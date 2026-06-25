@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李柔｜PM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFAF4;
+    --orange: #D4622A;
+    --orange-light: #F5E8DF;
+    --orange-mid: #E8956A;
+    --ink: #1A1410;
+    --ink-mid: #4A3728;
+    --ink-muted: #8C6E5D;
+    --border: #E8DDD6;
+    --white: #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    background: rgba(255,250,244,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-left { display: flex; align-items: center; gap: 2rem; }
+  .nav-logo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-links { display: flex; gap: 1.25rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8125rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+  .lang-toggle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    padding: 0.3rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .lang-toggle:hover {
+    color: var(--orange);
+    border-color: var(--orange);
+  }
+
+  /* ── Hero ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 7rem 0 5rem;
+  }
+  .hero-inner-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; width: 100%; }
+  .hero-inner { max-width: 720px; }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: var(--orange-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+  .hero-name {
+    font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+  .hero-name em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .hero-subtitle {
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 2.5rem;
+  }
+  .hero-desc {
+    font-size: 1.0625rem;
+    color: var(--ink-mid);
+    line-height: 1.85;
+    max-width: 560px;
+    margin-bottom: 1rem;
+  }
+  .hero-desc strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0 2.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 0.5rem; }
+  .stat-num {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--ink-muted); letter-spacing: 0.03em; }
+  .hero-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .tag {
+    font-size: 0.75rem;
+    color: var(--ink-mid);
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+  }
+  .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    color: var(--orange);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    border: 1.5px solid var(--orange);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: var(--orange-light); }
+
+  /* ── Section shared ── */
+  section { padding: 6rem 0; }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  .section-eyebrow {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+  .section-title {
+    font-size: clamp(1.625rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 3rem;
+    letter-spacing: -0.025em;
+  }
+
+  /* ── About ── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: start;
+    max-width: 560px;
+  }
+  .about-text p:not(.section-eyebrow) {
+    font-size: 1rem;
+    color: var(--ink-mid);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .about-text p strong { color: var(--ink); font-weight: 500; }
+  .about-aside {}
+  .aside-block {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .aside-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+  }
+  .aside-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .aside-item {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.25rem;
+  }
+
+  /* ── Projects ── */
+  #projects { background: var(--cream); }
+  .projects-list { display: flex; flex-direction: column; gap: 2rem; }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+  .project-card:hover { box-shadow: 0 8px 32px rgba(26,20,16,0.08); }
+
+  .project-header {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    cursor: pointer;
+  }
+  .project-num {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--orange-light);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    user-select: none;
+    transition: color 0.25s;
+  }
+  .project-card:hover .project-num { color: var(--orange-mid); }
+  .project-meta {}
+  .project-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    background: var(--orange-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  .project-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+  .project-hook {
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+    font-style: italic;
+    
+  }
+  .project-toggle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 1.25rem;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    user-select: none;
+  }
+  .project-card.open .project-toggle {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+    transform: rotate(45deg);
+  }
+
+  .project-body {
+    display: none;
+    padding: 0 2.5rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .project-card.open .project-body { display: block; }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .story-block {
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+  }
+  .story-block-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.6rem;
+  }
+  .story-block p {
+    font-size: 0.875rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+  }
+  .story-block p strong { color: var(--ink); font-weight: 500; }
+
+  .outcome-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .outcome-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--orange-light);
+    border-radius: 0.625rem;
+    padding: 1rem 1.5rem;
+    min-width: 140px;
+  }
+  .outcome-num {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .outcome-label {
+    font-size: 0.6875rem;
+    color: var(--ink-muted);
+    text-align: center;
+  }
+
+  .role-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--ink-muted);
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .role-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  /* ── Skills ── */
+  #skills { background: var(--white); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .skill-group {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+  .skill-group-title {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.875rem;
+  }
+  .skill-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-chip {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.75rem;
+    border-radius: 0.25rem;
+  }
+
+  /* ── Contact ── */
+  #contact { background: var(--ink); padding: 5rem 0; }
+  #contact .section-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .contact-left {}
+  .contact-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-mid);
+    margin-bottom: 1rem;
+  }
+  .contact-title {
+    font-size: clamp(1.625rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+  .contact-title em { font-style: normal; color: var(--orange-mid); font-weight: 300; }
+  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #C4A898;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--cream); }
+  .contact-link-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.25rem;
+    font-size: 0.6875rem;
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid #2A2018;
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+  }
+  footer p {
+    font-size: 0.75rem;
+    color: #5C4A3A;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 0; }
+    .section-inner { padding: 0 1.25rem; }
+    .hero-inner-wrap { padding: 0 1.25rem; }
+    #hero { padding: 6rem 0 4rem; }
+    .hero-stats { gap: 1.25rem; flex-wrap: wrap; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .story-grid { grid-template-columns: 1fr; }
+    .project-header { grid-template-columns: 80px 1fr auto; gap: 1rem; padding: 1.25rem; }
+    .project-num { font-size: 2.5rem; }
+    .project-body { padding: 0 1.25rem 1.25rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    #contact .section-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-left">
+    <a href="#hero" class="nav-logo">JOU LI</a>
+    <ul class="nav-links">
+      <li><a href="#about" data-zh="關於我" data-en="About">關於我</a></li>
+      <li><a href="#projects" data-zh="產品案例" data-en="Case Studies">產品案例</a></li>
+      <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
+      <li><a href="#contact" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+      <li><a href="https://docs.google.com/document/d/1Mbmeddnxy9a6fUEMw8dMtaRo7DUgNGzUCD1bs4U6g3Q/preview" target="_blank" data-zh="履歷" data-en="Resume">履歷</a></li>
+    </ul>
+  </div>
+  <button class="lang-toggle" onclick="toggleLang()" aria-label="切換語言">EN</button>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-inner-wrap">
+  <div class="hero-inner reveal">
+    <span class="hero-eyebrow">Product Manager</span>
+    <h1 class="hero-name">李 柔｜<em>Jou Li</em></h1>
+    <p class="hero-subtitle">Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei</p>
+
+    <p class="hero-desc">
+      用戶研究 × 數據觀察 × 跨部門協作
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">2 yr</span>
+        <span class="stat-label">Web3 產品經驗</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">60%</span>
+        <span class="stat-label">儀表板佔平台流量</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5×</span>
+        <span class="stat-label">Onboarding 成功率提升</span>
+      </div>
+    </div>
+
+    <div class="hero-tags">
+      <span class="tag">使用者研究</span>
+      <span class="tag">產品策略</span>
+      <span class="tag">Onboarding 設計</span>
+      <span class="tag">Web3 / AI</span>
+    </div>
+
+
+  </div>
+  </div>
+</section>
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="section-eyebrow">關於我</p>
+        <p>2 年在 Web3 新創參與產品規劃、用戶研究與跨部門協作。因為自己就是目標用戶（加密新手），習慣從第一手使用體驗出發找產品問題，再用數據驗證。</p>
+        <p>樂於學習新技術與 AI 工具，提升產品流程與工作效率。現在希望把這套能力帶進 PM 角色，做出真正解決問題的產品。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-eyebrow">產品案例</p>
+
+    <div class="projects-list">
+
+      <!-- Project 01 -->
+      <div class="project-card reveal" id="card-1">
+        <div class="project-header" onclick="toggleProject('card-1')">
+          <div class="project-num">01</div>
+          <div class="project-meta">
+            <span class="project-tag">使用者研究・產品策略</span>
+            <h3 class="project-name">跨交易所 Web3 數據平台</h3>
+            <p class="project-hook">「我用新手視角，設計出佔整體流量 60% 的核心功能」</p>
+          </div>
+          <div class="project-toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="story-grid">
+            <div class="story-block">
+              <div class="story-block-label">問題</div>
+              <p>加密新手面對三層障礙：<strong>看不懂指標</strong>、資訊分散在各大平台、不知道如何從上千個幣種篩出值得交易的標的。試過 KOL 文章和各種工具，還是找不到適合自己的方法。</p>
+            </div>
+            <div class="story-block">
+              <div class="story-block-label">做法</div>
+              <p>用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。設計三層流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，以自身新手視角把關每個功能的易讀性。</p>
+            </div>
+            <div class="story-block">
+              <div class="story-block-label">我的洞察</div>
+              <p>我本身就是目標用戶，所以直覺就是最好的用戶研究。提出觀察清單功能（源自訪談需求），並設計儀表板資訊架構，讓複雜指標變得<strong>散戶也能看懂</strong>。</p>
+            </div>
+          </div>
+          <div class="outcome-row">
+            <div class="outcome-pill">
+              <span class="outcome-num">60%</span>
+              <span class="outcome-label">儀表板佔整體流量</span>
+            </div>
+            <div class="outcome-pill">
+              <span class="outcome-num">拆出獨立</span>
+              <span class="outcome-label">成為產品核心模組</span>
+            </div>
+            <div class="outcome-pill">
+              <span class="outcome-num">穩定</span>
+              <span class="outcome-label">用戶留存率</span>
+            </div>
+          </div>
+          <div class="role-line">
+            <span class="role-dot"></span>
+            UI/UX 設計師・實質參與產品規劃・Web + App・2 年
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="project-card reveal" id="card-2">
+        <div class="project-header" onclick="toggleProject('card-2')">
+          <div class="project-num">02</div>
+          <div class="project-meta">
+            <span class="project-tag">Onboarding・流程優化</span>
+            <h3 class="project-name">AI Trading Agent</h3>
+            <p class="project-hook">「把安裝成功率從 10% 提升到 50%——從流程外找到流失點」</p>
+          </div>
+          <div class="project-toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="story-grid">
+            <div class="story-block">
+              <div class="story-block-label">背景與問題</div>
+              <p>數據平台留存受市場波動影響大，團隊以既有數據優勢延伸至 AI 自動交易工具。但安裝流程需申請雲端帳號、購買 LLM，<strong>耗時 15–20 分鐘</strong>，Workshop 現場安裝成功率僅 5–10%。</p>
+            </div>
+            <div class="story-block">
+              <div class="story-block-label">洞察</div>
+              <p>用戶在進入產品前就先流失——問題不在介面，在<strong>產品邊界定義錯了</strong>：把技術前置作業留給用戶自己處理。</p>
+            </div>
+            <div class="story-block">
+              <div class="story-block-label">做法</div>
+              <p>推動將技術配置內化為產品端預設，用戶只需購買 Credit、<strong>一鍵下載</strong>即可在 Telegram 上使用。同步負責介面引導、說明文件與示範影片。</p>
+            </div>
+          </div>
+          <div class="outcome-row">
+            <div class="outcome-pill">
+              <span class="outcome-num">15→5 分</span>
+              <span class="outcome-label">安裝時間縮短</span>
+            </div>
+            <div class="outcome-pill">
+              <span class="outcome-num">5×</span>
+              <span class="outcome-label">安裝成功率提升</span>
+            </div>
+            <div class="outcome-pill">
+              <span class="outcome-num">~50%</span>
+              <span class="outcome-label">Workshop 完成率</span>
+            </div>
+          </div>
+          <div class="role-line">
+            <span class="role-dot"></span>
+            UI/UX 設計師・Onboarding 體驗設計・Telegram Bot
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-eyebrow">技能與工具</p>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">產品能力</div>
+        <div class="skill-chips">
+          <span class="skill-chip">用戶研究</span>
+          <span class="skill-chip">競品分析</span>
+          <span class="skill-chip">功能規劃</span>
+          <span class="skill-chip">Onboarding 設計</span>
+          <span class="skill-chip">User Flow</span>
+          <span class="skill-chip">產品策略</span>
+          <span class="skill-chip">跨部門協作</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">設計能力</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Wireframing</span>
+          <span class="skill-chip">介面設計</span>
+          <span class="skill-chip">資訊架構</span>
+          <span class="skill-chip">使用者流程</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">工具</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Figma</span>
+          <span class="skill-chip">Mixpanel</span>
+          <span class="skill-chip">Notion</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">領域知識</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Web3 / 加密貨幣</span>
+          <span class="skill-chip">AI 產品</span>
+          <span class="skill-chip">DeFi</span>
+          <span class="skill-chip">Telegram Bot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-left">
+      <p class="contact-eyebrow">聯絡我</p>
+      <h2 class="contact-title">有機會一起<br>做出好產品嗎？<em>聊聊吧。</em></h2>
+    </div>
+    <div class="contact-links">
+      <div>
+        <div class="contact-link-label">Email</div>
+        <a href="mailto:rosslee891028@gmail.com" class="contact-link">rosslee891028@gmail.com</a>
+      </div>
+      <div>
+        <div class="contact-link-label">電話</div>
+        <a href="tel:+886917777431" class="contact-link">0917-777-4331</a>
+      </div>
+      <div>
+        <div class="contact-link-label">地點</div>
+        <span class="contact-link" style="cursor:default">Taipei, Taiwan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 李柔 Jou Li &nbsp;·&nbsp; Built with care</p>
+</footer>
+
+<script>
+  function toggleProject(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const translations = {
+    zh: {
+      'eyebrow': 'Product Manager',
+      'hero-name': '李 柔｜<em>Jou Li</em>',
+      'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
+      'hero-desc': '用戶研究 × 數據觀察 × 跨部門協作',
+      'stat-label-0': 'Web3 產品經驗',
+      'stat-label-1': '儀表板佔平台流量',
+      'stat-label-2': 'Onboarding 成功率提升',
+      'tag-0': '使用者研究', 'tag-1': '產品策略', 'tag-2': 'Onboarding 設計', 'tag-3': 'Web3 / AI',
+      'about-eyebrow': '關於我',
+      'about-p1': '2 年在 Web3 新創參與產品規劃、用戶研究與跨部門協作。因為自己就是目標用戶（加密新手），習慣從第一手使用體驗出發找產品問題，再用數據驗證。',
+      'about-p2': '樂於學習新技術與 AI 工具，提升產品流程與工作效率。現在希望把這套能力帶進 PM 角色，做出真正解決問題的產品。',
+      'proj-eyebrow': '產品案例',
+      'proj1-tag': '使用者研究・產品策略',
+      'proj1-name': '跨交易所 Web3 數據平台',
+      'proj1-hook': '「我用新手視角，設計出佔整體流量 60% 的核心功能」',
+      'proj1-b1-label': '問題', 'proj1-b1': '加密新手面對三層障礙：<strong>看不懂指標</strong>、資訊分散在各大平台、不知道如何從上千個幣種篩出值得交易的標的。試過 KOL 文章和各種工具，還是找不到適合自己的方法。',
+      'proj1-b2-label': '做法', 'proj1-b2': '用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。設計三層流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，以自身新手視角把關每個功能的易讀性。',
+      'proj1-b3-label': '我的洞察', 'proj1-b3': '我本身就是目標用戶，所以直覺就是最好的用戶研究。提出觀察清單功能（源自訪談需求），並設計儀表板資訊架構，讓複雜指標變得<strong>散戶也能看懂</strong>。',
+      'proj1-o1': '60%', 'proj1-o1l': '儀表板佔整體流量',
+      'proj1-o2': '拆出獨立', 'proj1-o2l': '成為產品核心模組',
+      'proj1-o3': '穩定', 'proj1-o3l': '用戶留存率',
+      'proj1-role': 'UI/UX 設計師・實質參與產品規劃・Web + App・2 年',
+      'proj2-tag': 'Onboarding・流程優化',
+      'proj2-name': 'AI Trading Agent',
+      'proj2-hook': '「把安裝成功率從 10% 提升到 50%——從流程外找到流失點」',
+      'proj2-b1-label': '背景與問題', 'proj2-b1': '數據平台留存受市場波動影響大，團隊以既有數據優勢延伸至 AI 自動交易工具。但安裝流程需申請雲端帳號、購買 LLM，<strong>耗時 15–20 分鐘</strong>，Workshop 現場安裝成功率僅 5–10%。',
+      'proj2-b2-label': '洞察', 'proj2-b2': '用戶在進入產品前就先流失——問題不在介面，在<strong>產品邊界定義錯了</strong>：把技術前置作業留給用戶自己處理。',
+      'proj2-b3-label': '做法', 'proj2-b3': '推動將技術配置內化為產品端預設，用戶只需購買 Credit、<strong>一鍵下載</strong>即可在 Telegram 上使用。同步負責介面引導、說明文件與示範影片。',
+      'proj2-o1': '15→5 分', 'proj2-o1l': '安裝時間縮短',
+      'proj2-o2': '5×', 'proj2-o2l': '安裝成功率提升',
+      'proj2-o3': '~50%', 'proj2-o3l': 'Workshop 完成率',
+      'proj2-role': 'UI/UX 設計師・Onboarding 體驗設計・Telegram Bot',
+      'skills-eyebrow': '技能與工具',
+      'sg1-title': '產品能力', 'sg2-title': '設計能力', 'sg3-title': '工具', 'sg4-title': '領域知識',
+      'contact-eyebrow': '聯絡我',
+      'contact-title': '有機會一起<br>做出好產品嗎？<em>聊聊吧。</em>',
+      'footer': '© 2026 李柔 Jou Li &nbsp;·&nbsp; Built with care',
+      'lang-btn': 'EN',
+      'nav-about': '關於我', 'nav-work': '產品案例', 'nav-skills': '技能', 'nav-contact': '聯絡', 'nav-resume': '履歷',
+    },
+    en: {
+      'eyebrow': 'Product Manager',
+      'hero-name': 'Jou Li',
+      'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
+      'hero-desc': 'User Research × Data Observation × Cross-functional Collaboration',
+      'stat-label-0': 'Web3 Product Experience',
+      'stat-label-1': 'Dashboard Traffic Share',
+      'stat-label-2': 'Onboarding Success Rate Lift',
+      'tag-0': 'User Research', 'tag-1': 'Product Strategy', 'tag-2': 'Onboarding Design', 'tag-3': 'Web3 / AI',
+      'about-eyebrow': 'About',
+      'about-p1': '2 years in a Web3 startup — involved in product planning, user research, and cross-functional collaboration. Being the target user myself (a crypto newcomer), I naturally ground problem-finding in first-hand experience, then validate with data.',
+      'about-p2': 'I enjoy picking up new technologies and AI tools to improve product workflows. My goal is to bring this approach into a PM role and build products that genuinely solve problems.',
+      'proj-eyebrow': 'Work',
+      'proj1-tag': 'User Research · Product Strategy',
+      'proj1-name': 'Cross-Exchange Web3 Data Platform',
+      'proj1-hook': '"I used a beginner\'s perspective to design the feature driving 60% of platform traffic."',
+      'proj1-b1-label': 'Problem', 'proj1-b1': 'Crypto newcomers faced three layers of friction: <strong>confusing indicators</strong>, fragmented data across platforms, and no way to filter thousands of coins into actionable picks. Despite trying KOL articles and various tools, users still couldn\'t find a workflow that worked.',
+      'proj1-b2-label': 'Approach', 'proj1-b2': 'User interviews + competitor analysis (CoinMarketCap, CoinGecko, CoinAnk) revealed that while competitors had data, none helped users actually <em>make decisions</em>. Designed a three-layer flow: <strong>Leaderboard → Dashboard → Watchlist</strong>, using my own beginner perspective to gate every feature for readability.',
+      'proj1-b3-label': 'Insight', 'proj1-b3': 'Being the target user meant my intuition was the best user research. I proposed the Watchlist feature (validated through interviews) and shaped the dashboard\'s information architecture to make complex indicators <strong>approachable for retail investors</strong>.',
+      'proj1-o1': '60%', 'proj1-o1l': 'Dashboard traffic share',
+      'proj1-o2': 'Spun off', 'proj1-o2l': 'Became core product module',
+      'proj1-o3': 'Stable', 'proj1-o3l': 'User retention rate',
+      'proj1-role': 'UI/UX Designer · Product Planning · Web + App · 2 years',
+      'proj2-tag': 'Onboarding · Flow Optimization',
+      'proj2-name': 'AI Trading Agent',
+      'proj2-hook': '"Raised installation success rate from 10% to 50% — by finding where users dropped off before even entering the product."',
+      'proj2-b1-label': 'Background & Problem', 'proj2-b1': 'Platform retention was highly correlated with market conditions, so the team extended its data advantage into an AI-powered trading agent. However, setup required creating a cloud account and purchasing an LLM subscription — <strong>taking 15–20 minutes</strong>, with only 5–10% of Workshop attendees successfully completing installation.',
+      'proj2-b2-label': 'Insight', 'proj2-b2': 'Users were dropping off before they even entered the product. The issue wasn\'t the interface — it was a <strong>misplaced product boundary</strong>: technical setup was left entirely to the user.',
+      'proj2-b3-label': 'Approach', 'proj2-b3': 'Advocated for moving all technical configuration server-side. Users only needed to purchase a Credit and <strong>download in one click</strong> to start on Telegram. Also owned the onboarding UI, documentation, and tutorial videos.',
+      'proj2-o1': '15→5 min', 'proj2-o1l': 'Installation time reduced',
+      'proj2-o2': '5×', 'proj2-o2l': 'Success rate improvement',
+      'proj2-o3': '~50%', 'proj2-o3l': 'Workshop completion rate',
+      'proj2-role': 'UI/UX Designer · Onboarding Experience · Telegram Bot',
+      'skills-eyebrow': 'Skills & Tools',
+      'sg1-title': 'Product', 'sg2-title': 'Design', 'sg3-title': 'Tools', 'sg4-title': 'Domain',
+      'contact-eyebrow': 'Get in Touch',
+      'contact-title': 'Want to build something<br>worth building? <em>Let\'s talk.</em>',
+      'footer': '© 2026 Jou Li &nbsp;·&nbsp; Built with care',
+      'lang-btn': '中',
+      'nav-about': 'About', 'nav-work': 'Case Studies', 'nav-skills': 'Skills', 'nav-contact': 'Contact', 'nav-resume': 'Resume',
+    }
+  };
+
+  let currentLang = 'zh';
+
+  function toggleLang() {
+    currentLang = currentLang === 'zh' ? 'en' : 'zh';
+    applyLang(currentLang);
+  }
+
+  function applyLang(lang) {
+    const t = translations[lang];
+    document.querySelector('.hero-eyebrow').textContent = t['eyebrow'];
+    document.querySelector('.hero-name').innerHTML = t['hero-name'];
+    document.querySelector('.hero-subtitle').innerHTML = t['hero-subtitle'];
+    document.querySelector('.hero-desc').textContent = t['hero-desc'];
+    const statLabels = document.querySelectorAll('.stat-label');
+    statLabels.forEach((el, i) => el.textContent = t[`stat-label-${i}`]);
+    const tags = document.querySelectorAll('.hero-tags .tag');
+    tags.forEach((el, i) => el.textContent = t[`tag-${i}`]);
+    document.querySelector('.about-text .section-eyebrow').textContent = t['about-eyebrow'];
+    const aboutPs = document.querySelectorAll('.about-text p:not(.section-eyebrow)');
+    aboutPs[0].textContent = t['about-p1'];
+    aboutPs[1].textContent = t['about-p2'];
+    document.querySelector('#projects .section-eyebrow').textContent = t['proj-eyebrow'];
+    document.querySelector('#card-1 .project-tag').textContent = t['proj1-tag'];
+    document.querySelector('#card-1 .project-name').textContent = t['proj1-name'];
+    document.querySelector('#card-1 .project-hook').textContent = t['proj1-hook'];
+    const p1blocks = document.querySelectorAll('#card-1 .story-block');
+    p1blocks[0].querySelector('.story-block-label').textContent = t['proj1-b1-label'];
+    p1blocks[0].querySelector('p').innerHTML = t['proj1-b1'];
+    p1blocks[1].querySelector('.story-block-label').textContent = t['proj1-b2-label'];
+    p1blocks[1].querySelector('p').innerHTML = t['proj1-b2'];
+    p1blocks[2].querySelector('.story-block-label').textContent = t['proj1-b3-label'];
+    p1blocks[2].querySelector('p').innerHTML = t['proj1-b3'];
+    const p1pills = document.querySelectorAll('#card-1 .outcome-pill');
+    p1pills[0].querySelector('.outcome-num').textContent = t['proj1-o1'];
+    p1pills[0].querySelector('.outcome-label').textContent = t['proj1-o1l'];
+    p1pills[1].querySelector('.outcome-num').textContent = t['proj1-o2'];
+    p1pills[1].querySelector('.outcome-label').textContent = t['proj1-o2l'];
+    p1pills[2].querySelector('.outcome-num').textContent = t['proj1-o3'];
+    p1pills[2].querySelector('.outcome-label').textContent = t['proj1-o3l'];
+    document.querySelector('#card-1 .role-line').innerHTML = `<span class="role-dot"></span>${t['proj1-role']}`;
+    document.querySelector('#card-2 .project-tag').textContent = t['proj2-tag'];
+    document.querySelector('#card-2 .project-name').textContent = t['proj2-name'];
+    document.querySelector('#card-2 .project-hook').textContent = t['proj2-hook'];
+    const p2blocks = document.querySelectorAll('#card-2 .story-block');
+    p2blocks[0].querySelector('.story-block-label').textContent = t['proj2-b1-label'];
+    p2blocks[0].querySelector('p').innerHTML = t['proj2-b1'];
+    p2blocks[1].querySelector('.story-block-label').textContent = t['proj2-b2-label'];
+    p2blocks[1].querySelector('p').innerHTML = t['proj2-b2'];
+    p2blocks[2].querySelector('.story-block-label').textContent = t['proj2-b3-label'];
+    p2blocks[2].querySelector('p').innerHTML = t['proj2-b3'];
+    const p2pills = document.querySelectorAll('#card-2 .outcome-pill');
+    p2pills[0].querySelector('.outcome-num').textContent = t['proj2-o1'];
+    p2pills[0].querySelector('.outcome-label').textContent = t['proj2-o1l'];
+    p2pills[1].querySelector('.outcome-num').textContent = t['proj2-o2'];
+    p2pills[1].querySelector('.outcome-label').textContent = t['proj2-o2l'];
+    p2pills[2].querySelector('.outcome-num').textContent = t['proj2-o3'];
+    p2pills[2].querySelector('.outcome-label').textContent = t['proj2-o3l'];
+    document.querySelector('#card-2 .role-line').innerHTML = `<span class="role-dot"></span>${t['proj2-role']}`;
+    document.querySelector('#skills .section-eyebrow').textContent = t['skills-eyebrow'];
+    const sgTitles = document.querySelectorAll('.skill-group-title');
+    ['sg1-title','sg2-title','sg3-title','sg4-title'].forEach((k,i) => sgTitles[i].textContent = t[k]);
+
+    const chipGroups = document.querySelectorAll('.skill-chips');
+    const chipsData = {
+      zh: [
+        ['用戶研究','競品分析','功能規劃','Onboarding 設計','User Flow','產品策略','跨部門協作'],
+        ['Wireframing','介面設計','資訊架構','使用者流程'],
+        ['Figma','Mixpanel','Notion'],
+        ['Web3 / 加密貨幣','AI 產品','DeFi','Telegram Bot']
+      ],
+      en: [
+        ['User Research','Competitor Analysis','Feature Planning','Onboarding Design','User Flow','Product Strategy','Cross-functional Collaboration'],
+        ['Wireframing','UI Design','Information Architecture','User Flow'],
+        ['Figma','Mixpanel','Notion'],
+        ['Web3 / Crypto','AI Products','DeFi','Telegram Bot']
+      ]
+    };
+    chipGroups.forEach((group, i) => {
+      group.innerHTML = chipsData[lang][i].map(c => `<span class="skill-chip">${c}</span>`).join('');
+    });
+    document.querySelector('#contact .contact-eyebrow').textContent = t['contact-eyebrow'];
+    document.querySelector('.contact-title').innerHTML = t['contact-title'];
+    document.querySelector('footer p').innerHTML = t['footer'];
+    document.querySelector('.lang-toggle').textContent = t['lang-btn'];
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks[0].textContent = t['nav-about'];
+    navLinks[1].textContent = t['nav-work'];
+    navLinks[2].textContent = t['nav-skills'];
+    navLinks[3].textContent = t['nav-contact'];
+    navLinks[4].textContent = t['nav-resume'];
+  }
+</script>
+
+</body>
+</html>
