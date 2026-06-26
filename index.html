@@ -1016,11 +1016,8 @@
     document.querySelector('.hero-eyebrow').textContent = t['eyebrow'];
     document.querySelector('.hero-name').innerHTML = t['hero-name'];
     document.querySelector('.hero-subtitle').innerHTML = t['hero-subtitle'];
-    document.querySelector('.hero-desc').textContent = t['hero-desc'];
     const statLabels = document.querySelectorAll('.stat-label');
     statLabels.forEach((el, i) => el.textContent = t[`stat-label-${i}`]);
-    const tags = document.querySelectorAll('.hero-tags .tag');
-    tags.forEach((el, i) => el.textContent = t[`tag-${i}`]);
     document.querySelector('.hero-about').textContent = t['about-p1'];
     const heroTags = document.querySelectorAll('.hero-tags .tag');
     const tagKeys = lang === 'zh'
