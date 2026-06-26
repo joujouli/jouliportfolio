@@ -180,7 +180,13 @@
     padding: 0.3rem 0.75rem;
     border-radius: 2rem;
   }
-  .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .hero-about {
+    font-size: 0.9375rem;
+    color: var(--ink-mid);
+    line-height: 1.8;
+    max-width: 560px;
+    margin-top: 1.5rem;
+  }
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -592,7 +598,6 @@
   <div class="nav-left">
     <a href="#hero" class="nav-logo">JOU LI</a>
     <ul class="nav-links">
-      <li><a href="#about" data-zh="關於我" data-en="About">關於我</a></li>
       <li><a href="#projects" data-zh="產品案例" data-en="Case Studies">產品案例</a></li>
       <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
       <li><a href="#contact" data-zh="聯絡" data-en="Contact">聯絡</a></li>
@@ -609,7 +614,6 @@
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#about" onclick="closeMenu()">關於我</a>
   <a href="#projects" onclick="closeMenu()">產品案例</a>
   <a href="#skills" onclick="closeMenu()">技能</a>
   <a href="#contact" onclick="closeMenu()">聯絡</a>
@@ -624,9 +628,13 @@
     <h1 class="hero-name">李 柔｜<em>Jou Li</em></h1>
     <p class="hero-subtitle">Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei</p>
 
-    <p class="hero-desc">
-      用戶研究 × 數據觀察 × 跨部門協作
-    </p>
+    <div class="hero-tags">
+      <span class="tag">用戶研究</span>
+      <span class="tag">數據觀察</span>
+      <span class="tag">跨部門協作</span>
+    </div>
+
+    <p class="hero-about">2 年在 Web3 新創參與產品規劃、用戶研究與跨部門協作。因為自己就是目標用戶（加密新手），習慣從第一手使用體驗出發找產品問題，再用數據驗證。樂於學習新技術與 AI 工具，提升產品流程與工作效率。現在希望把這套能力帶進 PM 角色，做出真正解決問題的產品。</p>
 
     <div class="hero-stats">
       <div class="stat-item">
@@ -643,27 +651,7 @@
       </div>
     </div>
 
-    <div class="hero-tags">
-      <span class="tag">使用者研究</span>
-      <span class="tag">產品策略</span>
-      <span class="tag">Onboarding 設計</span>
-      <span class="tag">Web3 / AI</span>
-    </div>
-
-
   </div>
-  </div>
-</section>
-<section id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p class="section-eyebrow">關於我</p>
-        <p>2 年在 Web3 新創參與產品規劃、用戶研究與跨部門協作。因為自己就是目標用戶（加密新手），習慣從第一手使用體驗出發找產品問題，再用數據驗證。</p>
-        <p>樂於學習新技術與 AI 工具，提升產品流程與工作效率。現在希望把這套能力帶進 PM 角色，做出真正解決問題的產品。</p>
-      </div>
-
-    </div>
   </div>
 </section>
 
@@ -686,6 +674,7 @@
           <div class="project-toggle">+</div>
         </div>
         <div class="project-body">
+          <img src="cover_p1.png" alt="跨交易所 Web3 數據平台" style="width:100%; border-radius:0.625rem; margin:1.5rem 0 1.25rem; display:block;">
           <div class="story-grid">
             <div class="story-block">
               <div class="story-block-label">背景與問題</div>
@@ -928,8 +917,7 @@
       'stat-label-2': 'Onboarding 成功率提升',
       'tag-0': '使用者研究', 'tag-1': '產品策略', 'tag-2': 'Onboarding 設計', 'tag-3': 'Web3 / AI',
       'about-eyebrow': '關於我',
-      'about-p1': '2 年在 Web3 新創參與產品規劃、用戶研究與跨部門協作。因為自己就是目標用戶（加密新手），習慣從第一手使用體驗出發找產品問題，再用數據驗證。',
-      'about-p2': '樂於學習新技術與 AI 工具，提升產品流程與工作效率。現在希望把這套能力帶進 PM 角色，做出真正解決問題的產品。',
+      'about-p1': '2 年在 Web3 新創參與產品規劃、用戶研究與跨部門協作。因為自己就是目標用戶（加密新手），習慣從第一手使用體驗出發找產品問題，再用數據驗證。樂於學習新技術與 AI 工具，提升產品流程與工作效率。現在希望把這套能力帶進 PM 角色，做出真正解決問題的產品。',
       'proj-eyebrow': '產品案例',
       'proj1-tag': '使用者研究・產品策略',
       'proj1-name': '跨交易所 Web3 數據平台',
@@ -976,8 +964,7 @@
       'stat-label-2': 'Onboarding Success Rate Lift',
       'tag-0': 'User Research', 'tag-1': 'Product Strategy', 'tag-2': 'Onboarding Design', 'tag-3': 'Web3 / AI',
       'about-eyebrow': 'About',
-      'about-p1': '2 years in a Web3 startup — involved in product planning, user research, and cross-functional collaboration. Being the target user myself (a crypto newcomer), I naturally ground problem-finding in first-hand experience, then validate with data.',
-      'about-p2': 'I enjoy picking up new technologies and AI tools to improve product workflows. My goal is to bring this approach into a PM role and build products that genuinely solve problems.',
+      'about-p1': '2 years in a Web3 startup — involved in product planning, user research, and cross-functional collaboration. Being the target user myself (a crypto newcomer), I naturally ground problem-finding in first-hand experience, then validate with data. I enjoy picking up new technologies and AI tools to improve product workflows. My goal is to bring this approach into a PM role and build products that genuinely solve problems.',
       'proj-eyebrow': 'Work',
       'proj1-tag': 'User Research · Product Strategy',
       'proj1-name': 'Cross-Exchange Web3 Data Platform',
@@ -1033,10 +1020,12 @@
     statLabels.forEach((el, i) => el.textContent = t[`stat-label-${i}`]);
     const tags = document.querySelectorAll('.hero-tags .tag');
     tags.forEach((el, i) => el.textContent = t[`tag-${i}`]);
-    document.querySelector('.about-text .section-eyebrow').textContent = t['about-eyebrow'];
-    const aboutPs = document.querySelectorAll('.about-text p:not(.section-eyebrow)');
-    aboutPs[0].textContent = t['about-p1'];
-    aboutPs[1].textContent = t['about-p2'];
+    document.querySelector('.hero-about').textContent = t['about-p1'];
+    const heroTags = document.querySelectorAll('.hero-tags .tag');
+    const tagKeys = lang === 'zh'
+      ? ['用戶研究', '數據觀察', '跨部門協作']
+      : ['User Research', 'Data Observation', 'Cross-functional'];
+    heroTags.forEach((el, i) => el.textContent = tagKeys[i]);
     document.querySelector('#projects .section-eyebrow').textContent = t['proj-eyebrow'];
     document.querySelector('#card-1 .project-tag').textContent = t['proj1-tag'];
     document.querySelector('#card-1 .project-name').textContent = t['proj1-name'];
@@ -1114,17 +1103,15 @@
     document.querySelector('footer p').innerHTML = t['footer'];
     document.querySelector('.lang-toggle').textContent = t['lang-btn'];
     const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks[0].textContent = t['nav-about'];
-    navLinks[1].textContent = t['nav-work'];
-    navLinks[2].textContent = t['nav-skills'];
-    navLinks[3].textContent = t['nav-contact'];
-    navLinks[4].textContent = t['nav-resume'];
+    navLinks[0].textContent = t['nav-work'];
+    navLinks[1].textContent = t['nav-skills'];
+    navLinks[2].textContent = t['nav-contact'];
+    navLinks[3].textContent = t['nav-resume'];
     const mobileLinks = document.querySelectorAll('.mobile-menu a');
-    mobileLinks[0].textContent = t['nav-about'];
-    mobileLinks[1].textContent = t['nav-work'];
-    mobileLinks[2].textContent = t['nav-skills'];
-    mobileLinks[3].textContent = t['nav-contact'];
-    mobileLinks[4].textContent = t['nav-resume'];
+    mobileLinks[0].textContent = t['nav-work'];
+    mobileLinks[1].textContent = t['nav-skills'];
+    mobileLinks[2].textContent = t['nav-contact'];
+    mobileLinks[3].textContent = t['nav-resume'];
   }
 </script>
 
