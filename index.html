@@ -416,7 +416,22 @@
     text-align: center;
   }
 
-  .role-line {
+  .mockup-row {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.75rem 0 1.25rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .mockup-row img {
+    width: 155px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    .mockup-row img { width: 130px; }
+  }
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -700,11 +715,11 @@
               <p>以自身新手視角設計三層決策流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，並把關每個功能的易讀性，讓複雜指標變得<strong>散戶也能看懂</strong>。</p>
             </div>
           </div>
+          <div class="mockup-row">
+            <img src="screen_p1_1.png" alt="數據平台儀表板截圖">
+            <img src="screen_p1_2.png" alt="數據平台排行榜截圖">
+          </div>
           <div class="outcome-row">
-            <div class="outcome-pill">
-              <span class="outcome-num">60%</span>
-              <span class="outcome-label">儀表板佔整體流量</span>
-            </div>
             <div class="outcome-pill">
               <span class="outcome-num">拆出獨立</span>
               <span class="outcome-label">成為產品核心模組</span>
@@ -746,6 +761,10 @@
               <div class="story-block-label">做法</div>
               <p>推動將技術配置內化為產品端預設，用戶只需購買 Credit、<strong>一鍵下載</strong>即可在 Telegram 上使用。同步負責介面引導、說明文件與示範影片。</p>
             </div>
+          </div>
+          <div class="mockup-row">
+            <img src="screen_p2_1.png" alt="AI Trading Agent Telegram 截圖">
+            <img src="screen_p2_2.png" alt="AI Trading Agent 產品頁截圖">
           </div>
           <div class="outcome-row">
             <div class="outcome-pill">
