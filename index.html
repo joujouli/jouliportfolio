@@ -581,7 +581,7 @@
     .project-num { font-size: 2.5rem; }
     .project-body { padding: 0 1.25rem 1.25rem; }
     .skills-grid { grid-template-columns: 1fr; }
-    #contact .section-inner { flex-direction: column; }
+    #contact .section-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
@@ -688,16 +688,16 @@
         <div class="project-body">
           <div class="story-grid">
             <div class="story-block">
-              <div class="story-block-label">問題</div>
+              <div class="story-block-label">背景與問題</div>
               <p>加密新手面對三層障礙：<strong>看不懂指標</strong>、資訊分散在各大平台、不知道如何從上千個幣種篩出值得交易的標的。試過 KOL 文章和各種工具，還是找不到適合自己的方法。</p>
             </div>
             <div class="story-block">
-              <div class="story-block-label">做法</div>
-              <p>用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。設計三層流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，以自身新手視角把關每個功能的易讀性。</p>
+              <div class="story-block-label">洞察</div>
+              <p>用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。機會點在策略決定層，這也是我們切入的核心。</p>
             </div>
             <div class="story-block">
-              <div class="story-block-label">我的洞察</div>
-              <p>我本身就是目標用戶，所以直覺就是最好的用戶研究。提出觀察清單功能（源自訪談需求），並設計儀表板資訊架構，讓複雜指標變得<strong>散戶也能看懂</strong>。</p>
+              <div class="story-block-label">做法</div>
+              <p>以自身新手視角設計三層決策流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，並把關每個功能的易讀性，讓複雜指標變得<strong>散戶也能看懂</strong>。</p>
             </div>
           </div>
           <div class="outcome-row">
@@ -763,7 +763,50 @@
           </div>
           <div class="role-line">
             <span class="role-dot"></span>
-            UI/UX 設計師・Onboarding 體驗設計・Telegram Bot
+            UI/UX 設計師・Onboarding 體驗設計・Telegram Bot・約 2 個月
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 03 -->
+      <div class="project-card reveal" id="card-3">
+        <div class="project-header" onclick="toggleProject('card-3')">
+          <div class="project-num">03</div>
+          <div class="project-meta">
+            <span class="project-tag">DAO・交易員透明化</span>
+            <h3 class="project-name">去中心化交易平台（DEX）</h3>
+            <p class="project-hook">「讓用戶有根據地投票，而不是盲目跟單」</p>
+          </div>
+          <div class="project-toggle">+</div>
+        </div>
+        <div class="project-body">
+          <div class="story-grid">
+            <div class="story-block">
+              <div class="story-block-label">背景與問題</div>
+              <p>傳統跟單平台超過 75% 的用戶都賠錢，因為交易員可以透過多帳號對沖、永不止損等方式刷高 ROI 和勝率，用戶根本無從判斷真實績效。這個平台以 DAO 投票機制解決信任問題，但因為運作方式比較特別，對新用戶來說理解門檻相對較高。</p>
+            </div>
+            <div class="story-block">
+              <div class="story-block-label">洞察</div>
+              <p>負責優化投票流程與介面，新增<strong>交易員排行榜頁面</strong>，將各交易員的績效指標以清楚易讀的方式呈現，讓用戶不需要具備專業背景，也能比較各交易員的真實表現並做出有根據的投票決策。</p>
+            </div>
+            <div class="story-block">
+              <div class="story-block-label">做法</div>
+              <p>以新手視角把關每個流程步驟的易讀性，確保複雜的 Web3 機制——從購買代幣、參與投票到查看績效——都能讓非專業用戶理解和操作，<strong>降低 DAO 參與門檻</strong>。</p>
+            </div>
+          </div>
+          <div class="outcome-row">
+            <div class="outcome-pill">
+              <span class="outcome-num">1 頁</span>
+              <span class="outcome-label">排行榜頁面從無到有</span>
+            </div>
+            <div class="outcome-pill">
+              <span class="outcome-num">多項指標</span>
+              <span class="outcome-label">視覺化呈現</span>
+            </div>
+          </div>
+          <div class="role-line">
+            <span class="role-dot"></span>
+            UI/UX 設計師・介面設計・流程優化・約 3 個月
           </div>
         </div>
       </div>
@@ -891,9 +934,9 @@
       'proj1-tag': '使用者研究・產品策略',
       'proj1-name': '跨交易所 Web3 數據平台',
       'proj1-hook': '「我用新手視角，設計出佔整體流量 60% 的核心功能」',
-      'proj1-b1-label': '問題', 'proj1-b1': '加密新手面對三層障礙：<strong>看不懂指標</strong>、資訊分散在各大平台、不知道如何從上千個幣種篩出值得交易的標的。試過 KOL 文章和各種工具，還是找不到適合自己的方法。',
-      'proj1-b2-label': '做法', 'proj1-b2': '用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。設計三層流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，以自身新手視角把關每個功能的易讀性。',
-      'proj1-b3-label': '我的洞察', 'proj1-b3': '我本身就是目標用戶，所以直覺就是最好的用戶研究。提出觀察清單功能（源自訪談需求），並設計儀表板資訊架構，讓複雜指標變得<strong>散戶也能看懂</strong>。',
+      'proj1-b1-label': '背景與問題', 'proj1-b1': '加密新手面對三層障礙：<strong>看不懂指標</strong>、資訊分散在各大平台、不知道如何從上千個幣種篩出值得交易的標的。試過 KOL 文章和各種工具，還是找不到適合自己的方法。',
+      'proj1-b2-label': '洞察', 'proj1-b2': '用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。設計三層流程：<strong>排行榜篩幣 → 儀表板分析 → 觀察清單追蹤</strong>，以自身新手視角把關每個功能的易讀性。',
+      'proj1-b3-label': '做法', 'proj1-b3': '我本身就是目標用戶，所以直覺就是最好的用戶研究。提出觀察清單功能（源自訪談需求），並設計儀表板資訊架構，讓複雜指標變得<strong>散戶也能看懂</strong>。',
       'proj1-o1': '60%', 'proj1-o1l': '儀表板佔整體流量',
       'proj1-o2': '拆出獨立', 'proj1-o2l': '成為產品核心模組',
       'proj1-o3': '穩定', 'proj1-o3l': '用戶留存率',
@@ -907,7 +950,14 @@
       'proj2-o1': '15→5 分', 'proj2-o1l': '安裝時間縮短',
       'proj2-o2': '5×', 'proj2-o2l': '安裝成功率提升',
       'proj2-o3': '~50%', 'proj2-o3l': 'Workshop 完成率',
-      'proj2-role': 'UI/UX 設計師・Onboarding 體驗設計・Telegram Bot',
+      'proj2-role': 'UI/UX 設計師・Onboarding 體驗設計・Telegram Bot・約 2 個月',
+      'proj3-tag': 'DAO・交易員透明化',
+      'proj3-name': '去中心化交易平台（DEX）',
+      'proj3-hook': '「讓用戶有根據地投票，而不是盲目跟單」',
+      'proj3-b1-label': '背景與問題', 'proj3-b1': '傳統跟單平台超過 75% 的用戶都賠錢，因為交易員可以透過多帳號對沖、永不止損等方式刷高 ROI 和勝率，用戶根本無從判斷真實績效。這個平台以 DAO 投票機制解決信任問題，但因為運作方式比較特別，對新用戶來說理解門檻相對較高。',
+      'proj3-b2-label': '洞察', 'proj3-b2': '負責優化投票流程與介面，新增<strong>交易員排行榜頁面</strong>，將各交易員的績效指標以清楚易讀的方式呈現，讓用戶不需要具備專業背景，也能比較各交易員的真實表現並做出有根據的投票決策。',
+      'proj3-b3-label': '做法', 'proj3-b3': '以新手視角把關每個流程步驟的易讀性，確保複雜的 Web3 機制——從購買 $BLA、參與投票到查看績效——都能讓非專業用戶理解和操作，<strong>降低 DAO 參與門檻</strong>。',
+      'proj3-role': 'UI/UX 設計師・介面設計・流程優化・約 3 個月',
       'skills-eyebrow': '技能與工具',
       'sg1-title': '產品能力', 'sg2-title': '設計能力', 'sg3-title': '工具', 'sg4-title': '領域知識',
       'contact-eyebrow': '聯絡我',
@@ -932,9 +982,9 @@
       'proj1-tag': 'User Research · Product Strategy',
       'proj1-name': 'Cross-Exchange Web3 Data Platform',
       'proj1-hook': '"I used a beginner\'s perspective to design the feature driving 60% of platform traffic."',
-      'proj1-b1-label': 'Problem', 'proj1-b1': 'Crypto newcomers faced three layers of friction: <strong>confusing indicators</strong>, fragmented data across platforms, and no way to filter thousands of coins into actionable picks. Despite trying KOL articles and various tools, users still couldn\'t find a workflow that worked.',
-      'proj1-b2-label': 'Approach', 'proj1-b2': 'User interviews + competitor analysis (CoinMarketCap, CoinGecko, CoinAnk) revealed that while competitors had data, none helped users actually <em>make decisions</em>. Designed a three-layer flow: <strong>Leaderboard → Dashboard → Watchlist</strong>, using my own beginner perspective to gate every feature for readability.',
-      'proj1-b3-label': 'Insight', 'proj1-b3': 'Being the target user meant my intuition was the best user research. I proposed the Watchlist feature (validated through interviews) and shaped the dashboard\'s information architecture to make complex indicators <strong>approachable for retail investors</strong>.',
+      'proj1-b1-label': 'Background & Problem', 'proj1-b1': 'Crypto newcomers faced three layers of friction: <strong>confusing indicators</strong>, fragmented data across platforms, and no way to filter thousands of coins into actionable picks. Despite trying KOL articles and various tools, users still couldn\'t find a workflow that worked.',
+      'proj1-b2-label': 'Insight', 'proj1-b2': 'User interviews + competitor analysis (CoinMarketCap, CoinGecko, CoinAnk) revealed that while competitors had data, none helped users actually <em>make decisions</em>. Designed a three-layer flow: <strong>Leaderboard → Dashboard → Watchlist</strong>, using my own beginner perspective to gate every feature for readability.',
+      'proj1-b3-label': 'Approach', 'proj1-b3': 'Being the target user meant my intuition was the best user research. I proposed the Watchlist feature (validated through interviews) and shaped the dashboard\'s information architecture to make complex indicators <strong>approachable for retail investors</strong>.',
       'proj1-o1': '60%', 'proj1-o1l': 'Dashboard traffic share',
       'proj1-o2': 'Spun off', 'proj1-o2l': 'Became core product module',
       'proj1-o3': 'Stable', 'proj1-o3l': 'User retention rate',
@@ -948,7 +998,14 @@
       'proj2-o1': '15→5 min', 'proj2-o1l': 'Installation time reduced',
       'proj2-o2': '5×', 'proj2-o2l': 'Success rate improvement',
       'proj2-o3': '~50%', 'proj2-o3l': 'Workshop completion rate',
-      'proj2-role': 'UI/UX Designer · Onboarding Experience · Telegram Bot',
+      'proj2-role': 'UI/UX Designer · Onboarding Experience · Telegram Bot · ~2 months',
+      'proj3-tag': 'DAO · Trader Transparency',
+      'proj3-name': 'Decentralized Exchange (DEX)',
+      'proj3-hook': '"Helping users vote with confidence, not blindly copy trade."',
+      'proj3-b1-label': 'Background & Problem', 'proj3-b1': 'Over 75% of copy trading users lose money because traders can game leaderboards through multi-account hedging and never stopping losses. This platform addresses the trust issue through a DAO voting mechanism — but because the model works differently from conventional platforms, the learning curve for new users is relatively steep.',
+      'proj3-b2-label': 'Insight', 'proj3-b2': 'Redesigned the voting flow and built a new <strong>trader leaderboard page</strong>, presenting performance metrics in a clear, readable format so users without a finance background could compare traders\'s real performance and vote with confidence.',
+      'proj3-b3-label': 'Approach', 'proj3-b3': 'Applied a beginner\'s lens to every step of the flow, ensuring complex Web3 mechanics — from purchasing $BLA to voting and reviewing performance — were accessible to non-technical users, <strong>lowering the barrier to DAO participation</strong>.',
+      'proj3-role': 'UI/UX Designer · Interface Design · Flow Optimization · ~3 months',
       'skills-eyebrow': 'Skills & Tools',
       'sg1-title': 'Product', 'sg2-title': 'Design', 'sg3-title': 'Tools', 'sg4-title': 'Domain',
       'contact-eyebrow': 'Get in Touch',
@@ -1017,6 +1074,17 @@
     p2pills[2].querySelector('.outcome-num').textContent = t['proj2-o3'];
     p2pills[2].querySelector('.outcome-label').textContent = t['proj2-o3l'];
     document.querySelector('#card-2 .role-line').innerHTML = `<span class="role-dot"></span>${t['proj2-role']}`;
+    document.querySelector('#card-3 .project-tag').textContent = t['proj3-tag'];
+    document.querySelector('#card-3 .project-name').textContent = t['proj3-name'];
+    document.querySelector('#card-3 .project-hook').textContent = t['proj3-hook'];
+    const p3blocks = document.querySelectorAll('#card-3 .story-block');
+    p3blocks[0].querySelector('.story-block-label').textContent = t['proj3-b1-label'];
+    p3blocks[0].querySelector('p').innerHTML = t['proj3-b1'];
+    p3blocks[1].querySelector('.story-block-label').textContent = t['proj3-b2-label'];
+    p3blocks[1].querySelector('p').innerHTML = t['proj3-b2'];
+    p3blocks[2].querySelector('.story-block-label').textContent = t['proj3-b3-label'];
+    p3blocks[2].querySelector('p').innerHTML = t['proj3-b3'];
+    document.querySelector('#card-3 .role-line').innerHTML = `<span class="role-dot"></span>${t['proj3-role']}`;
     document.querySelector('#skills .section-eyebrow').textContent = t['skills-eyebrow'];
     const sgTitles = document.querySelectorAll('.skill-group-title');
     ['sg1-title','sg2-title','sg3-title','sg4-title'].forEach((k,i) => sgTitles[i].textContent = t[k]);
