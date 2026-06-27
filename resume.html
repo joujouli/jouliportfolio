@@ -166,33 +166,27 @@
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media print {
-    @page {
-      margin: 1.75cm 2cm;
-      size: A4;
-    }
+    @page { margin: 1.25cm 1.75cm; size: A4; }
     body { background: #fff; padding: 0; }
     .topbar { display: none; }
-    .paper {
-      box-shadow: none;
-      padding: 0;
-      max-width: 100%;
-      height: calc(297mm - 3.5cm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    .paper { box-shadow: none; padding: 0; max-width: 100%; }
     .header { margin-bottom: 0; }
-    hr { margin: 1rem 0; }
-    .section { margin-bottom: 0; margin-top: 2rem; }
-    .section-title { margin-bottom: 0.5rem; }
-    .exp-sub { margin: 0.6rem 0 0.3rem; }
-    .bullets li { margin-bottom: 0.2rem; line-height: 1.65; }
-    .skills-tools-row { padding-top: 0.6rem; }
-    .skills-list { gap: 0.2rem 0.5rem; }
-    #tools-grid { gap: 0.2rem; }
-    .skill-item { line-height: 1.65; }
-    .section-body { line-height: 1.7; }
-    .edu-dept { margin-top: 0.25rem; }
+    .header-name { font-size: 1.2rem; }
+    .header-info { font-size: 0.75rem; }
+    hr { margin-top: 0.2rem; margin-bottom: 0.55rem; }
+    .section { margin-top: 1.25rem; }
+    .section-title { font-size: 0.65rem; margin-bottom: 0.15rem; }
+    .section-body { font-size: 0.75rem; line-height: 1.55; }
+    .exp-role { font-size: 0.8rem; }
+    .exp-date { font-size: 0.7rem; }
+    .exp-sub { font-size: 0.75rem; margin: 0.4rem 0 0.2rem; }
+    .bullets li { font-size: 0.75rem; line-height: 1.5; margin-bottom: 0.08rem; }
+    .skill-item { font-size: 0.75rem; line-height: 1.5; }
+    .edu-dept { font-size: 0.75rem; margin-top: 0.15rem; }
+    .skills-tools-header { margin-bottom: 0.15rem; }
+    .skills-tools-row { padding-top: 0.45rem; }
+    .skills-list { gap: 0.1rem 0.5rem; }
+    #tools-grid { gap: 0.1rem; }
   }
 </style>
 </head>
@@ -210,8 +204,8 @@
     <div class="header-info">
       Taipei, Taiwan &nbsp;|&nbsp;
       <a href="tel:+886917777431">0917-777-4331</a> &nbsp;|&nbsp;
-      <a href="mailto:rosslee891028@gmail.com">rosslee891028@gmail.com</a><br>
-      <a href="https://joujouli.github.io/jouliportfolio" target="_blank">joujouli.github.io/jouliportfolio</a>
+      <a href="mailto:rosslee891028@gmail.com">rosslee891028@gmail.com</a> &nbsp;|&nbsp;
+      <a href="https://joujouli.github.io/jouliportfolio" target="_blank">Portfolio</a>
     </div>
   </div>
 
