@@ -126,10 +126,21 @@
     color: var(--ink-mid);
     margin-top: 0.2rem;
   }
-  .skills-grid {
+  .skills-tools-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.2rem 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+    border-top: 1.5px solid var(--ink);
+    padding-top: 0.75rem;
+  }
+  .skills-col {}
+  .skills-col .section-title {
+    margin-bottom: 0.5rem;
+  }
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.15rem 0.5rem;
   }
   .skill-item {
     font-size: 0.8125rem;
@@ -240,30 +251,29 @@
     <div class="edu-dept" id="edu-dept">兒童英語教育學系</div>
   </div>
 
-  <hr>
-
   <div class="section">
-    <div class="section-title" id="skills-title">Skills</div>
-    <div class="skills-grid" id="skills-grid">
-      <span class="skill-item">用戶研究</span>
-      <span class="skill-item">競品分析</span>
-      <span class="skill-item">功能規劃</span>
-      <span class="skill-item">產品策略</span>
-      <span class="skill-item">User Flow</span>
-      <span class="skill-item">Onboarding 設計</span>
-      <span class="skill-item">跨部門協作</span>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="section">
-    <div class="section-title" id="tools-title">Tools</div>
-    <div class="skills-grid" id="tools-grid">
-      <span class="skill-item">Figma</span>
-      <span class="skill-item">AI 工具應用</span>
-      <span class="skill-item">Notion</span>
-      <span class="skill-item">Mixpanel</span>
+    <div class="skills-tools-row">
+      <div class="skills-col">
+        <div class="section-title" id="skills-title">Skills</div>
+        <div class="skills-list" id="skills-grid">
+          <span class="skill-item">用戶研究</span>
+          <span class="skill-item">競品分析</span>
+          <span class="skill-item">功能規劃</span>
+          <span class="skill-item">產品策略</span>
+          <span class="skill-item">User Flow</span>
+          <span class="skill-item">Onboarding 設計</span>
+          <span class="skill-item">跨部門協作</span>
+        </div>
+      </div>
+      <div class="skills-col">
+        <div class="section-title" id="tools-title">Tools</div>
+        <div class="skills-list" id="tools-grid">
+          <span class="skill-item">Figma</span>
+          <span class="skill-item">AI 工具應用</span>
+          <span class="skill-item">Notion</span>
+          <span class="skill-item">Mixpanel</span>
+        </div>
+      </div>
     </div>
   </div>
 
