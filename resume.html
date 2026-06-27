@@ -50,7 +50,7 @@
     padding: 3rem 3.5rem;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
   }
-  .header { text-align: center; margin-bottom: 1.25rem; }
+  .header { text-align: center; margin-bottom: 1.5rem; }
   .header-name {
     font-size: 1.5rem;
     font-weight: 600;
@@ -65,8 +65,8 @@
   }
   .header-info a { color: var(--ink-muted); text-decoration: none; }
   .header-info a:hover { text-decoration: underline; }
-  hr { border: none; border-top: 1.5px solid var(--ink); margin: 1.1rem 0; }
-  .section { margin-bottom: 1.25rem; }
+  hr { border: none; border-top: 1.5px solid var(--ink); margin: 1.5rem 0; }
+  .section { margin-bottom: 1.5rem; }
   .section-title {
     font-size: 0.75rem;
     font-weight: 600;
@@ -100,7 +100,7 @@
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--ink);
-    margin: 0.6rem 0 0.3rem;
+    margin: 0.875rem 0 0.4rem;
   }
   .bullets { list-style: none; margin-bottom: 0.25rem; }
   .bullets li {
@@ -160,7 +160,7 @@
   }
   @media print {
     @page {
-      margin: 1.5cm 2cm;
+      margin: 1.75cm 2cm;
       size: A4;
     }
     body { background: #fff; padding: 0; }
@@ -169,17 +169,23 @@
       box-shadow: none;
       padding: 0;
       max-width: 100%;
+      height: calc(297mm - 3.5cm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .header { margin-bottom: 1rem; }
-    hr { margin: 0.875rem 0; }
-    .section { margin-bottom: 1rem; }
-    .section-title { margin-bottom: 0.4rem; }
-    .exp-sub { margin: 0.5rem 0 0.25rem; }
-    .bullets li { margin-bottom: 0.1rem; line-height: 1.6; }
-    .skills-tools-row { padding-top: 0.5rem; }
-    .skills-list { gap: 0.1rem 0.5rem; }
-    .skill-item { line-height: 1.6; }
-    .section-body { line-height: 1.65; }
+    .header { margin-bottom: 0; }
+    hr { margin: 1rem 0; }
+    .section { margin-bottom: 0; }
+    .section-title { margin-bottom: 0.5rem; }
+    .exp-sub { margin: 0.6rem 0 0.3rem; }
+    .bullets li { margin-bottom: 0.2rem; line-height: 1.65; }
+    .skills-tools-row { padding-top: 0.6rem; }
+    .skills-list { gap: 0.2rem 0.5rem; }
+    #tools-grid { gap: 0.2rem; }
+    .skill-item { line-height: 1.65; }
+    .section-body { line-height: 1.7; }
+    .edu-dept { margin-top: 0.25rem; }
   }
 </style>
 </head>
