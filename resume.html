@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李柔｜Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A1410;
+    --ink-mid: #3A3030;
+    --ink-muted: #6A6060;
+    --border: #C8C0B8;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #E8E4E0;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    padding: 2rem 1rem;
+  }
+  .topbar {
+    max-width: 720px;
+    margin: 0 auto 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .topbar-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    padding: 0.3rem 0.875rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+  }
+  .topbar-btn:hover { color: var(--ink); border-color: var(--ink); }
+  .paper {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem 3.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .header { text-align: center; margin-bottom: 1.25rem; }
+  .header-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+  .header-info {
+    font-size: 0.8125rem;
+    color: var(--ink-muted);
+    line-height: 1.8;
+  }
+  .header-info a { color: var(--ink-muted); text-decoration: none; }
+  .header-info a:hover { text-decoration: underline; }
+  hr { border: none; border-top: 1.5px solid var(--ink); margin: 1.1rem 0; }
+  .section { margin-bottom: 1.25rem; }
+  .section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .section-body {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .exp-role {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .exp-date {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+  }
+  .exp-sub {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0.6rem 0 0.3rem;
+  }
+  .bullets { list-style: none; margin-bottom: 0.25rem; }
+  .bullets li {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    margin-bottom: 0.15rem;
+  }
+  .bullets li::before {
+    content: '●';
+    color: var(--ink);
+    font-size: 0.5rem;
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+  .bullets li strong { color: var(--ink); font-weight: 500; }
+  .edu-dept {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    margin-top: 0.2rem;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2rem 1rem;
+  }
+  .skill-item {
+    font-size: 0.8125rem;
+    color: var(--ink-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .skill-item::before {
+    content: '●';
+    color: var(--ink);
+    font-size: 0.5rem;
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+  @media (max-width: 600px) {
+    body { padding: 0; }
+    .paper { padding: 2rem 1.5rem; box-shadow: none; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .topbar { display: none; }
+    .paper { box-shadow: none; padding: 1.5rem 2rem; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="topbar-btn" onclick="window.print()">⬇ 下載 PDF</button>
+  <button class="topbar-btn" onclick="toggleLang()" id="lang-btn">EN</button>
+</div>
+
+<div class="paper">
+
+  <div class="header">
+    <div class="header-name">李柔 Jou Li</div>
+    <div class="header-info">
+      Taipei, Taiwan &nbsp;|&nbsp;
+      <a href="tel:+886917777431">0917-777-4331</a> &nbsp;|&nbsp;
+      <a href="mailto:rosslee891028@gmail.com">rosslee891028@gmail.com</a><br>
+      <a href="https://joujouli.github.io/jouliportfolio" target="_blank">joujouli.github.io/jouliportfolio</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="section-body">具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題根本，再以跨部門協作推動解法落地。具備與工程師、設計師協作的實務經驗，能同時從使用者需求與產品策略角度思考問題。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。</p>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="exp-header">
+      <span class="exp-role">UI/UX 設計師｜吾集科技有限公司</span>
+      <span class="exp-date">2023.10 — 2026.06</span>
+    </div>
+
+    <div class="exp-sub">加密貨幣數據分析平台</div>
+    <ul class="bullets" id="b1">
+      <li><span>參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。</span></li>
+      <li><span>根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。</span></li>
+      <li><span>強化核心功能，使其成為最高平台使用率，<strong>佔整體流量約 60%</strong>。</span></li>
+    </ul>
+
+    <div class="exp-sub">AI Trading Agent</div>
+    <ul class="bullets" id="b2">
+      <li><span>參與產品方向規劃，初期專注於介面與流程設計以降低新手用戶的學習門檻。</span></li>
+      <li><span>協助規劃 onboarding 體驗來推動工作坊，負責說明文件與示範影片的製作。</span></li>
+      <li><span>識別核心流失點，與跨部門合作將技術前置作業內化為產品端預設，以縮短安裝流程耗時。</span></li>
+    </ul>
+
+    <div class="exp-sub">去中心化驗證跟單交易平台</div>
+    <ul class="bullets" id="b3">
+      <li><span>參與產品規劃與網站設計，負責投票機制、排行榜等功能流程與介面設計。</span></li>
+      <li><span>進行用戶研究與市場觀察來點出產品缺口，協助團隊優化流程與使用者體驗。</span></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-title" id="edu-title">Education</div>
+    <div class="exp-header">
+      <span class="exp-role" id="edu-school">國立臺北教育大學</span>
+      <span class="exp-date" id="edu-date">2019.09 — 2023.06</span>
+    </div>
+    <div class="edu-dept" id="edu-dept">兒童英語教育學系</div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-title" id="skills-title">Skills</div>
+    <div class="skills-grid" id="skills-grid">
+      <span class="skill-item">用戶研究</span>
+      <span class="skill-item">競品分析</span>
+      <span class="skill-item">功能規劃</span>
+      <span class="skill-item">產品策略</span>
+      <span class="skill-item">User Flow</span>
+      <span class="skill-item">Onboarding 設計</span>
+      <span class="skill-item">跨部門協作</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-title" id="tools-title">Tools</div>
+    <div class="skills-grid" id="tools-grid">
+      <span class="skill-item">Figma</span>
+      <span class="skill-item">AI 工具應用</span>
+      <span class="skill-item">Notion</span>
+      <span class="skill-item">Mixpanel</span>
+    </div>
+  </div>
+
+
+
+</div>
+
+<script>
+  const t = {
+    zh: {
+      btn: 'EN', lang: 'zh-TW', pdf_btn: '⬇ 下載 PDF',
+      name: '李柔 Jou Li',
+      summary_title: 'Professional Summary',
+      summary: '具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題根本，再以跨部門協作推動解法落地。具備與工程師、設計師協作的實務經驗，能同時從使用者需求與產品策略角度思考問題。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。',
+      exp_title: 'Work Experience',
+      role: 'UI/UX 設計師｜吾集科技有限公司',
+      date: '2023.10 — 2026.06',
+      sub1: '加密貨幣數據分析平台', sub2: 'AI Trading Agent', sub3: '去中心化驗證跟單交易平台',
+      b1: ['參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。','根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。','強化核心功能，使其成為最高平台使用率，<strong>佔整體流量約 60%</strong>。'],
+      b2: ['參與產品方向規劃，初期專注於介面與流程設計以降低新手用戶的學習門檻。','協助規劃 onboarding 體驗來推動工作坊，負責說明文件與示範影片的製作。','識別核心流失點，與跨部門合作將技術前置作業內化為產品端預設，以縮短安裝流程耗時。'],
+      b3: ['參與產品規劃與網站設計，負責投票機制、排行榜等功能流程與介面設計。','進行用戶研究與市場觀察來點出產品缺口，協助團隊優化流程與使用者體驗。'],
+      edu_title: 'Education', edu_school: '國立臺北教育大學', edu_date: '2019.09 — 2023.06', edu_dept: '兒童英語教育學系',
+      skills_title: 'Skills', tools_title: 'Tools',
+      skills: ['用戶研究','競品分析','功能規劃','產品策略','User Flow','Onboarding 設計','跨部門協作'],
+      tools: ['Figma','AI 工具應用','Notion','Mixpanel'],
+    },
+    en: {
+      btn: '中', lang: 'en', pdf_btn: '⬇ Download PDF',
+      name: 'Jou Li',
+      summary_title: 'Professional Summary',
+      summary: '2 years of product planning and user research experience in a Web3 startup. Skilled at identifying root problems through user interviews, data observation, and competitor analysis, then driving solutions through cross-functional collaboration. Experienced working with engineers and designers. Actively transitioning into a Product Manager role, with a focus on user-insight-driven product decisions.',
+      exp_title: 'Work Experience',
+      role: 'UI/UX Designer｜Wuji Technology',
+      date: 'Oct 2023 — Jun 2026',
+      sub1: 'Crypto Data Analytics Platform', sub2: 'AI Trading Agent', sub3: 'Decentralized Copy Trading Platform',
+      b1: ['Participated in feature planning and UI design for web and app; skilled at reviewing usability from a beginner\'s perspective.','Conducted user interviews and backend data analysis to identify pain points; used competitor research to establish product differentiation.','Strengthened core features to become the most-used on the platform, <strong>accounting for ~60% of total traffic</strong>.'],
+      b2: ['Participated in product direction planning, initially focused on interface and flow design to lower the learning curve for new users.','Helped plan onboarding experiences for workshops; responsible for documentation and tutorial video production.','Identified core drop-off points; collaborated cross-functionally to move technical setup server-side, reducing installation time.'],
+      b3: ['Participated in product planning and web design, responsible for voting mechanism, leaderboard flow and interface design.','Conducted user research and market observation to identify product gaps and help the team optimize flows and user experience.'],
+      edu_title: 'Education', edu_school: 'National Taipei University of Education', edu_date: 'Sep 2019 — Jun 2023', edu_dept: "B.A. in Children's English Education",
+      skills_title: 'Skills', tools_title: 'Tools',
+      skills: ['User Research','Competitor Analysis','Feature Planning','Product Strategy','User Flow','Onboarding Design','Cross-functional'],
+      tools: ['Figma','AI 工具應用','Notion','Mixpanel'],
+    }
+  };
+
+  let lang = 'zh';
+
+  function toggleLang() {
+    lang = lang === 'zh' ? 'en' : 'zh';
+    const d = t[lang];
+    document.documentElement.lang = d.lang;
+    document.getElementById('lang-btn').textContent = d.btn;
+    document.querySelectorAll('.topbar-btn')[0].textContent = d.pdf_btn;
+    document.querySelector('.header-name').textContent = d.name;
+    document.querySelectorAll('.section-title')[0].textContent = d.summary_title;
+    document.querySelector('.section-body').textContent = d.summary;
+    document.querySelectorAll('.section-title')[1].textContent = d.exp_title;
+    document.querySelector('.exp-role').textContent = d.role;
+    document.querySelector('.exp-date').textContent = d.date;
+    const subs = document.querySelectorAll('.exp-sub');
+    subs[0].textContent = d.sub1; subs[1].textContent = d.sub2; subs[2].textContent = d.sub3;
+    ['b1','b2','b3'].forEach(id => {
+      document.getElementById(id).innerHTML = d[id].map(b => `<li><span>${b}</span></li>`).join('');
+    });
+    document.getElementById('edu-title').textContent = d.edu_title;
+    document.getElementById('edu-school').textContent = d.edu_school;
+    document.getElementById('edu-date').textContent = d.edu_date;
+    document.getElementById('edu-dept').textContent = d.edu_dept;
+    document.getElementById('skills-title').textContent = d.skills_title;
+    document.getElementById('skills-grid').innerHTML = d.skills.map(s => `<span class="skill-item">${s}</span>`).join('');
+    document.getElementById('tools-title').textContent = d.tools_title;
+    document.getElementById('tools-grid').innerHTML = d.tools.map(s => `<span class="skill-item">${s}</span>`).join('');
+  }
+</script>
+
+</body>
+</html>
