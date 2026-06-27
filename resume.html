@@ -109,15 +109,16 @@
     line-height: 1.75;
     display: flex;
     gap: 0.5rem;
-    align-items: flex-start;
+    align-items: baseline;
     margin-bottom: 0.15rem;
   }
   .bullets li::before {
     content: '●';
     color: var(--ink);
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     flex-shrink: 0;
-    margin-top: 0.45rem;
+    position: relative;
+    top: -0.1rem;
   }
   .bullets li strong { color: var(--ink); font-weight: 500; }
   .edu-dept {
@@ -134,15 +135,15 @@
     font-size: 0.8125rem;
     color: var(--ink-mid);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.4rem;
+    line-height: 1.75;
   }
   .skill-item::before {
     content: '●';
     color: var(--ink);
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     flex-shrink: 0;
-    margin-top: 0.45rem;
   }
   @media (max-width: 600px) {
     body { padding: 0; }
@@ -289,7 +290,7 @@
       edu_title: 'Education', edu_school: 'National Taipei University of Education', edu_date: 'Sep 2019 — Jun 2023', edu_dept: "B.A. in Children's English Education",
       skills_title: 'Skills', tools_title: 'Tools',
       skills: ['User Research','Competitor Analysis','Feature Planning','Product Strategy','User Flow','Onboarding Design','Cross-functional'],
-      tools: ['Figma','AI 工具應用','Notion','Mixpanel'],
+      tools: ['Figma','AI Tool Proficiency','Notion','Mixpanel'],
     }
   };
 
