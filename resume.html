@@ -65,15 +65,15 @@
   }
   .header-info a { color: var(--ink-muted); text-decoration: none; }
   .header-info a:hover { text-decoration: underline; }
-  hr { border: none; border-top: 1.5px solid var(--ink); margin: 1.5rem 0; }
-  .section { margin-bottom: 1.5rem; }
+  hr { border: none; border-top: 1.5px solid var(--ink); margin-top: 0.25rem; margin-bottom: 0.875rem; }
+  .section { margin-bottom: 0; margin-top: 2.5rem; }
   .section-title {
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
   }
   .section-body {
     font-size: 0.8125rem;
@@ -126,19 +126,26 @@
     color: var(--ink-mid);
     margin-top: 0.2rem;
   }
+  .skills-tools-header {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0 2rem;
+    margin-bottom: 0.25rem;
+  }
   .skills-tools-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     gap: 0 2rem;
     border-top: 1.5px solid var(--ink);
     padding-top: 0.75rem;
+    margin-top: 0.25rem;
   }
   .skills-col {}
   .skills-col .section-title {
     margin-bottom: 0.5rem;
   }
-  .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.15rem 0.5rem; }
-  #tools-grid { display: flex; flex-direction: column; gap: 0.15rem; }
+  .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 0.5rem; }
+  #tools-grid { display: flex; flex-direction: column; gap: 0.2rem; }
   .skill-item {
     font-size: 0.8125rem;
     color: var(--ink-mid);
@@ -176,7 +183,7 @@
     }
     .header { margin-bottom: 0; }
     hr { margin: 1rem 0; }
-    .section { margin-bottom: 0; }
+    .section { margin-bottom: 0; margin-top: 2rem; }
     .section-title { margin-bottom: 0.5rem; }
     .exp-sub { margin: 0.6rem 0 0.3rem; }
     .bullets li { margin-bottom: 0.2rem; line-height: 1.65; }
@@ -208,17 +215,15 @@
     </div>
   </div>
 
-  <hr>
-
   <div class="section">
     <div class="section-title">Professional Summary</div>
+    <hr>
     <p class="section-body">具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題，同時從使用者需求與產品策略角度思考問題，再以跨部門協作解決痛點、優化體驗。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。</p>
   </div>
 
-  <hr>
-
   <div class="section">
     <div class="section-title">Work Experience</div>
+    <hr>
 
     <div class="exp-header">
       <span class="exp-role">UI/UX 設計師｜吾集科技有限公司</span>
@@ -246,10 +251,9 @@
     </ul>
   </div>
 
-  <hr>
-
   <div class="section">
     <div class="section-title" id="edu-title">Education</div>
+    <hr>
     <div class="exp-header">
       <span class="exp-role" id="edu-school">國立臺北教育大學</span>
       <span class="exp-date" id="edu-date">2019.09 — 2023.06</span>
@@ -258,9 +262,12 @@
   </div>
 
   <div class="section">
+    <div class="skills-tools-header">
+      <span class="section-title">Skills</span>
+      <span class="section-title">Tools</span>
+    </div>
     <div class="skills-tools-row">
       <div class="skills-col">
-        <div class="section-title" id="skills-title">Skills</div>
         <div class="skills-list" id="skills-grid">
           <span class="skill-item">用戶研究</span>
           <span class="skill-item">競品分析</span>
@@ -272,7 +279,6 @@
         </div>
       </div>
       <div class="skills-col">
-        <div class="section-title" id="tools-title">Tools</div>
         <div class="skills-list" id="tools-grid">
           <span class="skill-item">Figma</span>
           <span class="skill-item">AI 工具應用</span>
@@ -348,10 +354,12 @@
     document.getElementById('edu-school').textContent = d.edu_school;
     document.getElementById('edu-date').textContent = d.edu_date;
     document.getElementById('edu-dept').textContent = d.edu_dept;
-    document.getElementById('skills-title').textContent = d.skills_title;
+    document.getElementById('skills-title') && (document.getElementById('skills-title').textContent = d.skills_title);
     document.getElementById('skills-grid').innerHTML = d.skills.map(s => `<span class="skill-item">${s}</span>`).join('');
-    document.getElementById('tools-title').textContent = d.tools_title;
+    document.getElementById('tools-title') && (document.getElementById('tools-title').textContent = d.tools_title);
     document.getElementById('tools-grid').innerHTML = d.tools.map(s => `<span class="skill-item">${s}</span>`).join('');
+    const stHeaders = document.querySelectorAll('.skills-tools-header .section-title');
+    if(stHeaders.length) { stHeaders[0].textContent = d.skills_title; stHeaders[1].textContent = d.tools_title; }
   }
 </script>
 
