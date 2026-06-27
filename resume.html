@@ -151,9 +151,24 @@
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media print {
+    @page {
+      margin: 0;
+      size: A4;
+    }
     body { background: #fff; padding: 0; }
     .topbar { display: none; }
-    .paper { box-shadow: none; padding: 1.5rem 2rem; max-width: 100%; }
+    .paper {
+      box-shadow: none;
+      padding: 1.5rem 2.5rem;
+      max-width: 100%;
+      font-size: 0.75rem;
+    }
+    .header-name { font-size: 1.25rem; }
+    .section-title { font-size: 0.65rem; }
+    .section-body, .bullets li, .skill-item, .exp-role, .exp-date, .exp-sub, .edu-dept { font-size: 0.75rem; }
+    hr { margin: 0.75rem 0; }
+    .section { margin-bottom: 0.875rem; }
+    .skills-grid { gap: 0.1rem 1rem; }
   }
 </style>
 </head>
@@ -180,7 +195,7 @@
 
   <div class="section">
     <div class="section-title">Professional Summary</div>
-    <p class="section-body">具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題根本，再以跨部門協作推動解法落地。具備與工程師、設計師協作的實務經驗，能同時從使用者需求與產品策略角度思考問題。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。</p>
+    <p class="section-body">具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題，同時從使用者需求與產品策略角度思考問題，再以跨部門協作解決痛點、優化體驗。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。</p>
   </div>
 
   <hr>
@@ -262,7 +277,7 @@
       btn: 'EN', lang: 'zh-TW', pdf_btn: '⬇ 下載 PDF',
       name: '李柔 Jou Li',
       summary_title: 'Professional Summary',
-      summary: '具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題根本，再以跨部門協作推動解法落地。具備與工程師、設計師協作的實務經驗，能同時從使用者需求與產品策略角度思考問題。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。',
+      summary: '具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題，同時從使用者需求與產品策略角度思考問題，再以跨部門協作解決痛點、優化體驗。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。',
       exp_title: 'Work Experience',
       role: 'UI/UX 設計師｜吾集科技有限公司',
       date: '2023.10 — 2026.06',
