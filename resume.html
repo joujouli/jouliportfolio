@@ -137,11 +137,8 @@
   .skills-col .section-title {
     margin-bottom: 0.5rem;
   }
-  .skills-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.15rem 0.5rem;
-  }
+  .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.15rem 0.5rem; }
+  #tools-grid { display: flex; flex-direction: column; gap: 0.15rem; }
   .skill-item {
     font-size: 0.8125rem;
     color: var(--ink-mid);
@@ -163,23 +160,26 @@
   }
   @media print {
     @page {
-      margin: 0;
+      margin: 1.5cm 2cm;
       size: A4;
     }
     body { background: #fff; padding: 0; }
     .topbar { display: none; }
     .paper {
       box-shadow: none;
-      padding: 1.5rem 2.5rem;
+      padding: 0;
       max-width: 100%;
-      font-size: 0.75rem;
     }
-    .header-name { font-size: 1.25rem; }
-    .section-title { font-size: 0.65rem; }
-    .section-body, .bullets li, .skill-item, .exp-role, .exp-date, .exp-sub, .edu-dept { font-size: 0.75rem; }
-    hr { margin: 0.75rem 0; }
-    .section { margin-bottom: 0.875rem; }
-    .skills-grid { gap: 0.1rem 1rem; }
+    .header { margin-bottom: 1rem; }
+    hr { margin: 0.875rem 0; }
+    .section { margin-bottom: 1rem; }
+    .section-title { margin-bottom: 0.4rem; }
+    .exp-sub { margin: 0.5rem 0 0.25rem; }
+    .bullets li { margin-bottom: 0.1rem; line-height: 1.6; }
+    .skills-tools-row { padding-top: 0.5rem; }
+    .skills-list { gap: 0.1rem 0.5rem; }
+    .skill-item { line-height: 1.6; }
+    .section-body { line-height: 1.65; }
   }
 </style>
 </head>
@@ -223,7 +223,7 @@
     <ul class="bullets" id="b1">
       <li><span>參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。</span></li>
       <li><span>根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。</span></li>
-      <li><span>強化核心功能，使其成為最高平台使用率，<strong>佔整體流量約 60%</strong>。</span></li>
+      <li><span>強化核心功能，使其成為最高平台使用率，佔整體流量約 60%。</span></li>
     </ul>
 
     <div class="exp-sub">AI Trading Agent</div>
@@ -292,7 +292,7 @@
       role: 'UI/UX 設計師｜吾集科技有限公司',
       date: '2023.10 — 2026.06',
       sub1: '加密貨幣數據分析平台', sub2: 'AI Trading Agent', sub3: '去中心化驗證跟單交易平台',
-      b1: ['參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。','根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。','強化核心功能，使其成為最高平台使用率，<strong>佔整體流量約 60%</strong>。'],
+      b1: ['參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。','根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。','強化核心功能，使其成為最高平台使用率，佔整體流量約 60%。'],
       b2: ['參與產品方向規劃，初期專注於介面與流程設計以降低新手用戶的學習門檻。','協助規劃 onboarding 體驗來推動工作坊，負責說明文件與示範影片的製作。','識別核心流失點，與跨部門合作將技術前置作業內化為產品端預設，以縮短安裝流程耗時。'],
       b3: ['參與產品規劃與網站設計，負責投票機制、排行榜等功能流程與介面設計。','進行用戶研究與市場觀察來點出產品缺口，協助團隊優化流程與使用者體驗。'],
       edu_title: 'Education', edu_school: '國立臺北教育大學', edu_date: '2019.09 — 2023.06', edu_dept: '兒童英語教育學系',
@@ -309,7 +309,7 @@
       role: 'UI/UX Designer｜Wuji Technology',
       date: 'Oct 2023 — Jun 2026',
       sub1: 'Crypto Data Analytics Platform', sub2: 'AI Trading Agent', sub3: 'Decentralized Copy Trading Platform',
-      b1: ['Participated in feature planning and UI design for web and app; skilled at reviewing usability from a beginner\'s perspective.','Conducted user interviews and backend data analysis to identify pain points; used competitor research to establish product differentiation.','Strengthened core features to become the most-used on the platform, <strong>accounting for ~60% of total traffic</strong>.'],
+      b1: ['Participated in feature planning and UI design for web and app; skilled at reviewing usability from a beginner\'s perspective.','Conducted user interviews and backend data analysis to identify pain points; used competitor research to establish product differentiation.','Strengthened core features to become the most-used on the platform, accounting for ~60% of total traffic.'],
       b2: ['Participated in product direction planning, initially focused on interface and flow design to lower the learning curve for new users.','Helped plan onboarding experiences for workshops; responsible for documentation and tutorial video production.','Identified core drop-off points; collaborated cross-functionally to move technical setup server-side, reducing installation time.'],
       b3: ['Participated in product planning and web design, responsible for voting mechanism, leaderboard flow and interface design.','Conducted user research and market observation to identify product gaps and help the team optimize flows and user experience.'],
       edu_title: 'Education', edu_school: 'National Taipei University of Education', edu_date: 'Sep 2019 — Jun 2023', edu_dept: "B.A. in Children's English Education",
