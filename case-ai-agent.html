@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Trading Agent｜李柔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFAF4;
+    --orange: #D4622A;
+    --orange-light: #F5E8DF;
+    --ink: #1A1410;
+    --ink-mid: #4A3728;
+    --ink-muted: #8C6E5D;
+    --border: #E8DDD6;
+    --white: #FFFFFF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 2.5rem;
+    background: rgba(255,250,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .back-link {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.8125rem; color: var(--ink-mid); text-decoration: none;
+  }
+  .back-link:hover { color: var(--orange); }
+  .nav-logo { font-size: 1rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+
+  /* Hero */
+  .hero {
+    max-width: 880px; margin: 0 auto;
+    padding: 8rem 2.5rem 3rem;
+  }
+  .hero-tag {
+    display: inline-block; font-size: 0.6875rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange);
+    background: var(--orange-light); padding: 0.3rem 0.75rem; border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight: 600;
+    letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.25rem;
+  }
+  .hero-desc { font-size: 1.0625rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 2rem; }
+  .meta-row { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .meta-item {}
+  .meta-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.3rem; }
+  .meta-value { font-size: 0.9375rem; color: var(--ink); font-weight: 500; }
+
+  /* Cover image */
+  .cover {
+    max-width: 880px; margin: 0 auto 4rem; padding: 0 2.5rem;
+  }
+  .cover-img {
+    width: 100%; border-radius: 12px; display: block;
+  }
+
+  /* Section */
+  .section {
+    max-width: 880px; margin: 0 auto; padding: 0 2.5rem 4rem;
+  }
+  .section-eyebrow {
+    font-size: 1.375rem; font-weight: 600; letter-spacing: -0.015em;
+    text-transform: none; color: var(--ink); margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-size: 1.5rem; font-weight: 600; letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+  }
+  .section-body { font-size: 1rem; color: var(--ink-mid); line-height: 1.85; }
+  .section-body p { margin-bottom: 1rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* Quote callout for pain points */
+  .quote-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem;
+    margin-top: 1.5rem;
+  }
+  .quote-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem 1.5rem; position: relative;
+  }
+  .quote-mark { font-size: 1.75rem; color: var(--orange); line-height: 1; font-family: Georgia, serif; }
+  .quote-text { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.65; font-style: italic; }
+
+  /* Competitor table */
+  .table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; min-width: 640px; }
+  th { background: var(--ink); color: var(--cream); text-align: left; padding: 0.75rem 1rem; font-weight: 500; }
+  td { padding: 0.75rem 1rem; border-top: 1px solid var(--border); color: var(--ink-mid); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--white); }
+  .row-label { font-weight: 600; color: var(--ink); background: var(--orange-light) !important; }
+
+  .insight-box {
+    background: var(--orange-light); border-radius: 10px; padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem; border-left: 3px solid var(--orange);
+  }
+  .insight-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .insight-text { font-size: 0.9375rem; color: var(--ink); line-height: 1.7; }
+
+  /* Timeline for decisions */
+  .timeline { position: relative; margin-top: 1.5rem; padding-left: 1.75rem; }
+  .timeline::before { content: ''; position: absolute; left: 4.5px; top: 9.5px; bottom: 9.5px; width: 1.5px; background: var(--border); }
+  .timeline-item { position: relative; padding-bottom: 1.5rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -1.75rem; top: 5px;
+    width: 9px; height: 9px; border-radius: 50%; background: var(--orange);
+  }
+  .timeline-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+  .timeline-text { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.7; }
+
+  .stat-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .stat-pill {
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem 1.75rem; flex: 1; min-width: 180px;
+  }
+  .stat-num { font-size: 1.5rem; font-weight: 600; color: var(--orange); letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+  .stat-label { font-size: 0.8125rem; color: var(--ink-muted); }
+
+  .reflect-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
+  .reflect-item { display: flex; gap: 1rem; }
+  .reflect-letter {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    background: var(--ink); color: var(--cream); display: flex; align-items: center;
+    justify-content: center; font-size: 0.8125rem; font-weight: 600;
+  }
+  .reflect-content { flex: 1; }
+  .reflect-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .reflect-text { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.75; }
+
+  /* Footer nav */
+  .case-footer {
+    max-width: 880px; margin: 0 auto; padding: 3rem 2.5rem 5rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.875rem; font-weight: 500; color: var(--orange); text-decoration: none;
+  }
+  .footer-btn:hover { text-decoration: underline; }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .hero, .cover, .section, .case-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding-top: 6rem; }
+    .quote-grid { grid-template-columns: 1fr; }
+    .meta-row { gap: 1.5rem; }
+    .stat-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="back-link">← 返回作品集</a>
+  <a href="index.html" class="nav-logo">JOU LI</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">Onboarding・流程優化</span>
+  <h1 class="hero-title">AI Trading Agent</h1>
+  <p class="hero-desc">一款專為量化交易者設計的 AI 代理人，協助使用者完成策略研究、回測驗證、部署執行與績效監控等流程。產品運行於使用者的獨立雲端環境中，能夠持續執行交易策略，降低盯盤與手動操作成本。產品目標為協助使用者將交易邏輯轉換成可驗證、可執行且可持續運作的策略。</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">角色</div>
+      <div class="meta-value">UI/UX 設計師</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">時間</div>
+      <div class="meta-value">約 2 個月</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">平台</div>
+      <div class="meta-value">Telegram Bot</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">核心成果</div>
+      <div class="meta-value">完成率 10% → 40%</div>
+    </div>
+  </div>
+</div>
+
+<div class="cover reveal">
+  <img class="cover-img" src="cover_p2.png" alt="AI Trading Agent">
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">我的角色</div>
+  <div class="section-body">
+    <p>擔任 UI/UX Designer，參與產品規劃與流程設計。主要負責：User Flow 與 Wireframe 規劃、功能流程設計、Onboarding 體驗設計、Mockup 與 Prototype 製作。</p>
+    <p>產品上線後，我持續透過工作坊觀察與用戶回饋蒐集產品痛點，並與 PM 及工程團隊共同討論優化方向。</p>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">背景</div>
+  <div class="section-body">
+    <p>AI 與量化交易成為投資社群熱門話題，透過社群觀察與用戶交流，我們發現許多交易者對量化交易感興趣，但實際採用率卻不高。主要原因來自兩個門檻：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">技術門檻</div>
+        <div class="reflect-text">建立量化策略通常需要撰寫程式、串接交易所 API、蒐集歷史資料、建立回測機制，對多數投資人而言學習成本過高。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">AI 使用誤區</div>
+        <div class="reflect-text">許多使用者嘗試直接利用 AI 進行即時交易判斷，例如每隔數分鐘讓 LLM 判斷市場方向並執行交易。但這種模式除了需支付 LLM 成本外，還會產生額外交易手續費與滑價風險，使每筆交易都增加隱形成本。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">市場研究</div>
+  <div class="section-body">
+    <p>在研究市面上的 AI Trading 產品後，我們發現兩個共同問題：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">AI 能提供分析，但無法落實執行</div>
+        <div class="reflect-text">許多產品只能提供市場分析、產生交易建議，但無法真正將策略部署到實際交易環境中。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">AI 過於黑盒化</div>
+        <div class="reflect-text">雖然產品能生成策略，但使用者無法理解策略邏輯、回測依據和執行條件，因此難以建立信任感。</div>
+      </div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">關鍵洞察</div>
+    <div class="insight-text">使用者真正需要的並不是讓 AI 幫忙判斷市場，而是讓 AI <strong>協助建立策略與驗證，並執行策略</strong>。基於這個洞察，我們決定開發專屬的 AI Agent——核心概念是讓 AI 負責產生策略，使用者負責決定是否採用策略，而非完全交由 AI 直接控制交易。</div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">關鍵產品決策</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-title">決策一｜讓 AI 撰寫策略，而不是直接交易</div>
+      <div class="timeline-text">降低黑盒風險，提高策略透明度，讓使用者能清楚理解 AI 生成的邏輯。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-title">決策二｜加入回測驗證流程</div>
+      <div class="timeline-text">讓使用者能先驗證歷史績效，再決定是否部署，建立對策略的信任基礎。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-title">決策三｜支援自動部署</div>
+      <div class="timeline-text">將研究完成的策略直接轉換成定期執行的交易腳本，形成完整流程：描述交易邏輯 → AI 生成策略 → 歷史回測 → 檢視績效 → 部署執行 → 監控結果。</div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">挑戰與優化</div>
+  <div class="section-body">
+    <p>產品推出初期，我們發現最大的問題並非策略功能本身，而是安裝流程過於複雜。使用者需要建立雲端帳號、購買 LLM API，還要完成多項環境設定，整體安裝流程需耗費約 15–20 分鐘。因此每次工作坊結束後，實際完成安裝的使用者僅約 10%。</p>
+    <p>透過工作坊觀察與使用者回饋分析，我們將原本複雜的技術設定內化至產品端。新的安裝流程僅需一鍵下載即可啟動 Agent 開始使用，同時補充教學文件、安裝指南、示範影片與策略案例庫來降低學習成本。</p>
+  </div>
+  <div class="stat-row">
+    <div class="stat-pill">
+      <div class="stat-num">15 → 5 分</div>
+      <div class="stat-label">安裝時間縮短</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">4×</div>
+      <div class="stat-label">工作坊完成率提升</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">~40%</div>
+      <div class="stat-label">工作坊完成率</div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">產品影響</div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">U</div>
+      <div class="reflect-content">
+        <div class="reflect-title">User Impact</div>
+        <div class="reflect-text">安裝時間由 15–20 分鐘縮短至約 5 分鐘，大幅降低 AI 量化交易入門門檻，提高使用者對策略生成結果的理解與信任。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">B</div>
+      <div class="reflect-content">
+        <div class="reflect-title">Business Impact</div>
+        <div class="reflect-text">工作坊完成率由 10% 提升至約 40%，提升產品啟用率與實際體驗率，驗證簡化 Onboarding 對轉換率的影響。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">學習與反思</div>
+  <div class="section-body">
+    <p>這項產品是由前一個專案「加密貨幣數據平台」延伸而來，因此我有機會再次參與從 0 到 1 的產品規劃過程。雖然我參與的主要是產品前期階段，但這段經驗讓我對產品開發有了更深刻的理解：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">市場變化速度會直接影響產品策略</div>
+        <div class="reflect-text">當 AI Agent 開始受到市場關注時，短時間內便出現大量相關產品與應用場景，加密貨幣社群也快速探索各種結合 AI 的交易方式。這段經驗也讓我意識到，產品經理除了理解使用者需求之外，更需要具備市場敏感度，持續驗證產品定位是否符合產業趨勢。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">用戶流失往往發生在體驗產品價值之前</div>
+        <div class="reflect-text">產品推出初期，我們認為最大的挑戰會是 AI 策略生成品質，但透過工作坊觀察後發現，許多使用者甚至還沒開始體驗核心功能，就因為繁瑣的安裝流程而放棄使用。這讓我重新思考產品成功的關鍵——再強大的功能，如果使用者無法順利進入產品，就無法感受到產品價值。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">3</div>
+      <div class="reflect-content">
+        <div class="reflect-title">好的 AI 產品不應取代使用者思考，而是放大使用者能力</div>
+        <div class="reflect-text">在研究過程中，我們發現許多 AI Trading 產品傾向直接提供交易決策，但這樣的模式容易讓使用者失去對策略的理解，也難以建立長期信任。這讓我學到，設計 AI 產品時，不只是追求自動化程度，更需要思考如何在效率與可控性之間取得平衡，讓 AI 成為輔助決策的工具，而非完全取代人的判斷。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-footer">
+  <a href="index.html" class="footer-btn">← 返回所有產品案例</a>
+  <a href="resume.html" target="_blank" class="footer-btn">查看履歷 →</a>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

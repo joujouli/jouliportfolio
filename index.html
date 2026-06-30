@@ -713,7 +713,7 @@
       </a>
 
       <!-- Project 02 -->
-      <div class="project-card reveal" id="card-2" onclick="toggleProject('card-2')">
+      <a href="case-ai-agent.html" target="_blank" class="project-card reveal" id="card-2">
         <div class="project-thumb">
           <img src="cover_p2.png" alt="AI Trading Agent">
         </div>
@@ -725,7 +725,7 @@
         <div class="project-arrow">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </div>
-      </div>
+      </a>
 
       <!-- Project 03 -->
       <div class="project-card reveal" id="card-3" onclick="toggleProject('card-3')">
@@ -745,42 +745,6 @@
     </div>
 
     <!-- Expanded detail panels for cards without dedicated pages -->
-    <div class="project-detail" id="detail-2">
-      <button class="detail-close" onclick="toggleProject('card-2')" aria-label="關閉">✕</button>
-      <div class="story-grid">
-        <div class="story-block">
-          <div class="story-block-label">背景與問題</div>
-          <p>透過工作坊觀察與使用者回饋分析，發現產品安裝流程需額外申請雲端帳號及購買 LLM，整體設定<strong>時間長達 15–20 分鐘</strong>，導致工作坊完成率僅約 10%。</p>
-        </div>
-        <div class="story-block">
-          <div class="story-block-label">洞察</div>
-          <p>用戶在進入產品前就先流失——問題不在介面，在<strong>產品邊界定義錯了</strong>：把技術前置作業留給用戶自己處理。</p>
-        </div>
-        <div class="story-block">
-          <div class="story-block-label">做法</div>
-          <p>與團隊共同重新設計導入流程，將繁瑣的技術設定整合至產品端預設配置，讓使用者下載後即可直接使用；同時負責介面引導設計、操作文件與示範影片製作，進一步降低學習門檻。</p>
-        </div>
-      </div>
-      <div class="outcome-row">
-        <div class="outcome-pill">
-          <span class="outcome-num">15 → 5 分</span>
-          <span class="outcome-label">安裝時間縮短</span>
-        </div>
-        <div class="outcome-pill">
-          <span class="outcome-num">4×</span>
-          <span class="outcome-label">工作坊完成率提升</span>
-        </div>
-        <div class="outcome-pill">
-          <span class="outcome-num">~40%</span>
-          <span class="outcome-label">工作坊完成率</span>
-        </div>
-      </div>
-      <div class="role-line">
-        <span class="role-dot"></span>
-        UI/UX 設計師・Onboarding 體驗設計・Telegram Bot・約 2 個月
-      </div>
-    </div>
-
     <div class="project-detail" id="detail-3">
       <button class="detail-close" onclick="toggleProject('card-3')" aria-label="關閉">✕</button>
       <div class="story-grid">
@@ -1066,21 +1030,6 @@
     document.querySelector('#card-2 .project-tag').textContent = t['proj2-tag'];
     document.querySelector('#card-2 .project-name').textContent = t['proj2-name'];
     document.querySelector('#card-2 .project-hook').textContent = t['proj2-hook'];
-    const p2blocks = document.querySelectorAll('#detail-2 .story-block');
-    p2blocks[0].querySelector('.story-block-label').textContent = t['proj2-b1-label'];
-    p2blocks[0].querySelector('p').innerHTML = t['proj2-b1'];
-    p2blocks[1].querySelector('.story-block-label').textContent = t['proj2-b2-label'];
-    p2blocks[1].querySelector('p').innerHTML = t['proj2-b2'];
-    p2blocks[2].querySelector('.story-block-label').textContent = t['proj2-b3-label'];
-    p2blocks[2].querySelector('p').innerHTML = t['proj2-b3'];
-    const p2pills = document.querySelectorAll('#detail-2 .outcome-pill');
-    p2pills[0].querySelector('.outcome-num').textContent = t['proj2-o1'];
-    p2pills[0].querySelector('.outcome-label').textContent = t['proj2-o1l'];
-    p2pills[1].querySelector('.outcome-num').textContent = t['proj2-o2'];
-    p2pills[1].querySelector('.outcome-label').textContent = t['proj2-o2l'];
-    p2pills[2].querySelector('.outcome-num').textContent = t['proj2-o3'];
-    p2pills[2].querySelector('.outcome-label').textContent = t['proj2-o3l'];
-    document.querySelector('#detail-2 .role-line').innerHTML = `<span class="role-dot"></span>${t['proj2-role']}`;
     document.querySelector('#card-3 .project-tag').textContent = t['proj3-tag'];
     document.querySelector('#card-3 .project-name').textContent = t['proj3-name'];
     document.querySelector('#card-3 .project-hook').textContent = t['proj3-hook'];
