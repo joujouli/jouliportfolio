@@ -23,7 +23,7 @@
     padding: 2rem 1rem;
   }
   .topbar {
-    max-width: 720px;
+    max-width: 740px;
     margin: 0 auto 1rem;
     display: flex;
     justify-content: flex-end;
@@ -43,115 +43,95 @@
     transition: all 0.2s;
   }
   .topbar-btn:hover { color: var(--ink); border-color: var(--ink); }
+
+  /* Paper sized to A4 proportions so screen + print match exactly */
   .paper {
-    max-width: 720px;
+    width: 740px;
     margin: 0 auto;
     background: #fff;
-    padding: 2.5rem 3rem;
+    padding: 56px 64px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
   }
-  .header { text-align: center; margin-bottom: 1.5rem; }
-  .header-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.4rem;
-  }
-  .header-info {
-    font-size: 0.8125rem;
-    color: var(--ink-muted);
-    line-height: 1.8;
-  }
+
+  .header { text-align: center; margin-bottom: 22px; }
+  .header-name { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .header-info { font-size: 13px; color: var(--ink-muted); line-height: 1.6; }
   .header-info a { color: var(--ink-muted); text-decoration: none; }
   .header-info a:hover { text-decoration: underline; }
-  hr { border: none; border-top: 1.5px solid var(--ink); margin-top: 0.25rem; margin-bottom: 0.875rem; }
-  .section { margin-bottom: 0; margin-top: 2.5rem; }
+
+  hr { border: none; border-top: 1.5px solid var(--ink); margin-top: 4px; margin-bottom: 12px; }
+
+  .section { margin-top: 22px; }
+  .section:first-of-type { margin-top: 0; }
   .section-title {
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink);
-    margin-bottom: 0.3rem;
-  }
-  .section-body {
-    font-size: 0.8125rem;
-    color: var(--ink-mid);
-    line-height: 1.75;
-  }
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-  }
-  .exp-role {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-  .exp-date {
-    font-size: 0.75rem;
-    color: var(--ink-muted);
-    flex-shrink: 0;
-  }
-  .exp-sub {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin: 0.875rem 0 0.4rem;
-  }
-  .bullets { list-style: none; margin-bottom: 0.25rem; }
-  .bullets li {
-    font-size: 0.8125rem;
-    color: var(--ink-mid);
-    line-height: 1.75;
-    margin-bottom: 0.15rem;
-    list-style-type: disc;
-    margin-left: 1.2rem;
   }
 
-  .bullets li strong { color: var(--ink); font-weight: 500; }
-  .edu-dept {
-    font-size: 0.8125rem;
+  .section-body { font-size: 13px; color: var(--ink-mid); line-height: 1.65; }
+
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .exp-role { font-size: 14px; font-weight: 600; }
+  .exp-date { font-size: 12px; color: var(--ink-muted); flex-shrink: 0; }
+  .exp-sub { font-size: 13px; font-weight: 500; margin: 10px 0 5px; }
+
+  .bullets { list-style: none; }
+  .bullets li {
+    font-size: 13px;
     color: var(--ink-mid);
-    margin-top: 0.2rem;
+    line-height: 1.6;
+    margin-bottom: 3px;
+    padding-left: 15px;
+    position: relative;
   }
+  .bullets li::before { content: '•'; position: absolute; left: 0; color: var(--ink); }
+  .bullets li strong { color: var(--ink); font-weight: 500; }
+
+  .edu-dept { font-size: 13px; color: var(--ink-mid); margin-top: 3px; }
+
   .skills-tools-header {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 0 2rem;
-    margin-bottom: 0.25rem;
+    gap: 0 32px;
   }
   .skills-tools-row {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 0 2rem;
+    gap: 0 32px;
     border-top: 1.5px solid var(--ink);
-    padding-top: 0.75rem;
-    margin-top: 0.25rem;
+    padding-top: 12px;
+    margin-top: 4px;
   }
-  .skills-col {}
-  .skills-col .section-title {
-    margin-bottom: 0.5rem;
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    list-style: none;
   }
-  .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 0.5rem; }
-  .skills-list, #tools-grid { list-style: none !important; padding-left: 0 !important; margin: 0; }
-  .skill-item { padding-left: 1rem; position: relative; list-style: none !important; }
-  .skill-item::before { content: '•'; position: absolute; left: 0; }
-  #tools-grid { display: flex; flex-direction: column; gap: 0.2rem; list-style: none; padding-left: 0; }
+  #tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style: none;
+  }
   .skill-item {
-    font-size: 0.8125rem;
+    font-size: 13px;
     color: var(--ink-mid);
-    line-height: 1.75;
+    line-height: 1.6;
+    padding-left: 15px;
+    position: relative;
+  }
+  .skill-item::before { content: '•'; position: absolute; left: 0; color: var(--ink); }
+
+  @media (max-width: 800px) {
+    body { padding: 0; }
+    .paper { width: 100%; padding: 32px 24px; box-shadow: none; }
+    .topbar { padding: 16px 16px 0; }
   }
 
-  @media (max-width: 600px) {
-    body { padding: 0; }
-    .paper { padding: 2rem 1.5rem; box-shadow: none; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  }
   @media print {
     @page { size: A4; margin: 0; }
     body { background: #fff; padding: 0; margin: 0; }
@@ -159,17 +139,9 @@
     .paper {
       box-shadow: none;
       width: 210mm;
-      padding: 2cm 2.4cm;
       margin: 0;
-      font-size: 0.8rem;
+      padding: 18mm 20mm;
     }
-    .header-name { font-size: 1.3rem; }
-    .header-info { font-size: 0.75rem; }
-    .section-title { font-size: 0.65rem; }
-    .exp-role { font-size: 0.82rem; }
-    .exp-date { font-size: 0.72rem; }
-    .exp-sub { font-size: 0.78rem; }
-    .section-body, .bullets li, .skill-item, .edu-dept { font-size: 0.78rem; }
   }
 </style>
 </head>
@@ -244,29 +216,23 @@
       <span class="section-title">Tools</span>
     </div>
     <div class="skills-tools-row">
-      <div class="skills-col">
-        <ul class="skills-list" id="skills-grid">
-          <li class="skill-item">用戶研究</li>
-          <li class="skill-item">競品分析</li>
-          <li class="skill-item">功能規劃</li>
-          <li class="skill-item">產品策略</li>
-          <li class="skill-item">User Flow</li>
-          <li class="skill-item">Onboarding 設計</li>
-          <li class="skill-item">跨部門協作</li>
-        </ul>
-      </div>
-      <div class="skills-col">
-        <ul class="skills-list" id="tools-grid">
-          <li class="skill-item">Figma</li>
-          <li class="skill-item">AI 工具應用</li>
-          <li class="skill-item">Notion</li>
-          <li class="skill-item">Mixpanel</li>
-        </div>
+      <ul class="skills-list" id="skills-grid">
+        <li class="skill-item">用戶研究</li>
+        <li class="skill-item">競品分析</li>
+        <li class="skill-item">功能規劃</li>
+        <li class="skill-item">產品策略</li>
+        <li class="skill-item">User Flow</li>
+        <li class="skill-item">Onboarding 設計</li>
+        <li class="skill-item">跨部門協作</li>
+      </ul>
+      <ul class="skills-list" id="tools-grid">
+        <li class="skill-item">Figma</li>
+        <li class="skill-item">AI 工具應用</li>
+        <li class="skill-item">Notion</li>
+        <li class="skill-item">Mixpanel</li>
       </ul>
     </div>
   </div>
-
-
 
 </div>
 
@@ -331,12 +297,11 @@
     document.getElementById('edu-school').textContent = d.edu_school;
     document.getElementById('edu-date').textContent = d.edu_date;
     document.getElementById('edu-dept').textContent = d.edu_dept;
-    document.getElementById('skills-title') && (document.getElementById('skills-title').textContent = d.skills_title);
-    document.getElementById('skills-grid').innerHTML = d.skills.map(s => `<li class="skill-item">${s}</li>`).join('');
-    document.getElementById('tools-title') && (document.getElementById('tools-title').textContent = d.tools_title);
-    document.getElementById('tools-grid').innerHTML = d.tools.map(s => `<li class="skill-item">${s}</li>`).join('');
     const stHeaders = document.querySelectorAll('.skills-tools-header .section-title');
-    if(stHeaders.length) { stHeaders[0].textContent = d.skills_title; stHeaders[1].textContent = d.tools_title; }
+    stHeaders[0].textContent = d.skills_title;
+    stHeaders[1].textContent = d.tools_title;
+    document.getElementById('skills-grid').innerHTML = d.skills.map(s => `<li class="skill-item">${s}</li>`).join('');
+    document.getElementById('tools-grid').innerHTML = d.tools.map(s => `<li class="skill-item">${s}</li>`).join('');
   }
 </script>
 
