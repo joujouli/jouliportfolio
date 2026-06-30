@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨交易所 Web3 數據平台｜李柔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFAF4;
+    --orange: #D4622A;
+    --orange-light: #F5E8DF;
+    --ink: #1A1410;
+    --ink-mid: #4A3728;
+    --ink-muted: #8C6E5D;
+    --border: #E8DDD6;
+    --white: #FFFFFF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 2.5rem;
+    background: rgba(255,250,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .back-link {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.8125rem; color: var(--ink-mid); text-decoration: none;
+  }
+  .back-link:hover { color: var(--orange); }
+  .nav-logo { font-size: 1rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+
+  /* Hero */
+  .hero {
+    max-width: 880px; margin: 0 auto;
+    padding: 8rem 2.5rem 3rem;
+  }
+  .hero-tag {
+    display: inline-block; font-size: 0.6875rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange);
+    background: var(--orange-light); padding: 0.3rem 0.75rem; border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight: 600;
+    letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.25rem;
+  }
+  .hero-desc { font-size: 1.0625rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 2rem; }
+  .meta-row { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .meta-item {}
+  .meta-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.3rem; }
+  .meta-value { font-size: 0.9375rem; color: var(--ink); font-weight: 500; }
+
+  /* Cover image */
+  .cover {
+    max-width: 880px; margin: 0 auto 4rem; padding: 0 2.5rem;
+  }
+  .cover-img {
+    width: 100%; border-radius: 12px; display: block;
+  }
+
+  /* Section */
+  .section {
+    max-width: 880px; margin: 0 auto; padding: 0 2.5rem 4rem;
+  }
+  .section-eyebrow {
+    font-size: 1.375rem; font-weight: 600; letter-spacing: -0.015em;
+    text-transform: none; color: var(--ink); margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-size: 1.5rem; font-weight: 600; letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+  }
+  .section-body { font-size: 1rem; color: var(--ink-mid); line-height: 1.85; }
+  .section-body p { margin-bottom: 1rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* Quote callout for pain points */
+  .quote-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem;
+    margin-top: 1.5rem;
+  }
+  .quote-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem 1.5rem; position: relative;
+  }
+  .quote-mark { font-size: 1.75rem; color: var(--orange); line-height: 1; font-family: Georgia, serif; }
+  .quote-text { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.65; font-style: italic; }
+
+  /* Competitor table */
+  .table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; min-width: 640px; }
+  th { background: var(--ink); color: var(--cream); text-align: left; padding: 0.75rem 1rem; font-weight: 500; }
+  td { padding: 0.75rem 1rem; border-top: 1px solid var(--border); color: var(--ink-mid); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--white); }
+  .row-label { font-weight: 600; color: var(--ink); background: var(--orange-light) !important; }
+
+  .insight-box {
+    background: var(--orange-light); border-radius: 10px; padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem; border-left: 3px solid var(--orange);
+  }
+  .insight-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .insight-text { font-size: 0.9375rem; color: var(--ink); line-height: 1.7; }
+
+  /* Timeline for decisions */
+  .timeline { position: relative; margin-top: 1.5rem; padding-left: 1.75rem; }
+  .timeline::before { content: ''; position: absolute; left: 4.5px; top: 9.5px; bottom: 9.5px; width: 1.5px; background: var(--border); }
+  .timeline-item { position: relative; padding-bottom: 1.5rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -1.75rem; top: 5px;
+    width: 9px; height: 9px; border-radius: 50%; background: var(--orange);
+  }
+  .timeline-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+  .timeline-text { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.7; }
+
+  .stat-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .stat-pill {
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem 1.75rem; flex: 1; min-width: 180px;
+  }
+  .stat-num { font-size: 1.5rem; font-weight: 600; color: var(--orange); letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+  .stat-label { font-size: 0.8125rem; color: var(--ink-muted); }
+
+  .reflect-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
+  .reflect-item { display: flex; gap: 1rem; }
+  .reflect-letter {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    background: var(--ink); color: var(--cream); display: flex; align-items: center;
+    justify-content: center; font-size: 0.8125rem; font-weight: 600;
+  }
+  .reflect-content { flex: 1; }
+  .reflect-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .reflect-text { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.75; }
+
+  /* Footer nav */
+  .case-footer {
+    max-width: 880px; margin: 0 auto; padding: 3rem 2.5rem 5rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.875rem; font-weight: 500; color: var(--orange); text-decoration: none;
+  }
+  .footer-btn:hover { text-decoration: underline; }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .hero, .cover, .section, .case-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding-top: 6rem; }
+    .quote-grid { grid-template-columns: 1fr; }
+    .meta-row { gap: 1.5rem; }
+    .stat-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="back-link">← 返回作品集</a>
+  <a href="index.html" class="nav-logo">JOU LI</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">使用者研究・產品策略</span>
+  <h1 class="hero-title">跨交易所 Web3 數據平台</h1>
+  <p class="hero-desc">一個專為加密貨幣投資人打造的跨交易所資訊整合平台，旨在降低散戶研究市場的門檻。透過整合多個交易所數據、獨家市場指標以及決策輔助工具，協助使用者從資訊蒐集、標的篩選到交易決策，建立更完整且有效率的投資流程。產品核心目標並非單純提供數據，而是幫助使用者將複雜的市場資訊轉化為可執行的投資決策。</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">角色</div>
+      <div class="meta-value">UI/UX 設計師</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">時間</div>
+      <div class="meta-value">2 年</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">平台</div>
+      <div class="meta-value">Web + App</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">核心成果</div>
+      <div class="meta-value">儀表板佔 60% 使用率</div>
+    </div>
+  </div>
+</div>
+
+<div class="cover reveal">
+  <img class="cover-img" src="cover_p1.png" alt="跨交易所 Web3 數據平台">
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">我的角色</div>
+  <div class="section-body">
+    <p>擔任 UI/UX Designer，並參與產品規劃與功能定義。主要負責：競品分析與市場研究、使用者訪談與需求整理、User Flow 與 Wireframe 規劃、功能流程設計、Mockup 與 Prototype 製作、與 PM 及工程師協作確認需求、上線後數據追蹤與優化提案。</p>
+    <p>在產品迭代階段，我持續透過 Mixpanel、用戶訪談及滿意度調查了解使用者行為，並於 Sprint Meeting 中提出優化建議，協助團隊制定後續產品方向。</p>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">問題發現</div>
+  <div class="section-body">
+    <p>透過用戶訪談、社群觀察以及競品分析，我們發現加密貨幣投資新手普遍面臨以下問題：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">資訊來源過於分散</div>
+        <div class="reflect-text">使用者需要在各數據平台及交易所之間反覆切換，才能完成一次完整研究。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">數據理解門檻高</div>
+        <div class="reflect-text">即使取得大量市場數據，大多數新手仍無法判斷：哪些指標值得關注？指標代表什麼意義？如何利用數據做決策？</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">3</div>
+      <div class="reflect-content">
+        <div class="reflect-title">缺乏決策輔助工具</div>
+        <div class="reflect-text">競品平台大多專注於提供市場資訊與數據圖表，但缺乏協助使用者從資料中形成投資決策的工具。</div>
+      </div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">產品假設</div>
+    <div class="insight-text">如果能夠將分散資訊整合，並透過決策工具協助用戶縮短研究流程，將有機會降低投資門檻並提升產品黏著度。</div>
+  </div>
+  <div class="quote-grid" style="margin-top: 1.75rem;">
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">網路上的資訊太繁雜，不知道如何入門幣圈。</div>
+    </div>
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">沒有專業背景看不懂指標跟數據。</div>
+    </div>
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">會先從交易所提供的排行榜去鎖定目標，但選擇太多不知道如何做篩選。</div>
+    </div>
+    <div class="quote-card">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">資料分散在各平台，準備過程麻煩。</div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">市場研究</div>
+  <div class="section-body">
+    <p>分析三個提供市場資訊與數據的平台——CoinMarketCap、CoinGecko、CoinAnk，比較其核心價值、功能範圍與使用者評價。</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>產品名稱</th><th>CoinMarketCap</th><th>CoinGecko</th><th>CoinAnk</th></tr>
+      <tr><td class="row-label">核心價值</td><td>提供最全面的加密貨幣市場資訊</td><td>提供更透明且深入的鏈上數據</td><td>協助交易者判斷市場資金流向</td></tr>
+      <tr><td class="row-label">優勢</td><td>品牌知名度最高、資料覆蓋最廣、對新手友善</td><td>DeFi 最強、新幣發現能力強、鏈上資料完整</td><td>衍生品數據最完整、Whale Analysis、圖表能力強</td></tr>
+      <tr><td class="row-label">痛點</td><td>有資料但缺少決策輔助，知道哪個幣在漲卻不知道為什麼</td><td>可以知道市場發生什麼事，但不知道該做什麼</td><td>資料專業但基礎資訊不夠完整，新手不易理解</td></tr>
+    </table>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">關鍵洞察</div>
+    <div class="insight-text">各平台都有各自優缺點，但共通痛點是<strong>缺乏決定性的執行策略</strong>——看完一堆圖表、數據後，使用者仍然不知道如何抉擇。這正是我們切入的核心機會。</div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">關鍵產品決策</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-title">決策一｜先建立數據指標，而非直接開發交易工具</div>
+      <div class="timeline-text">訪談發現新手最大的問題並非交易，而是不知道如何判斷市場。因此產品初期優先投入市場指標開發，並透過視覺化設計降低數據理解門檻。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-title">決策二｜建立篩選器功能作為探索入口</div>
+      <div class="timeline-text">許多使用者表示「我不知道該研究哪一個幣」。因此設計排行榜、篩選器作為產品入口，透過不同條件快速協助使用者發現潛在標的。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-title">決策三｜將交易工具延伸成完整決策流程</div>
+      <div class="timeline-text">當用戶找到標的後，仍需要進一步分析，因此設計「篩選器 → 儀表板 → 警報」的研究流程，讓用戶能持續追蹤標的並接收即時資訊，完成一站式的投資決策。</div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">迭代成果</div>
+    <div class="insight-text">當儀表板成為使用率最高的功能後，我們針對此進行優化：數據完整化、調整介面方便檢視、連結其他功能（警報、觀察清單）讓流程更順暢。當產品成熟後，儀表板已成為產品核心功能。</div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-pill">
+      <div class="stat-num">60%</div>
+      <div class="stat-label">儀表板佔整體使用率</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">5 項</div>
+      <div class="stat-label">核心工具逐步上線</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">2 年</div>
+      <div class="stat-label">完整開發週期</div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">產品影響</div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">B</div>
+      <div class="reflect-content">
+        <div class="reflect-title">Business Impact</div>
+        <div class="reflect-text">建立平台差異化定位、強化用戶留存與回訪動機、成功發展出平台核心功能。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">U</div>
+      <div class="reflect-content">
+        <div class="reflect-title">User Impact</div>
+        <div class="reflect-text">降低市場研究成本、提供一站式資訊整合體驗、建立從篩幣到決策的完整流程。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">P</div>
+      <div class="reflect-content">
+        <div class="reflect-title">Product Insight</div>
+        <div class="reflect-text">儀表板成為使用率最高的功能，佔整體流量約 60%。這代表使用者最需要的並非更多數據，而是協助發現機會與縮小選擇範圍的工具。這項洞察也影響後續產品發展方向。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">學習與反思</div>
+  <div class="section-body">
+    <p>這是我參與開發週期最完整的產品，從 0 到 1 跟團隊一起將產品上線並持續優化，這段經驗讓我學到：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">產品開發速度不一定等於產品成功</div>
+        <div class="reflect-text">在新創環境中，團隊經常快速驗證想法，但缺乏足夠研究容易造成資源浪費。透過 Sprint 制度與跨部門討論，我學會在開發前更完整地驗證需求與市場機會。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">溝通成本往往比設計成本更高</div>
+        <div class="reflect-text">即使流程設計已完成，不同職能對需求的理解仍可能出現落差。因此我逐漸建立在 Wireframe、Mockup 及 Prototype 各階段進行需求確認的習慣，以降低後續修改成本。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-footer">
+  <a href="index.html" class="footer-btn">← 返回所有產品案例</a>
+  <a href="resume.html" target="_blank" class="footer-btn">查看履歷 →</a>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
