@@ -104,10 +104,7 @@
 
   /* ── Hero ── */
   #hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 7rem 0 5rem;
+    padding: 7rem 0 3rem;
   }
   .hero-inner-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; width: 100%; }
   .hero-inner {
@@ -145,7 +142,7 @@
     font-weight: 600;
     line-height: 1.1;
     color: var(--ink);
-    margin-bottom: 0.4rem;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.03em;
     white-space: nowrap;
   }
@@ -353,12 +350,13 @@
   }
   .project-tag {
     display: inline-block;
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--cream);
     background: var(--ink);
-    padding: 0.4rem 0.9rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 2rem;
+    max-width: calc(100% - 3.5rem);
   }
 
   .project-arrow {
@@ -654,7 +652,7 @@
     <a href="#hero" class="nav-logo">JOU LI</a>
     <ul class="nav-links">
       <li><a href="#projects" data-zh="產品案例" data-en="Case Studies">產品案例</a></li>
-      <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
+      <li><a href="#skills" data-zh="技能與工具" data-en="Skills &amp; Tools">技能與工具</a></li>
       <li><a href="#contact" data-zh="聯絡" data-en="Contact">聯絡</a></li>
       <li><a href="resume.html" target="_blank" data-zh="履歷" data-en="Resume">履歷</a></li>
     </ul>
@@ -670,7 +668,7 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#projects" onclick="closeMenu()">產品案例</a>
-  <a href="#skills" onclick="closeMenu()">技能</a>
+  <a href="#skills" onclick="closeMenu()">技能與工具</a>
   <a href="#contact" onclick="closeMenu()">聯絡</a>
   <a href="resume.html" target="_blank" onclick="closeMenu()">履歷</a>
 </div>
@@ -681,7 +679,7 @@
   <div class="hero-inner reveal">
     <div class="hero-left">
       <span class="hero-eyebrow">Product X Design</span>
-      <h1 class="hero-name">李 柔｜<em>Jou Li</em></h1>
+      <h1 class="hero-name" data-zh="嗨！我是李柔" data-en="Hi! It's Jou, Li">嗨！我是李柔</h1>
 
       <div class="hero-tags">
         <span class="tag">用戶研究</span>
@@ -711,7 +709,7 @@
           <img src="cover_p1.png" alt="跨交易所 Web3 數據平台">
         </div>
         <div class="project-body">
-          <h3 class="project-name">跨交易所 Web3 數據平台</h3>
+          <h3 class="project-name">Web3 數據分析平台</h3>
           <p class="project-hook">協助加密貨幣投資人將複雜的市場數據轉化為可執行的投資決策</p>
           <span class="project-tag">市場研究・產品規劃</span>
         </div>
@@ -726,7 +724,7 @@
           <img src="cover_p2.png" alt="AI Trading Agent">
         </div>
         <div class="project-body">
-          <h3 class="project-name">AI Trading Agent</h3>
+          <h3 class="project-name">AI 交易代理人</h3>
           <p class="project-hook">透過 AI 自動化策略開發與部署，降低量化交易的技術門檻</p>
           <span class="project-tag">產品定位・Onboarding 優化</span>
         </div>
@@ -741,7 +739,7 @@
           <img src="cover_p3.png" alt="去中心化跟單平台">
         </div>
         <div class="project-body">
-          <h3 class="project-name">去中心化跟單平台</h3>
+          <h3 class="project-name">跟單交易平台</h3>
           <p class="project-hook">透過去中心化驗證機制，建立更透明且可信的跟單交易生態系</p>
           <span class="project-tag">產品開發・跨部門合作</span>
         </div>
@@ -868,7 +866,7 @@
   const translations = {
     zh: {
       'eyebrow': 'Product X Design',
-      'hero-name': '李 柔｜<em>Jou Li</em>',
+      'hero-name': '嗨！我是李柔',
       'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
       'hero-desc': '用戶研究 × 數據觀察 × 跨部門協作',
       'stat-label-0': 'Web3 產品經驗',
@@ -879,7 +877,7 @@
       'about-p1': '2+ 年 Web3 產品規劃與 UI/UX 經驗，擅長透過使用者研究、競品分析與數據洞察發現產品機會，並將複雜資訊轉化為易於理解的產品體驗。目前希望持續往 Product Management 發展，參與更多產品策略與決策工作。',
       'proj-eyebrow': '產品案例',
       'proj1-tag': '市場研究・產品規劃',
-      'proj1-name': '跨交易所 Web3 數據平台',
+      'proj1-name': 'Web3 數據分析平台',
       'proj1-hook': '協助加密貨幣投資人將複雜的市場數據轉化為可執行的投資決策',
       'proj1-b1-label': '背景與問題', 'proj1-b1': '加密新手面對三層障礙：<strong>看不懂指標</strong>、資訊分散在各大平台、不知道如何從上千個幣種篩出值得交易的標的。試過 KOL 文章和各種工具，還是找不到適合自己的方法。',
       'proj1-b2-label': '洞察', 'proj1-b2': '用戶訪談 + 競品分析（CoinMarketCap、CoinGecko、CoinAnk）後發現：競品都有資料，但沒有人幫用戶「做決策」。機會點在策略決定層，這也是我們切入的核心。',
@@ -899,7 +897,7 @@
       'proj2-o3': '~40%', 'proj2-o3l': '工作坊完成率',
       'proj2-role': 'UI/UX 設計師・Onboarding 體驗設計・Telegram Bot・約 2 個月',
       'proj3-tag': '產品開發・跨部門合作',
-      'proj3-name': '去中心化跟單平台',
+      'proj3-name': '跟單交易平台',
       'proj3-hook': '透過去中心化驗證機制，建立更透明且可信的跟單交易生態系',
       'proj3-b1-label': '背景與問題', 'proj3-b1': '參與去中心化自治組織投票體驗優化專案，透過流程檢視發現<strong>一般使用者難以理解交易員績效差異</strong>，進而影響投票決策品質。',
       'proj3-b2-label': '洞察', 'proj3-b2': '為此規劃<strong>交易員排行榜頁面</strong>，整合報酬率、勝率等關鍵績效指標，並以視覺化方式呈現資訊，協助使用者快速比較不同交易員表現。',
@@ -911,11 +909,11 @@
       'contact-title': '有機會一起<br>做出好產品嗎？<em>聊聊吧。</em>',
       'footer': '© 2026 李柔 Jou Li &nbsp;·&nbsp; Built with care',
       'lang-btn': 'EN',
-      'nav-about': '關於我', 'nav-work': '產品案例', 'nav-skills': '技能', 'nav-contact': '聯絡', 'nav-resume': '履歷',
+      'nav-about': '關於我', 'nav-work': '產品案例', 'nav-skills': '技能與工具', 'nav-contact': '聯絡', 'nav-resume': '履歷',
     },
     en: {
       'eyebrow': 'Product X Design',
-      'hero-name': 'Jou Li',
+      'hero-name': 'Hi! It\'s Jou, Li',
       'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
       'hero-desc': 'User Research × Data Observation × Cross-functional Collaboration',
       'stat-label-0': 'Web3 Product Experience',
@@ -924,9 +922,9 @@
       'tag-0': 'User Research', 'tag-1': 'Product Strategy', 'tag-2': 'Onboarding Design', 'tag-3': 'Web3 / AI',
       'about-eyebrow': 'About',
       'about-p1': '2+ years of Web3 product planning and UI/UX experience. Skilled at uncovering product opportunities through user research, competitor analysis, and data insights, and translating complex information into intuitive product experiences. Currently looking to grow further in Product Management and take on more product strategy and decision-making work.',
-      'proj-eyebrow': 'Work',
+      'proj-eyebrow': 'Case Studies',
       'proj1-tag': 'Market Research · Product Planning',
-      'proj1-name': 'Cross-Exchange Web3 Data Platform',
+      'proj1-name': 'Web3 Analytics Platform',
       'proj1-hook': 'Helping crypto investors turn complex market data into actionable investment decisions',
       'proj1-b1-label': 'Background & Problem', 'proj1-b1': 'Crypto newcomers faced three layers of friction: <strong>confusing indicators</strong>, fragmented data across platforms, and no way to filter thousands of coins into actionable picks. Despite trying KOL articles and various tools, users still couldn\'t find a workflow that worked.',
       'proj1-b2-label': 'Insight', 'proj1-b2': 'User interviews + competitor analysis (CoinMarketCap, CoinGecko, CoinAnk) revealed that while competitors had data, none helped users actually <em>make decisions</em>. The opportunity was at the decision-making layer — that became our core focus.',
@@ -946,7 +944,7 @@
       'proj2-o3': '~40%', 'proj2-o3l': 'Workshop completion rate',
       'proj2-role': 'UI/UX Designer · Onboarding Experience · Telegram Bot · ~2 months',
       'proj3-tag': 'Product Development · Cross-functional',
-      'proj3-name': 'Decentralized Exchange (DEX)',
+      'proj3-name': 'Copy Trading Platform',
       'proj3-hook': 'Building a transparent and trustworthy copy trading ecosystem through decentralized verification',
       'proj3-b1-label': 'Background & Problem', 'proj3-b1': 'Participated in a DAO voting experience optimization project; flow review revealed that <strong>average users struggled to understand differences in trader performance</strong>, undermining the quality of voting decisions.',
       'proj3-b2-label': 'Insight', 'proj3-b2': 'Designed a <strong>trader leaderboard page</strong> consolidating key metrics like ROI and win rate, presented visually to help users quickly compare different traders\' performance.',
@@ -958,7 +956,7 @@
       'contact-title': 'Want to build something<br>worth building? <em>Let\'s talk.</em>',
       'footer': '© 2026 Jou Li &nbsp;·&nbsp; Built with care',
       'lang-btn': '中',
-      'nav-about': 'About', 'nav-work': 'Case Studies', 'nav-skills': 'Skills', 'nav-contact': 'Contact', 'nav-resume': 'Resume',
+      'nav-about': 'About', 'nav-work': 'Case Studies', 'nav-skills': 'Skills & Tools', 'nav-contact': 'Contact', 'nav-resume': 'Resume',
     }
   };
 
@@ -972,7 +970,7 @@
   function applyLang(lang) {
     const t = translations[lang];
     document.querySelector('.hero-eyebrow').textContent = t['eyebrow'];
-    document.querySelector('.hero-name').innerHTML = t['hero-name'];
+    document.querySelector('.hero-name').textContent = t['hero-name'];
     document.querySelector('.hero-about').textContent = t['about-p1'];
     const heroTags = document.querySelectorAll('.hero-tags .tag');
     const tagKeys = lang === 'zh'
