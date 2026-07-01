@@ -92,29 +92,21 @@
 
   .edu-dept { font-size: 13px; color: var(--ink-mid); margin-top: 3px; }
 
-  .skills-tools-header {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 0 32px;
-  }
   .skills-tools-row {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0 32px;
-    border-top: 1.5px solid var(--ink);
-    padding-top: 12px;
-    margin-top: 4px;
+  }
+  .skills-col-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
   }
   .skills-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 8px;
-    list-style: none;
-  }
-  #tools-grid {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
     list-style: none;
   }
   .skill-item {
@@ -211,34 +203,40 @@
   </div>
 
   <div class="section">
-    <div class="skills-tools-header">
-      <span class="section-title" id="sg1-title">產品能力</span>
-      <span class="section-title" id="sg2-title">設計能力</span>
-      <span class="section-title" id="sg3-title">工具軟體</span>
-    </div>
-    <div class="skills-tools-row" style="grid-template-columns: 1fr 1fr 1fr;">
-      <ul class="skills-list" id="skills-grid">
-        <li class="skill-item">產品規劃</li>
-        <li class="skill-item">功能規劃</li>
-        <li class="skill-item">產品策略</li>
-        <li class="skill-item">用戶研究</li>
-        <li class="skill-item">競品分析</li>
-        <li class="skill-item">數據分析</li>
-      </ul>
-      <ul class="skills-list" id="design-grid" style="list-style:none;padding-left:0;display:flex;flex-direction:column;gap:0.2rem;">
-        <li class="skill-item">UX/UI Design</li>
-        <li class="skill-item">User Flow Design</li>
-        <li class="skill-item">Wireframing</li>
-        <li class="skill-item">Prototyping</li>
-      </ul>
-      <ul class="skills-list" id="tools-grid" style="list-style:none;padding-left:0;display:flex;flex-direction:column;gap:0.2rem;">
-        <li class="skill-item">Figma</li>
-        <li class="skill-item">Whimsical</li>
-        <li class="skill-item">Mixpanel</li>
-        <li class="skill-item">Notion</li>
-        <li class="skill-item">ChatGPT</li>
-        <li class="skill-item">Claude</li>
-      </ul>
+    <div class="section-title">Skills</div>
+    <hr>
+    <div class="skills-tools-row">
+      <div>
+        <div class="skills-col-title" id="sg1-title">產品能力</div>
+        <ul class="skills-list" id="skills-grid">
+          <li class="skill-item">產品規劃</li>
+          <li class="skill-item">功能規劃</li>
+          <li class="skill-item">產品策略</li>
+          <li class="skill-item">用戶研究</li>
+          <li class="skill-item">競品分析</li>
+          <li class="skill-item">數據分析</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skills-col-title" id="sg2-title">設計能力</div>
+        <ul class="skills-list" id="design-grid">
+          <li class="skill-item">UX/UI Design</li>
+          <li class="skill-item">User Flow Design</li>
+          <li class="skill-item">Wireframing</li>
+          <li class="skill-item">Prototyping</li>
+        </ul>
+      </div>
+      <div>
+        <div class="skills-col-title" id="sg3-title">工具軟體</div>
+        <ul class="skills-list" id="tools-grid">
+          <li class="skill-item">Figma</li>
+          <li class="skill-item">Whimsical</li>
+          <li class="skill-item">Mixpanel</li>
+          <li class="skill-item">Notion</li>
+          <li class="skill-item">ChatGPT</li>
+          <li class="skill-item">Claude</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -317,10 +315,9 @@
     document.getElementById('edu-school').textContent = d.edu_school;
     document.getElementById('edu-date').textContent = d.edu_date;
     document.getElementById('edu-dept').textContent = d.edu_dept;
-    const stHeaders = document.querySelectorAll('.skills-tools-header .section-title');
-    stHeaders[0].textContent = d.sg1_title;
-    stHeaders[1].textContent = d.sg2_title;
-    stHeaders[2].textContent = d.sg3_title;
+    document.getElementById('sg1-title').textContent = d.sg1_title;
+    document.getElementById('sg2-title').textContent = d.sg2_title;
+    document.getElementById('sg3-title').textContent = d.sg3_title;
     document.getElementById('skills-grid').innerHTML = d.skills.map(s => `<li class="skill-item">${s}</li>`).join('');
     document.getElementById('design-grid').innerHTML = d.design.map(s => `<li class="skill-item">${s}</li>`).join('');
     document.getElementById('tools-grid').innerHTML = d.tools.map(s => `<li class="skill-item">${s}</li>`).join('');
