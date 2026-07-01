@@ -495,7 +495,7 @@
   #skills { background: var(--white); }
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
   .skill-group {
@@ -653,7 +653,7 @@
     <a href="#hero" class="nav-logo">JOU LI</a>
     <ul class="nav-links">
       <li><a href="#projects" data-zh="產品案例" data-en="Case Studies">產品案例</a></li>
-      <li><a href="#skills" data-zh="技能與工具" data-en="Skills &amp; Tools">技能與工具</a></li>
+      <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
       <li><a href="#contact" data-zh="聯絡" data-en="Contact">聯絡</a></li>
       <li><a href="resume.html" target="_blank" data-zh="履歷" data-en="Resume">履歷</a></li>
     </ul>
@@ -669,7 +669,7 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#projects" onclick="closeMenu()">產品案例</a>
-  <a href="#skills" onclick="closeMenu()">技能與工具</a>
+  <a href="#skills" onclick="closeMenu()">技能</a>
   <a href="#contact" onclick="closeMenu()">聯絡</a>
   <a href="resume.html" target="_blank" onclick="closeMenu()">履歷</a>
 </div>
@@ -790,27 +790,26 @@
 <!-- Skills -->
 <section id="skills">
   <div class="section-inner">
-    <p class="section-eyebrow">技能與工具</p>
+    <p class="section-eyebrow">技能</p>
     <div class="skills-grid">
       <div class="skill-group reveal">
         <div class="skill-group-title">產品能力</div>
         <div class="skill-chips">
+          <span class="skill-chip">產品規劃</span>
+          <span class="skill-chip">功能規劃</span>
+          <span class="skill-chip">產品策略</span>
           <span class="skill-chip">用戶研究</span>
           <span class="skill-chip">競品分析</span>
-          <span class="skill-chip">功能規劃</span>
-          <span class="skill-chip">Onboarding 設計</span>
-          <span class="skill-chip">User Flow</span>
-          <span class="skill-chip">產品策略</span>
-          <span class="skill-chip">跨部門協作</span>
+          <span class="skill-chip">數據分析</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <div class="skill-group-title">設計能力</div>
         <div class="skill-chips">
+          <span class="skill-chip">UX/UI Design</span>
+          <span class="skill-chip">User Flow Design</span>
           <span class="skill-chip">Wireframing</span>
-          <span class="skill-chip">介面設計</span>
-          <span class="skill-chip">資訊架構</span>
-          <span class="skill-chip">使用者流程</span>
+          <span class="skill-chip">Prototyping</span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -819,15 +818,8 @@
           <span class="skill-chip">Figma</span>
           <span class="skill-chip">Mixpanel</span>
           <span class="skill-chip">Notion</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <div class="skill-group-title">領域知識</div>
-        <div class="skill-chips">
-          <span class="skill-chip">Web3 / 加密貨幣</span>
-          <span class="skill-chip">AI 產品</span>
-          <span class="skill-chip">DeFi</span>
-          <span class="skill-chip">Telegram Bot</span>
+          <span class="skill-chip">ChatGPT</span>
+          <span class="skill-chip">Claude</span>
         </div>
       </div>
     </div>
@@ -904,17 +896,17 @@
       'proj3-b2-label': '洞察', 'proj3-b2': '為此規劃<strong>交易員排行榜頁面</strong>，整合報酬率、勝率等關鍵績效指標，並以視覺化方式呈現資訊，協助使用者快速比較不同交易員表現。',
       'proj3-b3-label': '做法', 'proj3-b3': '同時優化整體投票流程，以新手視角降低參與門檻，讓非專業背景的用戶也能<strong>更有依據地完成投票決策</strong>。',
       'proj3-role': 'UI/UX 設計師・介面設計・流程優化・約 3 個月',
-      'skills-eyebrow': '技能與工具',
+      'skills-eyebrow': '技能',
       'sg1-title': '產品能力', 'sg2-title': '設計能力', 'sg3-title': '工具', 'sg4-title': '領域知識',
       'contact-eyebrow': '聯絡我',
       'contact-title': '有機會一起<br>做出好產品嗎？<em>聊聊吧。</em>',
       'footer': '© 2026 李柔 Jou Li &nbsp;·&nbsp; Built with care',
       'lang-btn': 'EN',
-      'nav-about': '關於我', 'nav-work': '產品案例', 'nav-skills': '技能與工具', 'nav-contact': '聯絡', 'nav-resume': '履歷',
+      'nav-about': '關於我', 'nav-work': '產品案例', 'nav-skills': '技能', 'nav-contact': '聯絡', 'nav-resume': '履歷',
     },
     en: {
       'eyebrow': 'Product X Design',
-      'hero-name': 'Hi! It\'s Jou, Li',
+      'hero-name': 'Hi! It\'s Jou Li',
       'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
       'hero-desc': 'User Research × Data Observation × Cross-functional Collaboration',
       'stat-label-0': 'Web3 Product Experience',
@@ -951,13 +943,13 @@
       'proj3-b2-label': 'Insight', 'proj3-b2': 'Designed a <strong>trader leaderboard page</strong> consolidating key metrics like ROI and win rate, presented visually to help users quickly compare different traders\' performance.',
       'proj3-b3-label': 'Approach', 'proj3-b3': 'Also optimized the overall voting flow with a beginner\'s lens to lower the barrier to entry, so even non-technical users could <strong>vote with confidence and clear rationale</strong>.',
       'proj3-role': 'UI/UX Designer · Interface Design · Flow Optimization · ~3 months',
-      'skills-eyebrow': 'Skills & Tools',
+      'skills-eyebrow': 'Skills',
       'sg1-title': 'Product', 'sg2-title': 'Design', 'sg3-title': 'Tools', 'sg4-title': 'Domain',
       'contact-eyebrow': 'Get in Touch',
       'contact-title': 'Want to build something<br>worth building? <em>Let\'s talk.</em>',
       'footer': '© 2026 Jou Li &nbsp;·&nbsp; Built with care',
       'lang-btn': '中',
-      'nav-about': 'About', 'nav-work': 'Case Studies', 'nav-skills': 'Skills & Tools', 'nav-contact': 'Contact', 'nav-resume': 'Resume',
+      'nav-about': 'About', 'nav-work': 'Case Studies', 'nav-skills': 'Skills', 'nav-contact': 'Contact', 'nav-resume': 'Resume',
     }
   };
 
@@ -998,16 +990,14 @@
     const chipGroups = document.querySelectorAll('.skill-chips');
     const chipsData = {
       zh: [
-        ['用戶研究','競品分析','功能規劃','Onboarding 設計','User Flow','產品策略','跨部門協作'],
-        ['Wireframing','介面設計','資訊架構','使用者流程'],
-        ['Figma','Mixpanel','Notion'],
-        ['Web3 / 加密貨幣','AI 產品','DeFi','Telegram Bot']
+        ['產品規劃','功能規劃','產品策略','用戶研究','競品分析','數據分析'],
+        ['UX/UI Design','User Flow Design','Wireframing','Prototyping'],
+        ['Figma','Mixpanel','Notion','ChatGPT','Claude']
       ],
       en: [
-        ['User Research','Competitor Analysis','Feature Planning','Onboarding Design','User Flow','Product Strategy','Cross-functional Collaboration'],
-        ['Wireframing','UI Design','Information Architecture','User Flow'],
-        ['Figma','Mixpanel','Notion'],
-        ['Web3 / Crypto','AI Products','DeFi','Telegram Bot']
+        ['Product Planning','Feature Planning','Product Strategy','User Research','Competitor Analysis','Product Analytics'],
+        ['UX/UI Design','User Flow Design','Wireframing','Prototyping'],
+        ['Figma','Mixpanel','Notion','ChatGPT','Claude']
       ]
     };
     chipGroups.forEach((group, i) => {
