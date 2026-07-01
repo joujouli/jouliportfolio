@@ -170,13 +170,25 @@
     .meta-row { gap: 1.5rem; }
     .stat-row { flex-direction: column; }
   }
+
+  .lang-toggle {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--ink-muted); background: transparent;
+    border: 1px solid var(--border); border-radius: 2rem;
+    padding: 0.3rem 0.875rem; cursor: pointer;
+    font-family: 'Inter', sans-serif; transition: all 0.2s;
+  }
+  .lang-toggle:hover { color: var(--orange); border-color: var(--orange); }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="back-link">← 返回作品集</a>
-  <a href="index.html" class="nav-logo">JOU LI</a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="lang-toggle" onclick="toggleLang()" id="case-lang-btn">EN</button>
+    <a href="index.html" class="nav-logo">JOU LI</a>
+  </div>
 </nav>
 
 <div class="hero">
@@ -378,6 +390,16 @@
 </div>
 
 <script>
+
+  let caseLang = 'zh';
+  function toggleLang() {
+    caseLang = caseLang === 'zh' ? 'en' : 'zh';
+    document.getElementById('case-lang-btn').textContent = caseLang === 'zh' ? 'EN' : '中';
+    document.querySelector('.back-link').textContent = caseLang === 'zh' ? '← 返回作品集' : '← Back';
+    document.querySelector('.case-footer .footer-btn').textContent = caseLang === 'zh' ? '← 返回所有產品案例' : '← All Projects';
+    document.documentElement.lang = caseLang === 'zh' ? 'zh-TW' : 'en';
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {

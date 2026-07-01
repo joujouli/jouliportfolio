@@ -110,7 +110,24 @@
     padding: 7rem 0 5rem;
   }
   .hero-inner-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; width: 100%; }
-  .hero-inner { width: 100%; }
+  .hero-inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-left {}
+  .hero-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .hero-avatar {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+  }
   .hero-eyebrow {
     display: inline-block;
     font-size: 0.6875rem;
@@ -585,6 +602,9 @@
   /* ── Responsive ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-right { justify-content: center; order: -1; }
+    .hero-avatar { width: 200px; height: 200px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .nav-right { display: flex; align-items: center; gap: 0.75rem; }
@@ -659,33 +679,21 @@
 <section id="hero">
   <div class="hero-inner-wrap">
   <div class="hero-inner reveal">
-    <span class="hero-eyebrow">Product Manager</span>
-    <h1 class="hero-name">李 柔｜<em>Jou Li</em></h1>
-    <p class="hero-subtitle">Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei</p>
+    <div class="hero-left">
+      <span class="hero-eyebrow">Product X Design</span>
+      <h1 class="hero-name">李 柔｜<em>Jou Li</em></h1>
 
-    <div class="hero-tags">
-      <span class="tag">用戶研究</span>
-      <span class="tag">數據觀察</span>
-      <span class="tag">跨部門協作</span>
+      <div class="hero-tags">
+        <span class="tag">用戶研究</span>
+        <span class="tag">數據觀察</span>
+        <span class="tag">跨部門協作</span>
+      </div>
+
+      <p class="hero-about">2+ 年 Web3 產品規劃與 UI/UX 經驗，擅長透過使用者研究、競品分析與數據洞察發現產品機會，並將複雜資訊轉化為易於理解的產品體驗。目前希望持續往 Product Management 發展，參與更多產品策略與決策工作。</p>
     </div>
-
-    <p class="hero-about">2+ 年 Web3 產品規劃與 UI/UX 經驗，擅長透過使用者研究、競品分析與數據洞察發現產品機會，並將複雜資訊轉化為易於理解的產品體驗。目前希望持續往 Product Management 發展，參與更多產品策略與決策工作。</p>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">2 yr</span>
-        <span class="stat-label">Web3 產品經驗</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">60%</span>
-        <span class="stat-label">儀表板佔平台流量</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">5×</span>
-        <span class="stat-label">Onboarding 成功率提升</span>
-      </div>
+    <div class="hero-right">
+      <img src="avatar.png" alt="李柔 Jou Li" class="hero-avatar">
     </div>
-
   </div>
   </div>
 </section>
@@ -891,7 +899,7 @@
 
   const translations = {
     zh: {
-      'eyebrow': 'Product Manager',
+      'eyebrow': 'Product X Design',
       'hero-name': '李 柔｜<em>Jou Li</em>',
       'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
       'hero-desc': '用戶研究 × 數據觀察 × 跨部門協作',
@@ -938,7 +946,7 @@
       'nav-about': '關於我', 'nav-work': '產品案例', 'nav-skills': '技能', 'nav-contact': '聯絡', 'nav-resume': '履歷',
     },
     en: {
-      'eyebrow': 'Product Manager',
+      'eyebrow': 'Product X Design',
       'hero-name': 'Jou Li',
       'hero-subtitle': 'Product Manager &nbsp;·&nbsp; Web3 &amp; AI &nbsp;·&nbsp; Taipei',
       'hero-desc': 'User Research × Data Observation × Cross-functional Collaboration',
@@ -997,7 +1005,7 @@
     const t = translations[lang];
     document.querySelector('.hero-eyebrow').textContent = t['eyebrow'];
     document.querySelector('.hero-name').innerHTML = t['hero-name'];
-    document.querySelector('.hero-subtitle').innerHTML = t['hero-subtitle'];
+    // hero-subtitle removed
     const statLabels = document.querySelectorAll('.stat-label');
     statLabels.forEach((el, i) => el.textContent = t[`stat-label-${i}`]);
     document.querySelector('.hero-about').textContent = t['about-p1'];
