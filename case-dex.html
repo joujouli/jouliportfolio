@@ -268,9 +268,10 @@
   function toggleLang() {
     caseLang = caseLang === 'zh' ? 'en' : 'zh';
     document.getElementById('case-lang-btn').textContent = caseLang === 'zh' ? 'EN' : '中';
-    document.querySelector('.back-link').textContent = caseLang === 'zh' ? '← 返回作品集' : '← Back';
-    document.querySelector('.case-footer .footer-btn').textContent = caseLang === 'zh' ? '← 返回所有產品案例' : '← All Projects';
     document.documentElement.lang = caseLang === 'zh' ? 'zh-TW' : 'en';
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.innerHTML = caseLang === 'zh' ? el.dataset.zh : el.dataset.en;
+    });
   }
 
   const observer = new IntersectionObserver((entries) => {
