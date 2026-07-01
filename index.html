@@ -683,9 +683,10 @@
       <h1 class="hero-name" data-zh="嗨！我是李柔" data-en="Hi! It's Jou Li">嗨！我是李柔</h1>
 
       <div class="hero-tags">
-        <span class="tag">用戶研究</span>
-        <span class="tag">數據觀察</span>
-        <span class="tag">跨部門協作</span>
+        <span class="tag" id="hero-tag-0">產品策略</span>
+        <span class="tag" id="hero-tag-1">使用者研究</span>
+        <span class="tag" id="hero-tag-2">UX 設計</span>
+        <span class="tag" id="hero-tag-3">Web3 與 AI</span>
       </div>
 
       <p class="hero-about">2+ 年 Web3 產品規劃與 UI/UX 經驗，擅長透過使用者研究、競品分析與數據洞察發現產品機會，並將複雜資訊轉化為易於理解的產品體驗。目前希望持續往 Product Management 發展，參與更多產品策略與決策工作。</p>
@@ -816,6 +817,7 @@
         <div class="skill-group-title">工具</div>
         <div class="skill-chips">
           <span class="skill-chip">Figma</span>
+          <span class="skill-chip">Whimsical</span>
           <span class="skill-chip">Mixpanel</span>
           <span class="skill-chip">Notion</span>
           <span class="skill-chip">ChatGPT</span>
@@ -865,7 +867,7 @@
       'stat-label-0': 'Web3 產品經驗',
       'stat-label-1': '儀表板佔平台流量',
       'stat-label-2': 'Onboarding 成功率提升',
-      'tag-0': '使用者研究', 'tag-1': '產品策略', 'tag-2': 'Onboarding 設計', 'tag-3': 'Web3 / AI',
+      'tag-0': '產品策略', 'tag-1': '使用者研究', 'tag-2': 'UX 設計', 'tag-3': 'Web3 與 AI',
       'about-eyebrow': '關於我',
       'about-p1': '2+ 年 Web3 產品規劃與 UI/UX 經驗，擅長透過使用者研究、競品分析與數據洞察發現產品機會，並將複雜資訊轉化為易於理解的產品體驗。目前希望持續往 Product Management 發展，參與更多產品策略與決策工作。',
       'proj-eyebrow': '產品案例',
@@ -897,7 +899,7 @@
       'proj3-b3-label': '做法', 'proj3-b3': '同時優化整體投票流程，以新手視角降低參與門檻，讓非專業背景的用戶也能<strong>更有依據地完成投票決策</strong>。',
       'proj3-role': 'UI/UX 設計師・介面設計・流程優化・約 3 個月',
       'skills-eyebrow': '技能',
-      'sg1-title': '產品能力', 'sg2-title': '設計能力', 'sg3-title': '工具', 'sg4-title': '領域知識',
+      'sg1-title': '產品能力', 'sg2-title': '設計能力', 'sg3-title': '工具',
       'contact-eyebrow': '聯絡我',
       'contact-title': '有機會一起<br>做出好產品嗎？<em>聊聊吧。</em>',
       'footer': '© 2026 李柔 Jou Li &nbsp;·&nbsp; Built with care',
@@ -912,7 +914,7 @@
       'stat-label-0': 'Web3 Product Experience',
       'stat-label-1': 'Dashboard Traffic Share',
       'stat-label-2': 'Onboarding Success Rate Lift',
-      'tag-0': 'User Research', 'tag-1': 'Product Strategy', 'tag-2': 'Onboarding Design', 'tag-3': 'Web3 / AI',
+      'tag-0': 'Product Strategy', 'tag-1': 'User Research', 'tag-2': 'UX Design', 'tag-3': 'Web3 & AI',
       'about-eyebrow': 'About',
       'about-p1': '2+ years of Web3 product planning and UI/UX experience. Skilled at uncovering product opportunities through user research, competitor analysis, and data insights, and translating complex information into intuitive product experiences. Currently looking to grow further in Product Management and take on more product strategy and decision-making work.',
       'proj-eyebrow': 'Case Studies',
@@ -944,7 +946,7 @@
       'proj3-b3-label': 'Approach', 'proj3-b3': 'Also optimized the overall voting flow with a beginner\'s lens to lower the barrier to entry, so even non-technical users could <strong>vote with confidence and clear rationale</strong>.',
       'proj3-role': 'UI/UX Designer · Interface Design · Flow Optimization · ~3 months',
       'skills-eyebrow': 'Skills',
-      'sg1-title': 'Product', 'sg2-title': 'Design', 'sg3-title': 'Tools', 'sg4-title': 'Domain',
+      'sg1-title': 'Product', 'sg2-title': 'Design', 'sg3-title': 'Tools',
       'contact-eyebrow': 'Get in Touch',
       'contact-title': 'Want to build something<br>worth building? <em>Let\'s talk.</em>',
       'footer': '© 2026 Jou Li &nbsp;·&nbsp; Built with care',
@@ -965,11 +967,10 @@
     document.querySelector('.hero-eyebrow').textContent = t['eyebrow'];
     document.querySelector('.hero-name').textContent = t['hero-name'];
     document.querySelector('.hero-about').textContent = t['about-p1'];
-    const heroTags = document.querySelectorAll('.hero-tags .tag');
-    const tagKeys = lang === 'zh'
-      ? ['用戶研究', '數據觀察', '跨部門協作']
-      : ['User Research', 'Data Observation', 'Cross-functional'];
-    heroTags.forEach((el, i) => el.textContent = tagKeys[i]);
+    ['tag-0','tag-1','tag-2','tag-3'].forEach((k, i) => {
+      const el = document.getElementById('hero-tag-' + i);
+      if (el) el.textContent = t[k];
+    });
 
     // Projects
     document.querySelector('#projects .section-eyebrow').textContent = t['proj-eyebrow'];
@@ -992,12 +993,12 @@
       zh: [
         ['產品規劃','功能規劃','產品策略','用戶研究','競品分析','數據分析'],
         ['UX/UI Design','User Flow Design','Wireframing','Prototyping'],
-        ['Figma','Mixpanel','Notion','ChatGPT','Claude']
+        ['Figma','Whimsical','Mixpanel','Notion','ChatGPT','Claude']
       ],
       en: [
-        ['Product Planning','Feature Planning','Product Strategy','User Research','Competitor Analysis','Product Analytics'],
+        ['Product Planning','Feature Planning','Product Strategy','User Research','Competitor Analysis','Data Analysis'],
         ['UX/UI Design','User Flow Design','Wireframing','Prototyping'],
-        ['Figma','Mixpanel','Notion','ChatGPT','Claude']
+        ['Figma','Whimsical','Mixpanel','Notion','ChatGPT','Claude']
       ]
     };
     chipGroups.forEach((group, i) => {

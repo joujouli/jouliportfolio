@@ -148,7 +148,7 @@
 <body>
 
 <div class="topbar">
-  <button class="topbar-btn" onclick="window.print()">⬇ 下載 PDF</button>
+  <button class="topbar-btn" id="download-btn" onclick="downloadPDF()">⬇ 下載 PDF</button>
   <button class="topbar-btn" onclick="toggleLang()" id="lang-btn">EN</button>
 </div>
 
@@ -167,7 +167,7 @@
   <div class="section">
     <div class="section-title">Professional Summary</div>
     <hr>
-    <p class="section-body">具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題，同時從使用者需求與產品策略角度思考問題，再以跨部門協作解決痛點、優化體驗。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。</p>
+    <p class="section-body">具備 2 年以上 Web3 新創產品規劃與 UX 設計經驗，曾參與加密貨幣數據平台、AI Trading Agent 與去中心化交易平台開發。擅長透過用戶研究、競品分析與數據觀察發掘產品機會，並與跨部門團隊協作推動功能規劃與體驗優化。期望持續往 Product Manager 發展，以使用者洞察驅動產品決策。</p>
   </div>
 
   <div class="section">
@@ -181,22 +181,22 @@
 
     <div class="exp-sub">加密貨幣數據分析平台</div>
     <ul class="bullets" id="b1">
-      <li>參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。</li>
-      <li>根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。</li>
-      <li>強化核心功能，使其成為最高平台使用率，佔整體流量約 60%。</li>
+      <li>參與網站與 App 的需求討論、功能規劃及介面設計，協助建立從資訊蒐集到投資決策的完整使用流程。</li>
+      <li>透過用戶訪談、數據分析與競品研究找出市場缺口，協助團隊建立產品差異化定位。</li>
+      <li>持續追蹤產品數據與用戶回饋進行功能優化，其核心功能最終成為平台主要流量入口，佔整體流量約 60%。</li>
     </ul>
 
-    <div class="exp-sub">AI Trading Agent</div>
+    <div class="exp-sub">AI 交易代理人</div>
     <ul class="bullets" id="b2">
-      <li>參與產品方向規劃，初期專注於介面與流程設計以降低新手用戶的學習門檻。</li>
-      <li>協助規劃 onboarding 體驗來推動工作坊，負責說明文件與示範影片的製作。</li>
-      <li>識別核心流失點，與跨部門合作將技術前置作業內化為產品端預設，以縮短安裝流程耗時。</li>
+      <li>參與產品方向討論、功能規劃及介面流程設計，降低 AI 量化交易工具的學習門檻。</li>
+      <li>規劃 Onboarding 體驗，負責教學文件、操作指南與示範影片製作，協助推動產品導入。</li>
+      <li>透過工作坊觀察與使用者回饋分析，識別產品導入流程中的核心流失點。</li>
     </ul>
 
     <div class="exp-sub">去中心化驗證跟單交易平台</div>
     <ul class="bullets" id="b3">
-      <li>參與產品規劃與網站設計，負責投票機制、排行榜等功能流程與介面設計。</li>
-      <li>進行用戶研究與市場觀察來點出產品缺口，協助團隊優化流程與使用者體驗。</li>
+      <li>參與產品規劃與網站設計，負責投票機制、排行榜及相關功能流程規劃與介面設計。</li>
+      <li>執行可用性測試並持續優化使用流程，降低新手理解門檻與操作成本。</li>
     </ul>
   </div>
 
@@ -212,24 +212,32 @@
 
   <div class="section">
     <div class="skills-tools-header">
-      <span class="section-title">Skills</span>
-      <span class="section-title">Tools</span>
+      <span class="section-title" id="sg1-title">產品能力</span>
+      <span class="section-title" id="sg2-title">設計能力</span>
+      <span class="section-title" id="sg3-title">工具軟體</span>
     </div>
-    <div class="skills-tools-row">
+    <div class="skills-tools-row" style="grid-template-columns: 1fr 1fr 1fr;">
       <ul class="skills-list" id="skills-grid">
-        <li class="skill-item">用戶研究</li>
-        <li class="skill-item">競品分析</li>
+        <li class="skill-item">產品規劃</li>
         <li class="skill-item">功能規劃</li>
         <li class="skill-item">產品策略</li>
-        <li class="skill-item">User Flow</li>
-        <li class="skill-item">Onboarding 設計</li>
-        <li class="skill-item">跨部門協作</li>
+        <li class="skill-item">用戶研究</li>
+        <li class="skill-item">競品分析</li>
+        <li class="skill-item">數據分析</li>
       </ul>
-      <ul class="skills-list" id="tools-grid">
+      <ul class="skills-list" id="design-grid" style="list-style:none;padding-left:0;display:flex;flex-direction:column;gap:0.2rem;">
+        <li class="skill-item">UX/UI Design</li>
+        <li class="skill-item">User Flow Design</li>
+        <li class="skill-item">Wireframing</li>
+        <li class="skill-item">Prototyping</li>
+      </ul>
+      <ul class="skills-list" id="tools-grid" style="list-style:none;padding-left:0;display:flex;flex-direction:column;gap:0.2rem;">
         <li class="skill-item">Figma</li>
-        <li class="skill-item">AI 工具應用</li>
-        <li class="skill-item">Notion</li>
+        <li class="skill-item">Whimsical</li>
         <li class="skill-item">Mixpanel</li>
+        <li class="skill-item">Notion</li>
+        <li class="skill-item">ChatGPT</li>
+        <li class="skill-item">Claude</li>
       </ul>
     </div>
   </div>
@@ -242,46 +250,58 @@
       btn: 'EN', lang: 'zh-TW', pdf_btn: '⬇ 下載 PDF',
       name: '李柔 Jou Li',
       summary_title: 'Professional Summary',
-      summary: '具備 2 年 Web3 新創產品規劃與用戶研究實務經驗，擅長透過用戶訪談、數據觀察與競品分析找出產品問題，同時從使用者需求與產品策略角度思考問題，再以跨部門協作解決痛點、優化體驗。現積極轉型為 Product Manager，目標以使用者洞察驅動產品決策。',
+      summary: '具備 2 年以上 Web3 新創產品規劃與 UX 設計經驗，曾參與加密貨幣數據平台、AI Trading Agent 與去中心化交易平台開發。擅長透過用戶研究、競品分析與數據觀察發掘產品機會，並與跨部門團隊協作推動功能規劃與體驗優化。期望持續往 Product Manager 發展，以使用者洞察驅動產品決策。',
       exp_title: 'Work Experience',
       role: 'UI/UX 設計師｜吾集科技有限公司',
       date: '2023.10 — 2026.06',
-      sub1: '加密貨幣數據分析平台', sub2: 'AI Trading Agent', sub3: '去中心化驗證跟單交易平台',
-      b1: ['參與網站與 App 的需求討論、功能流程規劃與介面設計，擅長以新手視角把關功能易讀性。','根據用戶訪談與後台數據分析，研究各功能使用情況，找出使用痛點並透過競品研究確立產品差異化方向。','強化核心功能，使其成為最高平台使用率，佔整體流量約 60%。'],
-      b2: ['參與產品方向規劃，初期專注於介面與流程設計以降低新手用戶的學習門檻。','協助規劃 onboarding 體驗來推動工作坊，負責說明文件與示範影片的製作。','識別核心流失點，與跨部門合作將技術前置作業內化為產品端預設，以縮短安裝流程耗時。'],
-      b3: ['參與產品規劃與網站設計，負責投票機制、排行榜等功能流程與介面設計。','進行用戶研究與市場觀察來點出產品缺口，協助團隊優化流程與使用者體驗。'],
+      sub1: '加密貨幣數據分析平台', sub2: 'AI 交易代理人', sub3: '去中心化驗證跟單交易平台',
+      b1: ['參與網站與 App 的需求討論、功能規劃及介面設計，協助建立從資訊蒐集到投資決策的完整使用流程。','透過用戶訪談、數據分析與競品研究找出市場缺口，協助團隊建立產品差異化定位。','持續追蹤產品數據與用戶回饋進行功能優化，其核心功能最終成為平台主要流量入口，佔整體流量約 60%。'],
+      b2: ['參與產品方向討論、功能規劃及介面流程設計，降低 AI 量化交易工具的學習門檻。','規劃 Onboarding 體驗，負責教學文件、操作指南與示範影片製作，協助推動產品導入。','透過工作坊觀察與使用者回饋分析，識別產品導入流程中的核心流失點。'],
+      b3: ['參與產品規劃與網站設計，負責投票機制、排行榜及相關功能流程規劃與介面設計。','執行可用性測試並持續優化使用流程，降低新手理解門檻與操作成本。'],
       edu_title: 'Education', edu_school: '國立臺北教育大學', edu_date: '2019.09 — 2023.06', edu_dept: '兒童英語教育學系',
       skills_title: 'Skills', tools_title: 'Tools',
-      skills: ['用戶研究','競品分析','功能規劃','產品策略','User Flow','Onboarding 設計','跨部門協作'],
-      tools: ['Figma','AI 工具應用','Notion','Mixpanel'],
+      sg1_title: '產品能力', sg2_title: '設計能力', sg3_title: '工具軟體',
+      skills: ['產品規劃','功能規劃','產品策略','用戶研究','競品分析','數據分析'],
+      design: ['UX/UI Design','User Flow Design','Wireframing','Prototyping'],
+      tools: ['Figma','Whimsical','Mixpanel','Notion','ChatGPT','Claude'],
     },
     en: {
       btn: '中', lang: 'en', pdf_btn: '⬇ Download PDF',
       name: 'Jou Li',
       summary_title: 'Professional Summary',
-      summary: 'I have 2 years of product planning and user research experience in a Web3 startup, skilled at identifying product problems through user interviews, data observation, and competitor analysis. I approach problems from both user needs and product strategy perspectives, then resolve pain points and optimize experience through cross-functional collaboration. I am actively transitioning into a Product Manager role, with the goal of driving product decisions through user insight.',
+      summary: 'Product-focused UX Designer with 2+ years of experience in Web3 startups. Contributed to the development of a cryptocurrency analytics platform, AI Trading Agent, and decentralized trading platform. Experienced in user research, competitor analysis, feature planning, and cross-functional collaboration to drive product improvements.',
       exp_title: 'Work Experience',
-      role: 'UI/UX Designer｜Wuji Technology',
+      role: 'UI/UX Designer｜WuChi Technology Company Limited',
       date: 'Oct 2023 — Jun 2026',
-      sub1: 'Crypto Data Analytics Platform', sub2: 'AI Trading Agent', sub3: 'Decentralized Copy Trading Platform',
-      b1: ['Participated in feature planning and UI design for web and app; skilled at reviewing usability from a beginner\'s perspective.','Conducted user interviews and backend data analysis to identify pain points; used competitor research to establish product differentiation.','Strengthened core features to become the most-used on the platform, accounting for ~60% of total traffic.'],
-      b2: ['Participated in product direction planning, initially focused on interface and flow design to lower the learning curve for new users.','Helped plan onboarding experiences for workshops; responsible for documentation and tutorial video production.','Identified core drop-off points; collaborated cross-functionally to move technical setup server-side, reducing installation time.'],
-      b3: ['Participated in product planning and web design, responsible for voting mechanism, leaderboard flow and interface design.','Conducted user research and market observation to identify product gaps and help the team optimize flows and user experience.'],
+      sub1: 'Crypto Data Analytics Platform', sub2: 'AI 交易代理人', sub3: 'Decentralized Copy Trading Platform',
+      b1: ['Planned product features and designed web/mobile experiences to support users\' investment decisions.','Conducted user research, competitor analysis, and data reviews to identify product opportunities.','Optimized core features based on user feedback and behavioral data, contributing to a feature that generated ~60% of platform traffic.'],
+      b2: ['Designed user flows and onboarding experiences for an AI-powered quantitative trading tool.','Created documentation, tutorials, and training materials to improve product adoption.','Identified onboarding drop-off points through workshops and user feedback.'],
+      b3: ['Designed ranking, voting, and trader evaluation experiences.','Conducted usability testing and optimized user flows to reduce learning barriers for new users.'],
       edu_title: 'Education', edu_school: 'National Taipei University of Education', edu_date: 'Sep 2019 — Jun 2023', edu_dept: "B.A. in Children's English Education",
       skills_title: 'Skills', tools_title: 'Tools',
-      skills: ['User Research','Competitor Analysis','Feature Planning','Product Strategy','User Flow','Onboarding Design','Cross-functional'],
-      tools: ['Figma','AI Tool Proficiency','Notion','Mixpanel'],
+      sg1_title: 'Product', sg2_title: 'Design', sg3_title: 'Tools',
+      skills: ['Product Planning','Feature Planning','Product Strategy','User Research','Competitor Analysis','Data Analysis'],
+      design: ['UX/UI Design','User Flow Design','Wireframing','Prototyping'],
+      tools: ['Figma','Whimsical','Mixpanel','Notion','ChatGPT','Claude'],
     }
   };
 
   let lang = 'zh';
+
+  function downloadPDF() {
+    const file = lang === 'zh' ? '李柔_履歷.pdf' : 'JouLi_Resume.pdf';
+    const a = document.createElement('a');
+    a.href = file;
+    a.download = file;
+    a.click();
+  }
 
   function toggleLang() {
     lang = lang === 'zh' ? 'en' : 'zh';
     const d = t[lang];
     document.documentElement.lang = d.lang;
     document.getElementById('lang-btn').textContent = d.btn;
-    document.querySelectorAll('.topbar-btn')[0].textContent = d.pdf_btn;
+    document.getElementById('download-btn').textContent = d.pdf_btn;
     document.querySelector('.header-name').textContent = d.name;
     document.querySelectorAll('.section-title')[0].textContent = d.summary_title;
     document.querySelector('.section-body').textContent = d.summary;
@@ -298,9 +318,11 @@
     document.getElementById('edu-date').textContent = d.edu_date;
     document.getElementById('edu-dept').textContent = d.edu_dept;
     const stHeaders = document.querySelectorAll('.skills-tools-header .section-title');
-    stHeaders[0].textContent = d.skills_title;
-    stHeaders[1].textContent = d.tools_title;
+    stHeaders[0].textContent = d.sg1_title;
+    stHeaders[1].textContent = d.sg2_title;
+    stHeaders[2].textContent = d.sg3_title;
     document.getElementById('skills-grid').innerHTML = d.skills.map(s => `<li class="skill-item">${s}</li>`).join('');
+    document.getElementById('design-grid').innerHTML = d.design.map(s => `<li class="skill-item">${s}</li>`).join('');
     document.getElementById('tools-grid').innerHTML = d.tools.map(s => `<li class="skill-item">${s}</li>`).join('');
   }
 </script>
