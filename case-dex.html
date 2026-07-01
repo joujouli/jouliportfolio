@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>去中心化跟單平台｜李柔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFAF4; --orange: #D4622A; --orange-light: #F5E8DF;
+    --ink: #1A1410; --ink-mid: #4A3728; --ink-muted: #8C6E5D;
+    --border: #E8DDD6; --white: #FFFFFF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2.5rem; background: rgba(255,250,244,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .back-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--ink-mid); text-decoration: none; }
+  .back-link:hover { color: var(--orange); }
+  .nav-logo { font-size: 1rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+
+  .hero { max-width: 880px; margin: 0 auto; padding: 8rem 2.5rem 3rem; }
+  .hero-tag { display: inline-block; font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); background: var(--orange-light); padding: 0.3rem 0.75rem; border-radius: 2rem; margin-bottom: 1.5rem; }
+  .hero-title { font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1.25rem; }
+  .hero-desc { font-size: 1.0625rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 2rem; }
+  .meta-row { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .meta-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.3rem; }
+  .meta-value { font-size: 0.9375rem; color: var(--ink); font-weight: 500; }
+
+  .cover { max-width: 880px; margin: 0 auto 4rem; padding: 0 2.5rem; }
+  .cover-img { width: 100%; border-radius: 12px; display: block; }
+
+  .section { max-width: 880px; margin: 0 auto; padding: 0 2.5rem 4rem; }
+  .section-eyebrow { font-size: 1.375rem; font-weight: 600; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 1.25rem; }
+  .section-body { font-size: 1rem; color: var(--ink-mid); line-height: 1.85; }
+  .section-body p { margin-bottom: 1rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .reflect-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
+  .reflect-item { display: flex; gap: 1rem; }
+  .reflect-letter { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 0.8125rem; font-weight: 600; }
+  .reflect-content { flex: 1; }
+  .reflect-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .reflect-text { font-size: 0.9375rem; color: var(--ink-mid); line-height: 1.75; }
+
+  .insight-box { background: var(--orange-light); border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 1.5rem; border-left: 3px solid var(--orange); }
+  .insight-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .insight-text { font-size: 0.9375rem; color: var(--ink); line-height: 1.7; }
+
+  .table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; min-width: 520px; }
+  th { background: var(--ink); color: var(--cream); text-align: left; padding: 0.75rem 1rem; font-weight: 500; }
+  td { padding: 0.75rem 1rem; border-top: 1px solid var(--border); color: var(--ink-mid); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--white); }
+  .row-label { font-weight: 600; color: var(--ink); background: var(--orange-light) !important; }
+
+  .timeline { position: relative; margin-top: 1.5rem; padding-left: 1.75rem; }
+  .timeline::before { content: ''; position: absolute; left: 4.5px; top: 9.5px; bottom: 9.5px; width: 1.5px; background: var(--border); }
+  .timeline-item { position: relative; padding-bottom: 1.5rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.75rem; top: 5px; width: 9px; height: 9px; border-radius: 50%; background: var(--orange); }
+  .timeline-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+  .timeline-text { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.7; }
+
+  .stat-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .stat-pill { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.75rem; flex: 1; min-width: 160px; }
+  .stat-num { font-size: 1.5rem; font-weight: 600; color: var(--orange); letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+  .stat-label { font-size: 0.8125rem; color: var(--ink-muted); }
+
+  .case-footer { max-width: 880px; margin: 0 auto; padding: 3rem 2.5rem 5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--orange); text-decoration: none; }
+  .footer-btn:hover { text-decoration: underline; }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.25rem; }
+    .hero, .cover, .section, .case-footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding-top: 6rem; }
+    .stat-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="back-link">← 返回作品集</a>
+  <a href="index.html" class="nav-logo">JOU LI</a>
+</nav>
+
+<div class="hero">
+  <span class="hero-tag">產品開發・跨部門合作</span>
+  <h1 class="hero-title">去中心化跟單平台</h1>
+  <p class="hero-desc">一個透過「去中心化驗證」機制運作的跟單交易平台。產品目標是解決傳統社群交易平台中經理人透過高風險操作、人為操縱排行榜等方式獲取曝光的問題，並建立一套能夠持續篩選優秀經理人的驗證機制。透過投票、績效驗證與獎勵制度，讓投資人、經理人與平台三方利益保持一致，打造更健康的跟單交易生態。</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">角色</div>
+      <div class="meta-value">UI/UX 設計師</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">時間</div>
+      <div class="meta-value">約 3 個月</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">平台</div>
+      <div class="meta-value">Web</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">核心成果</div>
+      <div class="meta-value">排行榜與投票流程優化</div>
+    </div>
+  </div>
+</div>
+
+<div class="cover reveal">
+  <img class="cover-img" src="cover_p3.png" alt="去中心化跟單平台">
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">我的角色</div>
+  <div class="section-body">
+    <p>擔任 UI/UX Designer，負責產品介面設計與流程優化。主要工作包含：User Flow 規劃、Wireframe 設計、功能優化提案、Mockup 與 Prototype 製作、用戶訪談、可用性測試。</p>
+    <p>由於產品早期版本主要由工程團隊開發，因此我加入後的重點在於重新檢視使用流程，降低新手理解門檻，並協助團隊優化關鍵功能體驗。</p>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">問題發現</div>
+  <div class="section-body">
+    <p>透過問卷調查與市場研究，我們發現超過 75% 的跟單交易用戶最終處於虧損狀態。進一步分析後發現問題並非來自跟單機制本身，而是使用者難以判斷：哪些經理人值得信任？</p>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">市場研究</div>
+  <div class="section-body">
+    <p>分析市場上兩種主流模式，比較其優勢與缺點：</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>模式</th><th>資產管理服務</th><th>社群交易服務</th></tr>
+      <tr><td class="row-label">說明</td><td>由專業團隊代為管理資產</td><td>透過公開排行榜挑選經理人</td></tr>
+      <tr><td class="row-label">優勢</td><td>操作門檻低</td><td>資訊透明、可查看交易紀錄</td></tr>
+      <tr><td class="row-label">缺點</td><td>資訊不透明、無法驗證經理人能力、資金風險較高</td><td>排行榜容易被操縱、高風險策略容易獲得曝光、使用者仍需投入大量研究成本</td></tr>
+    </table>
+  </div>
+  <div class="insight-box">
+    <div class="insight-label">關鍵洞察</div>
+    <div class="insight-text">問題並非缺乏經理人，而是<strong>缺乏驗證經理人的機制</strong>。現有平台大多依靠報酬率進行排名，然而高報酬並不等於穩定獲利，使用者即使看到排行榜，也難以判斷哪些經理人真正值得跟單。</div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">產品策略</div>
+  <div class="section-body">
+    <p>我們決定不再讓平台直接替使用者選擇經理人，而是建立一套「由社群共同驗證經理人」的機制，讓市場自行篩選出優秀交易者。</p>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">關鍵產品決策</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-title">決策一｜以投票機制取代單純排行榜排序</div>
+      <div class="timeline-text">傳統排行榜容易被短期績效影響，因此平台改由社群投票決定資金配置方向。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-title">決策二｜將獲利能力與風險波動共同納入評分</div>
+      <div class="timeline-text">避免高槓桿與極端操作獲得不合理優勢，讓穩定獲利的交易者得到應有的排名。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-title">決策三｜建立雙向獎勵機制</div>
+      <div class="timeline-text">讓經理人努力創造績效，以及投資人努力驗證經理人，雙方都能獲得獎勵，形成正向循環。</div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">UX 優化</div>
+  <div class="section-body">
+    <p>透過可用性測試發現，使用者難以理解：投票流程、權重計算方式、經理人績效差異。因此重新設計了兩個關鍵體驗：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">經理人排行榜</div>
+        <div class="reflect-text">整合報酬率、勝率、風險指標、投票狀況，以視覺化方式呈現，讓使用者一眼看出哪位經理人真正值得信任。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">投票流程優化</div>
+        <div class="reflect-text">將原本複雜的 DAO 投票流程拆解成更容易理解的步驟，降低新手參與門檻。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">產品影響</div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">U</div>
+      <div class="reflect-content">
+        <div class="reflect-title">User Impact</div>
+        <div class="reflect-text">降低理解門檻、提升投票決策效率、強化經理人比較能力。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">P</div>
+      <div class="reflect-content">
+        <div class="reflect-title">Product Impact</div>
+        <div class="reflect-text">建立差異化市場定位、將驗證機制納入平台核心價值、提供傳統社群交易平台以外的新模式。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section reveal">
+  <div class="section-eyebrow">學習與反思</div>
+  <div class="section-body">
+    <p>這是我在產品設計領域較早期的完整參與經驗，讓我對跨職能協作有了更深的理解：</p>
+  </div>
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-letter">1</div>
+      <div class="reflect-content">
+        <div class="reflect-title">好的產品方案必須建立在可執行性之上</div>
+        <div class="reflect-text">剛進入產品開發領域時，我經常從使用者角度提出各種理想解法。然而實際與工程團隊合作後才理解，產品決策除了滿足使用者需求外，也必須考量技術成本、開發資源與維護成本。這讓我開始學習從工程角度思考問題，並在提出方案前先評估可行性與投入產出比。</div>
+      </div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-letter">2</div>
+      <div class="reflect-content">
+        <div class="reflect-title">產品角色的價值在於整合不同觀點</div>
+        <div class="reflect-text">初入職場時，我常將意見被否決視為自己思考不足。但後來逐漸理解，每個部門看到的是不同面向的問題。產品開發並不是尋找單一正確答案，而是在商業目標、使用者需求與技術限制之間找到最佳平衡點。這段經驗讓我開始學習如何透過研究、數據與用戶回饋驗證自己的想法，而不是僅憑直覺做判斷。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-footer">
+  <a href="index.html" class="footer-btn">← 返回所有產品案例</a>
+  <a href="resume.html" target="_blank" class="footer-btn">查看履歷 →</a>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
