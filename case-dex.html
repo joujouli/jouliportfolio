@@ -84,24 +84,13 @@
     .stat-row { flex-direction: column; }
   }
 
-  .lang-toggle {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
-    color: var(--ink-muted); background: transparent;
-    border: 1px solid var(--border); border-radius: 2rem;
-    padding: 0.3rem 0.875rem; cursor: pointer;
-    font-family: 'Inter', sans-serif; transition: all 0.2s;
-  }
-  .lang-toggle:hover { color: var(--orange); border-color: var(--orange); }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="back-link">← 返回作品集</a>
-  <div style="display:flex;align-items:center;gap:1rem;">
-    <button class="lang-toggle" onclick="toggleLang()" id="case-lang-btn">EN</button>
-    <a href="index.html" class="nav-logo">JOU LI</a>
-  </div>
+  <a href="index.html" class="nav-logo">JOU LI</a>
 </nav>
 
 <div class="hero">
@@ -110,20 +99,20 @@
   <p class="hero-desc">一個透過「去中心化驗證」機制運作的跟單交易平台。產品目標是解決傳統社群交易平台中經理人透過高風險操作、人為操縱排行榜等方式獲取曝光的問題，並建立一套能夠持續篩選優秀經理人的驗證機制。透過投票、績效驗證與獎勵制度，讓投資人、經理人與平台三方利益保持一致，打造更健康的跟單交易生態。</p>
   <div class="meta-row">
     <div class="meta-item">
-      <div class="meta-label">角色</div>
-      <div class="meta-value">UI/UX 設計師</div>
+      <div class="meta-label" data-zh="角色" data-en="Role">角色</div>
+      <div class="meta-value" data-zh="UI/UX 設計師" data-en="UI/UX Designer">UI/UX 設計師</div>
     </div>
     <div class="meta-item">
-      <div class="meta-label">時間</div>
-      <div class="meta-value">約 3 個月</div>
+      <div class="meta-label" data-zh="時間" data-en="Duration">時間</div>
+      <div class="meta-value" data-zh="約 3 個月" data-en="~3 months">約 3 個月</div>
     </div>
     <div class="meta-item">
-      <div class="meta-label">平台</div>
+      <div class="meta-label" data-zh="平台" data-en="Platform">平台</div>
       <div class="meta-value">Web</div>
     </div>
     <div class="meta-item">
-      <div class="meta-label">核心成果</div>
-      <div class="meta-value">排行榜與投票流程優化</div>
+      <div class="meta-label" data-zh="核心成果" data-en="Key Outcome">核心成果</div>
+      <div class="meta-value" data-zh="排行榜與投票流程優化" data-en="Leaderboard & Voting Flow Optimization">排行榜與投票流程優化</div>
     </div>
   </div>
 </div>
@@ -135,41 +124,41 @@
 <div class="section reveal">
   <div class="section-eyebrow">我的角色</div>
   <div class="section-body">
-    <p>擔任 UI/UX Designer，負責產品介面設計與流程優化。主要工作包含：User Flow 規劃、Wireframe 設計、功能優化提案、Mockup 與 Prototype 製作、用戶訪談、可用性測試。</p>
-    <p>由於產品早期版本主要由工程團隊開發，因此我加入後的重點在於重新檢視使用流程，降低新手理解門檻，並協助團隊優化關鍵功能體驗。</p>
+    <p data-zh="擔任 UI/UX Designer，負責產品介面設計與流程優化。主要工作包含：User Flow 規劃、Wireframe 設計、功能優化提案、Mockup 與 Prototype 製作、用戶訪談、可用性測試。" data-en="Served as UI/UX Designer, responsible for product interface design and flow optimization. Main responsibilities: User Flow planning, Wireframe design, feature optimization proposals, Mockup and Prototype production, user interviews, and usability testing.">擔任 UI/UX Designer，負責產品介面設計與流程優化。主要工作包含：User Flow 規劃、Wireframe 設計、功能優化提案、Mockup 與 Prototype 製作、用戶訪談、可用性測試。</p>
+    <p data-zh="由於產品早期版本主要由工程團隊開發，因此我加入後的重點在於重新檢視使用流程，降低新手理解門檻，並協助團隊優化關鍵功能體驗。" data-en="Since the early product version was primarily built by the engineering team, my focus after joining was to revisit the user flow, lower the comprehension barrier for newcomers, and help the team optimize key feature experiences.">由於產品早期版本主要由工程團隊開發，因此我加入後的重點在於重新檢視使用流程，降低新手理解門檻，並協助團隊優化關鍵功能體驗。</p>
   </div>
 </div>
 
 <div class="section reveal">
   <div class="section-eyebrow">問題發現</div>
   <div class="section-body">
-    <p>透過問卷調查與市場研究，我們發現超過 75% 的跟單交易用戶最終處於虧損狀態。進一步分析後發現問題並非來自跟單機制本身，而是使用者難以判斷：哪些經理人值得信任？</p>
+    <p data-zh="透過問卷調查與市場研究，我們發現超過 75% 的跟單交易用戶最終處於虧損狀態。進一步分析後發現問題並非來自跟單機制本身，而是使用者難以判斷：哪些經理人值得信任？" data-en="Through surveys and market research, we found that over 75% of copy trading users end up at a loss. Further analysis revealed the problem wasn&#39;t the copy trading mechanism itself, but users&#39; inability to judge: which managers are actually worth trusting?">透過問卷調查與市場研究，我們發現超過 75% 的跟單交易用戶最終處於虧損狀態。進一步分析後發現問題並非來自跟單機制本身，而是使用者難以判斷：哪些經理人值得信任？</p>
   </div>
 </div>
 
 <div class="section reveal">
   <div class="section-eyebrow">市場研究</div>
   <div class="section-body">
-    <p>分析市場上兩種主流模式，比較其優勢與缺點：</p>
+    <p data-zh="分析市場上兩種主流模式，比較其優勢與缺點：" data-en="We analyzed the two mainstream models in the market, comparing their advantages and disadvantages:">分析市場上兩種主流模式，比較其優勢與缺點：</p>
   </div>
   <div class="table-wrap">
     <table>
-      <tr><th>模式</th><th>資產管理服務</th><th>社群交易服務</th></tr>
-      <tr><td class="row-label">說明</td><td>由專業團隊代為管理資產</td><td>透過公開排行榜挑選經理人</td></tr>
-      <tr><td class="row-label">優勢</td><td>操作門檻低</td><td>資訊透明、可查看交易紀錄</td></tr>
-      <tr><td class="row-label">缺點</td><td>資訊不透明、無法驗證經理人能力、資金風險較高</td><td>排行榜容易被操縱、高風險策略容易獲得曝光、使用者仍需投入大量研究成本</td></tr>
+      <tr><th data-zh="模式" data-en="Model">模式</th><th data-zh="資產管理服務" data-en="Asset Management">資產管理服務</th><th data-zh="社群交易服務" data-en="Social Trading">社群交易服務</th></tr>
+      <tr><td class="row-label" data-zh="說明" data-en="Description">說明</td><td data-zh="由專業團隊代為管理資產" data-en="Assets managed by a professional team">由專業團隊代為管理資產</td><td data-zh="透過公開排行榜挑選經理人" data-en="Manager selection via public leaderboard">透過公開排行榜挑選經理人</td></tr>
+      <tr><td class="row-label">優勢</td><td data-zh="操作門檻低" data-en="Low barrier to entry">操作門檻低</td><td data-zh="資訊透明、可查看交易紀錄" data-en="Transparent info, trade history visible">資訊透明、可查看交易紀錄</td></tr>
+      <tr><td class="row-label">缺點</td><td data-zh="資訊不透明、無法驗證經理人能力、資金風險較高" data-en="Opaque information, unverifiable manager skill, higher capital risk">資訊不透明、無法驗證經理人能力、資金風險較高</td><td data-zh="排行榜容易被操縱、高風險策略容易獲得曝光、使用者仍需投入大量研究成本" data-en="Leaderboards easily gamed, high-risk strategies gain undue exposure, users still face high research costs">排行榜容易被操縱、高風險策略容易獲得曝光、使用者仍需投入大量研究成本</td></tr>
     </table>
   </div>
   <div class="insight-box">
     <div class="insight-label">關鍵洞察</div>
-    <div class="insight-text">問題並非缺乏經理人，而是<strong>缺乏驗證經理人的機制</strong>。現有平台大多依靠報酬率進行排名，然而高報酬並不等於穩定獲利，使用者即使看到排行榜，也難以判斷哪些經理人真正值得跟單。</div>
+    <div class="insight-text" data-zh="問題並非缺乏經理人，而是<strong>缺乏驗證經理人的機制</strong>。現有平台大多依靠報酬率進行排名，然而高報酬並不等於穩定獲利，使用者即使看到排行榜，也難以判斷哪些經理人真正值得跟單。" data-en="The problem isn&#39;t a lack of managers — it&#39;s a <strong>lack of mechanisms to verify them</strong>. Most platforms rank by return rate, but high returns don&#39;t equal stable profits. Even with a leaderboard, users can&#39;t judge which managers are truly worth following.">問題並非缺乏經理人，而是<strong>缺乏驗證經理人的機制</strong>。現有平台大多依靠報酬率進行排名，然而高報酬並不等於穩定獲利，使用者即使看到排行榜，也難以判斷哪些經理人真正值得跟單。</div>
   </div>
 </div>
 
 <div class="section reveal">
   <div class="section-eyebrow">產品策略</div>
   <div class="section-body">
-    <p>我們決定不再讓平台直接替使用者選擇經理人，而是建立一套「由社群共同驗證經理人」的機制，讓市場自行篩選出優秀交易者。</p>
+    <p data-zh="我們決定不再讓平台直接替使用者選擇經理人，而是建立一套「由社群共同驗證經理人」的機制，讓市場自行篩選出優秀交易者。" data-en="We decided to stop having the platform select managers for users, and instead build a &quot;community-verified manager&quot; mechanism — letting the market self-select excellent traders.">我們決定不再讓平台直接替使用者選擇經理人，而是建立一套「由社群共同驗證經理人」的機制，讓市場自行篩選出優秀交易者。</p>
   </div>
 </div>
 
@@ -177,16 +166,16 @@
   <div class="section-eyebrow">關鍵產品決策</div>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-title">決策一｜以投票機制取代單純排行榜排序</div>
-      <div class="timeline-text">傳統排行榜容易被短期績效影響，因此平台改由社群投票決定資金配置方向。</div>
+      <div class="timeline-title" data-zh="決策一｜以投票機制取代單純排行榜排序" data-en="Decision 1 ｜ Replace pure leaderboard ranking with a voting mechanism">決策一｜以投票機制取代單純排行榜排序</div>
+      <div class="timeline-text" data-zh="傳統排行榜容易被短期績效影響，因此平台改由社群投票決定資金配置方向。" data-en="Traditional leaderboards are easily skewed by short-term performance. The platform now uses community voting to determine capital allocation direction.">傳統排行榜容易被短期績效影響，因此平台改由社群投票決定資金配置方向。</div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-title">決策二｜將獲利能力與風險波動共同納入評分</div>
-      <div class="timeline-text">避免高槓桿與極端操作獲得不合理優勢，讓穩定獲利的交易者得到應有的排名。</div>
+      <div class="timeline-title" data-zh="決策二｜將獲利能力與風險波動共同納入評分" data-en="Decision 2 ｜ Include both profitability and risk volatility in scoring">決策二｜將獲利能力與風險波動共同納入評分</div>
+      <div class="timeline-text" data-zh="避免高槓桿與極端操作獲得不合理優勢，讓穩定獲利的交易者得到應有的排名。" data-en="Prevent high-leverage and extreme strategies from gaining unfair advantage, and give stably profitable traders the ranking they deserve.">避免高槓桿與極端操作獲得不合理優勢，讓穩定獲利的交易者得到應有的排名。</div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-title">決策三｜建立雙向獎勵機制</div>
-      <div class="timeline-text">讓經理人努力創造績效，以及投資人努力驗證經理人，雙方都能獲得獎勵，形成正向循環。</div>
+      <div class="timeline-title" data-zh="決策三｜建立雙向獎勵機制" data-en="Decision 3 ｜ Build a two-way reward mechanism">決策三｜建立雙向獎勵機制</div>
+      <div class="timeline-text" data-zh="讓經理人努力創造績效，以及投資人努力驗證經理人，雙方都能獲得獎勵，形成正向循環。" data-en="Both managers working to generate performance and investors working to validate managers are rewarded, forming a positive feedback loop.">讓經理人努力創造績效，以及投資人努力驗證經理人，雙方都能獲得獎勵，形成正向循環。</div>
     </div>
   </div>
 </div>
@@ -194,21 +183,21 @@
 <div class="section reveal">
   <div class="section-eyebrow">UX 優化</div>
   <div class="section-body">
-    <p>透過可用性測試發現，使用者難以理解：投票流程、權重計算方式、經理人績效差異。因此重新設計了兩個關鍵體驗：</p>
+    <p data-zh="透過可用性測試發現，使用者難以理解：投票流程、權重計算方式、經理人績效差異。因此重新設計了兩個關鍵體驗：" data-en="Usability testing revealed that users struggled to understand: the voting flow, weight calculation, and manager performance differences. We redesigned two key experiences:">透過可用性測試發現，使用者難以理解：投票流程、權重計算方式、經理人績效差異。因此重新設計了兩個關鍵體驗：</p>
   </div>
   <div class="reflect-grid">
     <div class="reflect-item">
       <div class="reflect-letter">1</div>
       <div class="reflect-content">
-        <div class="reflect-title">經理人排行榜</div>
-        <div class="reflect-text">整合報酬率、勝率、風險指標、投票狀況，以視覺化方式呈現，讓使用者一眼看出哪位經理人真正值得信任。</div>
+        <div class="reflect-title" data-zh="經理人排行榜" data-en="Manager Leaderboard">經理人排行榜</div>
+        <div class="reflect-text" data-zh="整合報酬率、勝率、風險指標、投票狀況，以視覺化方式呈現，讓使用者一眼看出哪位經理人真正值得信任。" data-en="Consolidated ROI, win rate, risk indicators, and voting status in a visual format, letting users instantly identify which managers are truly worth trusting.">整合報酬率、勝率、風險指標、投票狀況，以視覺化方式呈現，讓使用者一眼看出哪位經理人真正值得信任。</div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">2</div>
       <div class="reflect-content">
-        <div class="reflect-title">投票流程優化</div>
-        <div class="reflect-text">將原本複雜的 DAO 投票流程拆解成更容易理解的步驟，降低新手參與門檻。</div>
+        <div class="reflect-title" data-zh="投票流程優化" data-en="Voting Flow Optimization">投票流程優化</div>
+        <div class="reflect-text" data-zh="將原本複雜的 DAO 投票流程拆解成更容易理解的步驟，降低新手參與門檻。" data-en="Broke down the originally complex DAO voting flow into more digestible steps, lowering the participation barrier for newcomers.">將原本複雜的 DAO 投票流程拆解成更容易理解的步驟，降低新手參與門檻。</div>
       </div>
     </div>
   </div>
@@ -221,14 +210,14 @@
       <div class="reflect-letter">U</div>
       <div class="reflect-content">
         <div class="reflect-title">User Impact</div>
-        <div class="reflect-text">降低理解門檻、提升投票決策效率、強化經理人比較能力。</div>
+        <div class="reflect-text" data-zh="降低理解門檻、提升投票決策效率、強化經理人比較能力。" data-en="Lowered comprehension barrier, improved voting decision efficiency, and strengthened users&#39; ability to compare managers.">降低理解門檻、提升投票決策效率、強化經理人比較能力。</div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">P</div>
       <div class="reflect-content">
         <div class="reflect-title">Product Impact</div>
-        <div class="reflect-text">建立差異化市場定位、將驗證機制納入平台核心價值、提供傳統社群交易平台以外的新模式。</div>
+        <div class="reflect-text" data-zh="建立差異化市場定位、將驗證機制納入平台核心價值、提供傳統社群交易平台以外的新模式。" data-en="Established differentiated market positioning, integrated the validation mechanism into the platform&#39;s core value, and offered a new model beyond traditional social trading platforms.">建立差異化市場定位、將驗證機制納入平台核心價值、提供傳統社群交易平台以外的新模式。</div>
       </div>
     </div>
   </div>
@@ -237,21 +226,21 @@
 <div class="section reveal">
   <div class="section-eyebrow">學習與反思</div>
   <div class="section-body">
-    <p>這是我在產品設計領域較早期的完整參與經驗，讓我對跨職能協作有了更深的理解：</p>
+    <p data-zh="這是我在產品設計領域較早期的完整參與經驗，讓我對跨職能協作有了更深的理解：" data-en="This was one of my earlier complete product design experiences, deepening my understanding of cross-functional collaboration:">這是我在產品設計領域較早期的完整參與經驗，讓我對跨職能協作有了更深的理解：</p>
   </div>
   <div class="reflect-grid">
     <div class="reflect-item">
       <div class="reflect-letter">1</div>
       <div class="reflect-content">
-        <div class="reflect-title">好的產品方案必須建立在可執行性之上</div>
-        <div class="reflect-text">剛進入產品開發領域時，我經常從使用者角度提出各種理想解法。然而實際與工程團隊合作後才理解，產品決策除了滿足使用者需求外，也必須考量技術成本、開發資源與維護成本。這讓我開始學習從工程角度思考問題，並在提出方案前先評估可行性與投入產出比。</div>
+        <div class="reflect-title" data-zh="好的產品方案必須建立在可執行性之上" data-en="Good product solutions must be grounded in feasibility">好的產品方案必須建立在可執行性之上</div>
+        <div class="reflect-text" data-zh="剛進入產品開發領域時，我經常從使用者角度提出各種理想解法。然而實際與工程團隊合作後才理解，產品決策除了滿足使用者需求外，也必須考量技術成本、開發資源與維護成本。這讓我開始學習從工程角度思考問題，並在提出方案前先評估可行性與投入產出比。" data-en="When I first entered product development, I often proposed ideal solutions from a pure user perspective. Working with engineering teams taught me that product decisions must also account for technical costs, development resources, and maintenance costs. I started learning to think from an engineering perspective and assess feasibility and ROI before proposing solutions.">剛進入產品開發領域時，我經常從使用者角度提出各種理想解法。然而實際與工程團隊合作後才理解，產品決策除了滿足使用者需求外，也必須考量技術成本、開發資源與維護成本。這讓我開始學習從工程角度思考問題，並在提出方案前先評估可行性與投入產出比。</div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">2</div>
       <div class="reflect-content">
-        <div class="reflect-title">產品角色的價值在於整合不同觀點</div>
-        <div class="reflect-text">初入職場時，我常將意見被否決視為自己思考不足。但後來逐漸理解，每個部門看到的是不同面向的問題。產品開發並不是尋找單一正確答案，而是在商業目標、使用者需求與技術限制之間找到最佳平衡點。這段經驗讓我開始學習如何透過研究、數據與用戶回饋驗證自己的想法，而不是僅憑直覺做判斷。</div>
+        <div class="reflect-title" data-zh="產品角色的價值在於整合不同觀點" data-en="The product role&#39;s value lies in integrating different perspectives">產品角色的價值在於整合不同觀點</div>
+        <div class="reflect-text" data-zh="初入職場時，我常將意見被否決視為自己思考不足。但後來逐漸理解，每個部門看到的是不同面向的問題。產品開發並不是尋找單一正確答案，而是在商業目標、使用者需求與技術限制之間找到最佳平衡點。這段經驗讓我開始學習如何透過研究、數據與用戶回饋驗證自己的想法，而不是僅憑直覺做判斷。" data-en="Early in my career, I often interpreted rejected ideas as my own lack of thinking. Over time I understood that each department sees a different facet of the problem. Product development isn&#39;t about finding the one right answer — it&#39;s about finding the best balance between business goals, user needs, and technical constraints. This experience taught me to validate ideas through research, data, and user feedback rather than intuition alone.">初入職場時，我常將意見被否決視為自己思考不足。但後來逐漸理解，每個部門看到的是不同面向的問題。產品開發並不是尋找單一正確答案，而是在商業目標、使用者需求與技術限制之間找到最佳平衡點。這段經驗讓我開始學習如何透過研究、數據與用戶回饋驗證自己的想法，而不是僅憑直覺做判斷。</div>
       </div>
     </div>
   </div>
@@ -264,15 +253,6 @@
 
 <script>
 
-  let caseLang = 'zh';
-  function toggleLang() {
-    caseLang = caseLang === 'zh' ? 'en' : 'zh';
-    document.getElementById('case-lang-btn').textContent = caseLang === 'zh' ? 'EN' : '中';
-    document.documentElement.lang = caseLang === 'zh' ? 'zh-TW' : 'en';
-    document.querySelectorAll('[data-zh]').forEach(el => {
-      el.innerHTML = caseLang === 'zh' ? el.dataset.zh : el.dataset.en;
-    });
-  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

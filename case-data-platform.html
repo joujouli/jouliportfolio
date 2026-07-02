@@ -171,24 +171,13 @@
     .stat-row { flex-direction: column; }
   }
 
-  .lang-toggle {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
-    color: var(--ink-muted); background: transparent;
-    border: 1px solid var(--border); border-radius: 2rem;
-    padding: 0.3rem 0.875rem; cursor: pointer;
-    font-family: 'Inter', sans-serif; transition: all 0.2s;
-  }
-  .lang-toggle:hover { color: var(--orange); border-color: var(--orange); }
 </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="back-link" data-zh="← 返回作品集" data-en="← Back">← 返回作品集</a>
-  <div style="display:flex;align-items:center;gap:1rem;">
-    <button class="lang-toggle" onclick="toggleLang()" id="case-lang-btn">EN</button>
-    <a href="index.html" class="nav-logo">JOU LI</a>
-  </div>
+  <a href="index.html" class="nav-logo">JOU LI</a>
 </nav>
 
 <div class="hero">
@@ -206,7 +195,7 @@
     </div>
     <div class="meta-item">
       <div class="meta-label" data-zh="平台" data-en="Platform">平台</div>
-      <div class="meta-value">Web + App</div>
+      <div class="meta-value" data-zh="Web + App" data-en="Web + App">Web + App</div>
     </div>
     <div class="meta-item">
       <div class="meta-label" data-zh="核心成果" data-en="Key Outcome">核心成果</div>
@@ -222,59 +211,59 @@
 <div class="section reveal">
   <div class="section-eyebrow" data-zh="我的角色" data-en="My Role">我的角色</div>
   <div class="section-body">
-    <p>擔任 UI/UX Designer，並參與產品規劃與功能定義。主要負責：競品分析與市場研究、使用者訪談與需求整理、User Flow 與 Wireframe 規劃、功能流程設計、Mockup 與 Prototype 製作、與 PM 及工程師協作確認需求、上線後數據追蹤與優化提案。</p>
-    <p>在產品迭代階段，我持續透過 Mixpanel、用戶訪談及滿意度調查了解使用者行為，並於 Sprint Meeting 中提出優化建議，協助團隊制定後續產品方向。</p>
+    <p><span data-zh="擔任 UI/UX Designer，並參與產品規劃與功能定義。主要負責：競品分析與市場研究、使用者訪談與需求整理、User Flow 與 Wireframe 規劃、功能流程設計、Mockup 與 Prototype 製作、與 PM 及工程師協作確認需求、上線後數據追蹤與優化提案。" data-en="Served as UI/UX Designer with involvement in product planning and feature definition. Responsibilities included: competitor analysis and market research, user interviews and requirements gathering, User Flow and Wireframe planning, feature flow design, Mockup and Prototype production, cross-functional collaboration with PM and engineers, and post-launch data tracking and optimization proposals.">擔任 UI/UX Designer，並參與產品規劃與功能定義。主要負責：競品分析與市場研究、使用者訪談與需求整理、User Flow 與 Wireframe 規劃、功能流程設計、Mockup 與 Prototype 製作、與 PM 及工程師協作確認需求、上線後數據追蹤與優化提案。</span></p>
+    <p><span data-zh="在產品迭代階段，我持續透過 Mixpanel、用戶訪談及滿意度調查了解使用者行為，並於 Sprint Meeting 中提出優化建議，協助團隊制定後續產品方向。" data-en="During the iteration phase, I continuously monitored user behavior through Mixpanel, interviews, and satisfaction surveys, proposing optimization recommendations at Sprint Meetings to help shape the product roadmap.">在產品迭代階段，我持續透過 Mixpanel、用戶訪談及滿意度調查了解使用者行為，並於 Sprint Meeting 中提出優化建議，協助團隊制定後續產品方向。</span></p>
   </div>
 </div>
 
 <div class="section reveal">
   <div class="section-eyebrow" data-zh="問題發現" data-en="Problem Discovery">問題發現</div>
   <div class="section-body">
-    <p>透過用戶訪談、社群觀察以及競品分析，我們發現加密貨幣投資新手普遍面臨以下問題：</p>
+    <p><span data-zh="透過用戶訪談、社群觀察以及競品分析，我們發現加密貨幣投資新手普遍面臨以下問題：" data-en="Through user interviews, community observation, and competitor analysis, we identified common challenges faced by crypto investment newcomers:">透過用戶訪談、社群觀察以及競品分析，我們發現加密貨幣投資新手普遍面臨以下問題：</span></p>
   </div>
   <div class="reflect-grid">
     <div class="reflect-item">
       <div class="reflect-letter">1</div>
       <div class="reflect-content">
-        <div class="reflect-title">資訊來源過於分散</div>
-        <div class="reflect-text">使用者需要在各數據平台及交易所之間反覆切換，才能完成一次完整研究。</div>
+        <div class="reflect-title"><span data-zh="資訊來源過於分散" data-en="Fragmented Information Sources">資訊來源過於分散</span></div>
+        <div class="reflect-text"><span data-zh="使用者需要在各數據平台及交易所之間反覆切換，才能完成一次完整研究。" data-en="Users had to switch between multiple data platforms and exchanges just to complete a single round of research.">使用者需要在各數據平台及交易所之間反覆切換，才能完成一次完整研究。</span></div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">2</div>
       <div class="reflect-content">
-        <div class="reflect-title">數據理解門檻高</div>
-        <div class="reflect-text">即使取得大量市場數據，大多數新手仍無法判斷：哪些指標值得關注？指標代表什麼意義？如何利用數據做決策？</div>
+        <div class="reflect-title"><span data-zh="數據理解門檻高" data-en="High Data Comprehension Barrier">數據理解門檻高</span></div>
+        <div class="reflect-text"><span data-zh="即使取得大量市場數據，大多數新手仍無法判斷：哪些指標值得關注？指標代表什麼意義？如何利用數據做決策？" data-en="Even with access to market data, most newcomers struggled to determine which indicators mattered, what they meant, and how to use them to make decisions.">即使取得大量市場數據，大多數新手仍無法判斷：哪些指標值得關注？指標代表什麼意義？如何利用數據做決策？</span></div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">3</div>
       <div class="reflect-content">
-        <div class="reflect-title">缺乏決策輔助工具</div>
-        <div class="reflect-text">競品平台大多專注於提供市場資訊與數據圖表，但缺乏協助使用者從資料中形成投資決策的工具。</div>
+        <div class="reflect-title"><span data-zh="缺乏決策輔助工具" data-en="Lack of Decision-Making Tools">缺乏決策輔助工具</span></div>
+        <div class="reflect-text"><span data-zh="競品平台大多專注於提供市場資訊與數據圖表，但缺乏協助使用者從資料中形成投資決策的工具。" data-en="Competing platforms focused on presenting data and charts, but lacked tools to help users form actual investment decisions.">競品平台大多專注於提供市場資訊與數據圖表，但缺乏協助使用者從資料中形成投資決策的工具。</span></div>
       </div>
     </div>
   </div>
   <div class="insight-box">
     <div class="insight-label">產品假設</div>
-    <div class="insight-text">如果能夠將分散資訊整合，並透過決策工具協助用戶縮短研究流程，將有機會降低投資門檻並提升產品黏著度。</div>
+    <div class="insight-text"><span data-zh="如果能夠將分散資訊整合，並透過決策工具協助用戶縮短研究流程，將有機會降低投資門檻並提升產品黏著度。" data-en="If we could consolidate fragmented information and provide decision tools to shorten the research process, we could lower the barrier to entry and improve product retention.">如果能夠將分散資訊整合，並透過決策工具協助用戶縮短研究流程，將有機會降低投資門檻並提升產品黏著度。</span></div>
   </div>
   <div class="quote-grid" style="margin-top: 1.75rem;">
     <div class="quote-card">
       <span class="quote-mark">"</span>
-      <div class="quote-text">網路上的資訊太繁雜，不知道如何入門幣圈。</div>
+      <div class="quote-text"><span data-zh="網路上的資訊太繁雜，不知道如何入門幣圈。" data-en="There's so much information online — I have no idea how to get started in crypto.">網路上的資訊太繁雜，不知道如何入門幣圈。</span></div>
     </div>
     <div class="quote-card">
       <span class="quote-mark">"</span>
-      <div class="quote-text">沒有專業背景看不懂指標跟數據。</div>
+      <div class="quote-text"><span data-zh="沒有專業背景看不懂指標跟數據。" data-en="Without a finance background, I can't make sense of these indicators and numbers.">沒有專業背景看不懂指標跟數據。</span></div>
     </div>
     <div class="quote-card">
       <span class="quote-mark">"</span>
-      <div class="quote-text">會先從交易所提供的排行榜去鎖定目標，但選擇太多不知道如何做篩選。</div>
+      <div class="quote-text"><span data-zh="會先從交易所提供的排行榜去鎖定目標，但選擇太多不知道如何做篩選。" data-en="I start with the exchange leaderboard to find targets, but there are too many options and I don't know how to filter.">會先從交易所提供的排行榜去鎖定目標，但選擇太多不知道如何做篩選。</span></div>
     </div>
     <div class="quote-card">
       <span class="quote-mark">"</span>
-      <div class="quote-text">資料分散在各平台，準備過程麻煩。</div>
+      <div class="quote-text"><span data-zh="資料分散在各平台，準備過程麻煩。" data-en="Data is scattered across platforms — the research process is just too tedious.">資料分散在各平台，準備過程麻煩。</span></div>
     </div>
   </div>
 </div>
@@ -282,19 +271,19 @@
 <div class="section reveal">
   <div class="section-eyebrow" data-zh="市場研究" data-en="Market Research">市場研究</div>
   <div class="section-body">
-    <p>分析三個提供市場資訊與數據的平台——CoinMarketCap、CoinGecko、CoinAnk，比較其核心價值、功能範圍與使用者評價。</p>
+    <p><span data-zh="分析三個提供市場資訊與數據的平台——CoinMarketCap、CoinGecko、CoinAnk，比較其<span data-zh="核心價值" data-en="Core Value">核心價值</span>、功能範圍與使用者評價。" data-en="We analyzed three major crypto data platforms — CoinMarketCap, CoinGecko, and CoinAnk — comparing their core value, feature scope, and user feedback.">分析三個提供市場資訊與數據的平台——CoinMarketCap、CoinGecko、CoinAnk，比較其<span data-zh="核心價值" data-en="Core Value">核心價值</span>、功能範圍與使用者評價。</span></p>
   </div>
   <div class="table-wrap">
     <table>
-      <tr><th>產品名稱</th><th>CoinMarketCap</th><th>CoinGecko</th><th>CoinAnk</th></tr>
-      <tr><td class="row-label">核心價值</td><td>提供最全面的加密貨幣市場資訊</td><td>提供更透明且深入的鏈上數據</td><td>協助交易者判斷市場資金流向</td></tr>
-      <tr><td class="row-label">優勢</td><td>品牌知名度最高、資料覆蓋最廣、對新手友善</td><td>DeFi 最強、新幣發現能力強、鏈上資料完整</td><td>衍生品數據最完整、Whale Analysis、圖表能力強</td></tr>
-      <tr><td class="row-label">痛點</td><td>有資料但缺少決策輔助，知道哪個幣在漲卻不知道為什麼</td><td>可以知道市場發生什麼事，但不知道該做什麼</td><td>資料專業但基礎資訊不夠完整，新手不易理解</td></tr>
+      <tr><th><span data-zh="產品名稱" data-en="Platform">產品名稱</span></th><th>CoinMarketCap</th><th>CoinGecko</th><th>CoinAnk</th></tr>
+      <tr><td class="row-label"><span data-zh="核心價值" data-en="Core Value">核心價值</span></td><td><span data-zh="提供最全面的加密貨幣市場資訊" data-en="Most comprehensive crypto market data">提供最全面的加密貨幣市場資訊</span></td><td><span data-zh="提供更透明且深入的鏈上數據" data-en="Deeper and more transparent on-chain data">提供更透明且深入的鏈上數據</span></td><td><span data-zh="協助交易者判斷市場資金流向" data-en="Helps traders identify market capital flow">協助交易者判斷市場資金流向</span></td></tr>
+      <tr><td class="row-label"><span data-zh="優勢" data-en="Strengths">優勢</span></td><td><span data-zh="品牌知名度最高、資料覆蓋最廣、對新手友善" data-en="Highest brand awareness, broadest data coverage, beginner-friendly">品牌知名度最高、資料覆蓋最廣、對新手友善</span></td><td><span data-zh="DeFi 最強、新幣發現能力強、鏈上資料完整" data-en="Strongest DeFi coverage, new coin discovery, complete on-chain data">DeFi 最強、新幣發現能力強、鏈上資料完整</span></td><td><span data-zh="衍生品數據最完整、Whale Analysis、圖表能力強" data-en="Most complete derivatives data, Whale Analysis, strong charting">衍生品數據最完整、Whale Analysis、圖表能力強</span></td></tr>
+      <tr><td class="row-label"><span data-zh="痛點" data-en="Pain Points">痛點</span></td><td><span data-zh="有資料但缺少決策輔助，知道哪個幣在漲卻不知道為什麼" data-en="Has data but lacks decision support — users know what's rising but not why">有資料但缺少決策輔助，知道哪個幣在漲卻不知道為什麼</span></td><td><span data-zh="可以知道市場發生什麼事，但不知道該做什麼" data-en="Tells users what's happening in the market, but not what to do">可以知道市場發生什麼事，但不知道該做什麼</span></td><td><span data-zh="資料專業但基礎資訊不夠完整，新手不易理解" data-en="Professional data but insufficient basics, hard for newcomers to understand">資料專業但基礎資訊不夠完整，新手不易理解</span></td></tr>
     </table>
   </div>
   <div class="insight-box">
     <div class="insight-label">關鍵洞察</div>
-    <div class="insight-text">各平台都有各自優缺點，但共通痛點是<strong>缺乏決定性的執行策略</strong>——看完一堆圖表、數據後，使用者仍然不知道如何抉擇。這正是我們切入的核心機會。</div>
+    <div class="insight-text">各平台都有各自優缺點，但共通<span data-zh="痛點" data-en="Pain Points">痛點</span>是<strong>缺乏決定性的執行策略</strong>——看完一堆圖表、數據後，使用者仍然不知道如何抉擇。這正是我們切入的核心機會。</div>
   </div>
 </div>
 
@@ -302,34 +291,34 @@
   <div class="section-eyebrow" data-zh="關鍵產品決策" data-en="Key Product Decisions">關鍵產品決策</div>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-title">決策一｜先建立數據指標，而非直接開發交易工具</div>
-      <div class="timeline-text">訪談發現新手最大的問題並非交易，而是不知道如何判斷市場。因此產品初期優先投入市場指標開發，並透過視覺化設計降低數據理解門檻。</div>
+      <div class="timeline-title"><span data-zh="決策一｜先建立數據指標，而非直接開發交易工具" data-en="Decision 1 ｜ Build data indicators first, not trading tools">決策一｜先建立數據指標，而非直接開發交易工具</span></div>
+      <div class="timeline-text"><span data-zh="訪談發現新手最大的問題並非交易，而是不知道如何判斷市場。因此產品初期優先投入市場指標開發，並透過視覺化設計降低數據理解門檻。" data-en="Interviews revealed that newcomers' biggest challenge wasn't trading itself, but not knowing how to read the market. We prioritized market indicator development early, using visual design to lower the comprehension barrier.">訪談發現新手最大的問題並非交易，而是不知道如何判斷市場。因此產品初期優先投入市場指標開發，並透過視覺化設計降低數據理解門檻。</span></div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-title">決策二｜建立篩選器功能作為探索入口</div>
-      <div class="timeline-text">許多使用者表示「我不知道該研究哪一個幣」。因此設計排行榜、篩選器作為產品入口，透過不同條件快速協助使用者發現潛在標的。</div>
+      <div class="timeline-title"><span data-zh="決策二｜建立篩選器功能作為探索入口" data-en="Decision 2 ｜ Build a screener as the discovery entry point">決策二｜建立篩選器功能作為探索入口</span></div>
+      <div class="timeline-text"><span data-zh="許多使用者表示「我不知道該研究哪一個幣」。因此設計排行榜、篩選器作為產品入口，透過不同條件快速協助使用者發現潛在標的。" data-en="Many users said "I don't know which coin to research." So we designed leaderboards and screeners as the product entry point, helping users discover potential targets through various filters.">許多使用者表示「我不知道該研究哪一個幣」。因此設計排行榜、篩選器作為產品入口，透過不同條件快速協助使用者發現潛在標的。</span></div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-title">決策三｜將交易工具延伸成完整決策流程</div>
-      <div class="timeline-text">當用戶找到標的後，仍需要進一步分析，因此設計「篩選器 → 儀表板 → 警報」的研究流程，讓用戶能持續追蹤標的並接收即時資訊，完成一站式的投資決策。</div>
+      <div class="timeline-title"><span data-zh="決策三｜將交易工具延伸成完整決策流程" data-en="Decision 3 ｜ Extend trading tools into a complete decision flow">決策三｜將交易工具延伸成完整決策流程</span></div>
+      <div class="timeline-text"><span data-zh="當用戶找到標的後，仍需要進一步分析，因此設計「篩選器 → 儀表板 → 警報」的研究流程，讓用戶能持續追蹤標的並接收即時資訊，完成一站式的投資決策。" data-en="Once users found a target, they still needed further analysis. We designed a "Screener → Dashboard → Alerts" research flow, enabling continuous tracking and real-time updates for one-stop investment decisions.">當用戶找到標的後，仍需要進一步分析，因此設計「篩選器 → 儀表板 → 警報」的研究流程，讓用戶能持續追蹤標的並接收即時資訊，完成一站式的投資決策。</span></div>
     </div>
   </div>
   <div class="insight-box">
     <div class="insight-label">迭代成果</div>
-    <div class="insight-text">當儀表板成為使用率最高的功能後，我們針對此進行優化：數據完整化、調整介面方便檢視、連結其他功能（警報、觀察清單）讓流程更順暢。當產品成熟後，儀表板已成為產品核心功能。</div>
+    <div class="insight-text"><span data-zh="當儀表板成為使用率最高的功能後，我們針對此進行優化：數據完整化、調整介面方便檢視、連結其他功能（警報、觀察清單）讓流程更順暢。當產品成熟後，儀表板已成為產品核心功能。" data-en="After the dashboard emerged as the most-used feature, we optimized it: enriching data, adjusting the interface for easier viewing, and linking to other features (Alerts, Watchlist) for a smoother flow. The dashboard became the product's core feature.">當儀表板成為使用率最高的功能後，我們針對此進行優化：數據完整化、調整介面方便檢視、連結其他功能（警報、觀察清單）讓流程更順暢。當產品成熟後，儀表板已成為產品核心功能。</span></div>
   </div>
   <div class="stat-row">
     <div class="stat-pill">
       <div class="stat-num">60%</div>
-      <div class="stat-label">儀表板佔整體使用率</div>
+      <div class="stat-label"><span data-zh="儀表板佔整體使用率" data-en="Dashboard share of total usage">儀表板佔整體使用率</span></div>
     </div>
     <div class="stat-pill">
       <div class="stat-num">5 項</div>
-      <div class="stat-label">核心工具逐步上線</div>
+      <div class="stat-label"><span data-zh="核心工具逐步上線" data-en="Core tools launched iteratively">核心工具逐步上線</span></div>
     </div>
     <div class="stat-pill">
       <div class="stat-num">2 年</div>
-      <div class="stat-label">完整開發週期</div>
+      <div class="stat-label"><span data-zh="完整開發週期" data-en="Full development cycle">完整開發週期</span></div>
     </div>
   </div>
 </div>
@@ -341,21 +330,21 @@
       <div class="reflect-letter">B</div>
       <div class="reflect-content">
         <div class="reflect-title">Business Impact</div>
-        <div class="reflect-text">建立平台差異化定位、強化用戶留存與回訪動機、成功發展出平台核心功能。</div>
+        <div class="reflect-text"><span data-zh="建立平台差異化定位、強化用戶留存與回訪動機、成功發展出平台核心功能。" data-en="Established platform differentiation, strengthened user retention and return motivation, and successfully developed the platform's core feature.">建立平台差異化定位、強化用戶留存與回訪動機、成功發展出平台核心功能。</span></div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">U</div>
       <div class="reflect-content">
         <div class="reflect-title">User Impact</div>
-        <div class="reflect-text">降低市場研究成本、提供一站式資訊整合體驗、建立從篩幣到決策的完整流程。</div>
+        <div class="reflect-text"><span data-zh="降低市場研究成本、提供一站式資訊整合體驗、建立從篩幣到決策的完整流程。" data-en="Reduced research costs, provided a one-stop information experience, and built a complete flow from coin screening to investment decision.">降低市場研究成本、提供一站式資訊整合體驗、建立從篩幣到決策的完整流程。</span></div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">P</div>
       <div class="reflect-content">
         <div class="reflect-title">Product Insight</div>
-        <div class="reflect-text">儀表板成為使用率最高的功能，佔整體流量約 60%。這代表使用者最需要的並非更多數據，而是協助發現機會與縮小選擇範圍的工具。這項洞察也影響後續產品發展方向。</div>
+        <div class="reflect-text"><span data-zh="儀表板成為使用率最高的功能，佔整體流量約 60%。這代表使用者最需要的並非更多數據，而是協助發現機會與縮小選擇範圍的工具。這項洞察也影響後續產品發展方向。" data-en="The dashboard became the most-used feature, accounting for ~60% of total traffic. This revealed that users needed not more data, but tools to discover opportunities and narrow choices — an insight that shaped future product direction.">儀表板成為使用率最高的功能，佔整體流量約 60%。這代表使用者最需要的並非更多數據，而是協助發現機會與縮小選擇範圍的工具。這項洞察也影響後續產品發展方向。</span></div>
       </div>
     </div>
   </div>
@@ -364,21 +353,21 @@
 <div class="section reveal">
   <div class="section-eyebrow" data-zh="學習與反思" data-en="Reflection">學習與反思</div>
   <div class="section-body">
-    <p>這是我參與開發週期最完整的產品，從 0 到 1 跟團隊一起將產品上線並持續優化，這段經驗讓我學到：</p>
+    <p><span data-zh="這是我參與開發週期最完整的產品，從 0 到 1 跟團隊一起將產品上線並持續優化，這段經驗讓我學到：" data-en="This was the most complete product development cycle I participated in — from 0 to 1 with the team. Here's what I learned:">這是我參與開發週期最完整的產品，從 0 到 1 跟團隊一起將產品上線並持續優化，這段經驗讓我學到：</span></p>
   </div>
   <div class="reflect-grid">
     <div class="reflect-item">
       <div class="reflect-letter">1</div>
       <div class="reflect-content">
-        <div class="reflect-title">產品開發速度不一定等於產品成功</div>
-        <div class="reflect-text">在新創環境中，團隊經常快速驗證想法，但缺乏足夠研究容易造成資源浪費。透過 Sprint 制度與跨部門討論，我學會在開發前更完整地驗證需求與市場機會。</div>
+        <div class="reflect-title"><span data-zh="產品開發速度不一定等於產品成功" data-en="Speed of development doesn't equal product success">產品開發速度不一定等於產品成功</span></div>
+        <div class="reflect-text"><span data-zh="在新創環境中，團隊經常快速驗證想法，但缺乏足夠研究容易造成資源浪費。透過 Sprint 制度與跨部門討論，我學會在開發前更完整地驗證需求與市場機會。" data-en="In a startup environment, teams often rush to validate ideas, but insufficient research wastes resources. Through Sprint rituals and cross-functional discussion, I learned to validate requirements and market opportunities more thoroughly before building.">在新創環境中，團隊經常快速驗證想法，但缺乏足夠研究容易造成資源浪費。透過 Sprint 制度與跨部門討論，我學會在開發前更完整地驗證需求與市場機會。</span></div>
       </div>
     </div>
     <div class="reflect-item">
       <div class="reflect-letter">2</div>
       <div class="reflect-content">
-        <div class="reflect-title">溝通成本往往比設計成本更高</div>
-        <div class="reflect-text">即使流程設計已完成，不同職能對需求的理解仍可能出現落差。因此我逐漸建立在 Wireframe、Mockup 及 Prototype 各階段進行需求確認的習慣，以降低後續修改成本。</div>
+        <div class="reflect-title"><span data-zh="溝通成本往往比設計成本更高" data-en="Communication costs often exceed design costs">溝通成本往往比設計成本更高</span></div>
+        <div class="reflect-text"><span data-zh="即使流程設計已完成，不同職能對需求的理解仍可能出現落差。因此我逐漸建立在 Wireframe、Mockup 及 Prototype 各階段進行需求確認的習慣，以降低後續修改成本。" data-en="Even after the flow design was done, different functions could misinterpret requirements. I developed a habit of confirming requirements at each stage — Wireframe, Mockup, and Prototype — to reduce costly rework.">即使流程設計已完成，不同職能對需求的理解仍可能出現落差。因此我逐漸建立在 Wireframe、Mockup 及 Prototype 各階段進行需求確認的習慣，以降低後續修改成本。</span></div>
       </div>
     </div>
   </div>
@@ -391,15 +380,6 @@
 
 <script>
 
-  let caseLang = 'zh';
-  function toggleLang() {
-    caseLang = caseLang === 'zh' ? 'en' : 'zh';
-    document.getElementById('case-lang-btn').textContent = caseLang === 'zh' ? 'EN' : '中';
-    document.documentElement.lang = caseLang === 'zh' ? 'zh-TW' : 'en';
-    document.querySelectorAll('[data-zh]').forEach(el => {
-      el.innerHTML = caseLang === 'zh' ? el.dataset.zh : el.dataset.en;
-    });
-  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
